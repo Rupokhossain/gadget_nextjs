@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+:root {
+
+  --prim-color: #4B70F5;
+  --prim-light: #a9baf989;
+
+  --Unbounded: "Unbounded", sans-serif;
+  --Merienda: "Merienda", cursive;
+}
+
+@theme inline {
+}
+
+* {
+  scroll-behavior: smooth;
+}
+.Unbounded {
+  font-family: var(--Unbounded);
+}
+.Merienda {
+  font-family: var(--Merienda);
+}
