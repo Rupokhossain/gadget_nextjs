@@ -1,5 +1,5 @@
 @import "tailwindcss";
-
+@plugin "daisyui";
 :root {
 
   --prim-color: #4B70F5;
@@ -9,8 +9,6 @@
   --Merienda: "Merienda", cursive;
 }
 
-@theme inline {
-}
 
 * {
   scroll-behavior: smooth;
@@ -20,4 +18,13 @@
 }
 .Merienda {
   font-family: var(--Merienda);
+}
+
+.hero{
+  width: 100%;
+  height: 60vh;
+  border-radius: 20px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% center;
 }
