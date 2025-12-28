@@ -32,7 +32,7 @@ const BottomHeader = () => {
                 key={item}
                 href="/"
                 className="py-2 lg:py-0 hover:text-[#4B70F5] transition-all duration-300 cursor-pointer font-semibold text-gray-700"
-                onClick={() => setIsOpen(false)} // মোবাইলে ক্লিক করলে মেনু বন্ধ হবে
+                onClick={() => setIsOpen(false)} 
               >
                 {item}
               </Link>

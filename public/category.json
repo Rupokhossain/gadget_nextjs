@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "title": "Accessories",
+    "image": "/assets/images/accessories.webp",
+    "productCount": "45+ Products"
+  },
+  {
+    "id": 2,
+    "title": "Mobile",
+    "image": "/assets/images/mobile.webp",
+    "productCount": "125+ Products"
+  },
+  {
+    "id": 3,
+    "title": "Tablets",
+    "image": "/assets/images/tablets.webp",
+    "productCount": "90+ Products"
+  },
+  {
+    "id": 4,
+    "title": "Laptops",
+    "image": "/assets/images/laptops.webp",
+    "productCount": "80+ Products"
+  },
+  {
+    "id": 5,
+    "title": "Televisions",
+    "image": "/assets/images/tv.webp",
+    "productCount": "60+ Products"
+  },
+  {
+    "id": 6,
+    "title": "Smart Watches",
+    "image": "/assets/images/watches.webp",
+    "productCount": "35+ Products"
+  },
+  {
+    "id": 7,
+    "title": "Headphones",
+    "image": "/assets/images/watches.webp",
+
+    "productCount": "55+ Products"
+  },
+  {
+    "id": 8,
+    "title": "Cameras",
+    "image": "/assets/images/laptops.webp",
+
+    "productCount": "25+ Products"
+  },
+  {
+    "id": 9,
+    "title": "Gaming Consoles",
+    "image": "/assets/images/accessories.webp",
+
+    "productCount": "15+ Products"
+  },
+  {
+    "id": 10,
+    "title": "Drones",
+    "image": "/assets/images/tablets.webp",
+
+    "productCount": "10+ Products"
+  }
+]
