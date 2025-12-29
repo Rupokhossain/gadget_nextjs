@@ -1,31 +1,31 @@
 import Image from "next/image";
 import React from "react";
 import { FaRegHeart, FaShoppingCart, FaStar } from "react-icons/fa";
-import { notFound } from "next/navigation";
 
 const page = async ({ params }) => {
-  // ১. params টি await করুন (Next.js 15+ এর জন্য প্রয়োজনীয়)
   const { id } = await params; 
 
-  // ২. ডাটা ফেচ করুন
-  const res1 = await fetch(`http://localhost:3000/products.json/${id}`, {
+  const res = await fetch("http://localhost:3000/products.json", {
     cache: "no-store",
   });
-  const data = await res1.json();
 
-  // ৩. আইডি টাইপ মিলিয়ে ফিল্টার করুন (String এ কনভার্ট করে নেওয়া নিরাপদ)
-  const product = data?.products?.find((p) => String(p.id) === String(id));
+  const data = await res.json();
 
-  // ৪. যদি প্রোডাক্ট না পাওয়া যায়
+  
+  const product = data.products.find(
+    (p) => p?.id?.toString() === id?.toString(id)
+  );
+
   if (!product) {
-    notFound();
+    return <div className="text-center py-20">Product Not Found</div>;
   }
+
+
 
   return (
     <div className="container mx-auto px-4 py-10 space-y-12">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
-        
-        {/* প্রোডাক্ট ইমেজ কলাম */}
+      
         <div className="lg:col-span-5 border border-gray-200 rounded-2xl p-6 flex items-center justify-center bg-white h-100 lg:h-125">
           <div className="relative w-full h-full">
             <Image
@@ -38,7 +38,7 @@ const page = async ({ params }) => {
           </div>
         </div>
 
-        {/* প্রোডাক্ট ইনফো কলাম */}
+     
         <div className="lg:col-span-7 space-y-6">
           <h1 className="text-3xl font-bold text-gray-900 leading-tight">
             {product?.title}
@@ -56,15 +56,20 @@ const page = async ({ params }) => {
           </div>
 
           <p className="text-gray-500 font-medium flex items-center gap-2">
-            Store: <span className="text-blue-600 font-bold">{product?.shopName}</span>
+            Store:{" "}
+            <span className="text-blue-600 font-bold">{product?.shopName}</span>
           </p>
 
           <hr className="border-gray-200" />
 
           <div className="flex items-baseline gap-4">
-            <div className="text-4xl font-bold text-gray-900">${product?.newPrice}</div>
+            <div className="text-4xl font-bold text-gray-900">
+              ${product?.newPrice}
+            </div>
             {product.oldPrice && (
-                <div className="text-xl text-gray-400 line-through">${product?.oldPrice}</div>
+              <div className="text-xl text-gray-400 line-through">
+                ${product?.oldPrice}
+              </div>
             )}
           </div>
 

@@ -1,22 +1,22 @@
-"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { CiHeart, CiShoppingCart } from "react-icons/ci";
 import { FaStar, FaStore } from "react-icons/fa";
 
-const TopSelling = ({ products }) => {
-  const handleClick = (id) => {
-    setId(id);
-  };
+const TopSelling = async() => {
+  const res1 = await fetch("http://localhost:3000/products.json", {
+    cache: "no-store",
+  });
+  const products = await res1.json();
 
   return (
     <div className=" py-12">
       <div className="container mx-auto px-4">
         {/* Row of 4: sm:2, lg:4 */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-          {products?.products?.map((product) => (
+          {products?.products?.map((p) => (
             <div
-              key={product?.id}
+              key={p?.id}
               className="bg-white border border-gray-200 hover:shadow-lg cursor-pointer rounded-xl p-4 relative transition-all duration-300 flex flex-col h-full"
             >
               {/* Top Left: Wishlist Icon */}
@@ -25,26 +25,24 @@ const TopSelling = ({ products }) => {
               </button>
 
               {/* Top Right: Badges (New / Discount) */}
-              {product?.badge && (
+              {p?.badge && (
                 <div
                   className={`absolute top-0 right-0 px-4 py-1.5 text-xs font-bold cursor-pointer text-white rounded-bl-2xl rounded-tr-xl shadow-md z-10 ${
-                    product.badgeType === "discount"
+                    p.badgeType === "discount"
                       ? "bg-red-500"
                       : "bg-yellow-400"
                   }`}
                 >
-                  {product?.badge}
+                  {p?.badge}
                 </div>
               )}
 
-              <Link href={`/product/${product?.id}`}>
+              <Link href={`/TopSelling/${p?.id}`}>
                 {/* Product Image */}
-                <div
-                onClick={() => handleClick(id)}
-                 className="relative flex justify-center items-center w-full h-50 overflow-hidden">
+                <div className="relative flex justify-center items-center w-full h-50 overflow-hidden">
                   <Image
-                    src={product?.image}
-                    alt={product?.title}
+                    src={p?.image}
+                    alt={p?.title}
                     width={200}
                     height={200}
                     className="max-h-full object-contain p-2 hover:scale-110 transition-transform duration-500"
@@ -55,13 +53,13 @@ const TopSelling = ({ products }) => {
                 <div className="mt-5 space-y-2.5">
                   {/* Pricing */}
                   <div className="flex items-center gap-2">
-                    {product.oldPrice && (
+                    {p.oldPrice && (
                       <span className="text-gray-500 text-sm line-through">
-                        ${product?.oldPrice}
+                        ${p?.oldPrice}
                       </span>
                     )}
                     <span className="text-xl font-semibold">
-                      ${product?.newPrice}
+                      ${p?.newPrice}
                     </span>
                     <span className="text-gray-500 text-sm">/Qty</span>
                   </div>
@@ -69,12 +67,12 @@ const TopSelling = ({ products }) => {
                   {/* Shop Info */}
                   <div className="text-lg text-gray-500 flex items-center gap-1">
                     <FaStore size={14} className="text-(--prim-color)" />
-                    <span>By {product?.shopName}</span>
+                    <span>By {p?.shopName}</span>
                   </div>
 
                   {/* Title */}
                   <h3 className="text-xl font-normal Unbounded my-2 hover:text-(--prim-color) cursor-pointer transition-all duration-300 line-clamp-2">
-                    {product?.title}
+                    {p?.title}
                   </h3>
 
                   {/* Rating & Sold Info */}
@@ -82,11 +80,11 @@ const TopSelling = ({ products }) => {
                     <div className="flex items-center text-yellow-500 text-md">
                       <FaStar fill="#FACC15" className="text-yellow-400" />
                       <span className="text-md text-yellow-500 pl-1">
-                        ({product?.rating})
+                        ({p?.rating})
                       </span>
                     </div>
                     <p className="mt-2 text-md Unbounded text-gray-600">
-                      Sold: <span>{product?.soldCount}</span>
+                      Sold: <span>{p?.soldCount}</span>
                     </p>
                   </div>
                 </div>
@@ -102,6 +100,6 @@ const TopSelling = ({ products }) => {
       </div>
     </div>
   );
-};
+}
 
-export default TopSelling;
+export default TopSelling
