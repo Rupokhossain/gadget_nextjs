@@ -1,0 +1,146 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "Speak 710 Portable Speaker for Music and...",
+      "image": "/assets/images/product-img1.webp",
+      "newPrice": 471.48,
+      "oldPrice": 904.21,
+      "shopName": "ElectraHub",
+      "rating": "17k",
+      "soldCount": "18/35",
+      "badge": null
+    },
+    {
+      "id": 2,
+      "title": "Rustic Granite Gloves Robot Vacuum ZUSG406...",
+      "image": "/assets/images/product-img2.webp",
+      "newPrice": 336.51,
+      "oldPrice": null,
+      "shopName": "ElectraHub",
+      "rating": "17k",
+      "soldCount": "22/40",
+      "badge": "50%",
+      "badgeType": "discount"
+    },
+    {
+      "id": 3,
+      "title": "Blender Combo with Single Serve Cups",
+      "image": "/assets/images/product-img3.webp",
+      "newPrice": 788.31,
+      "oldPrice": null,
+      "shopName": "ElectraHub",
+      "rating": "17k",
+      "soldCount": "20/32",
+      "badge": "New",
+      "badgeType": "status"
+    },
+    {
+      "id": 4,
+      "title": "Foot Portable Mini Washing Machine, White",
+      "image": "/assets/images/product-img4.webp",
+      "newPrice": 985.52,
+      "oldPrice": null,
+      "shopName": "ElectraHub",
+      "rating": "17k",
+      "soldCount": "15/25",
+      "badge": "35%",
+      "badgeType": "discount"
+    },
+    {
+      "id": 5,
+      "title": "Wireless Bluetooth Headphones Noise Cancel",
+      "image": "/assets/images/product-img5.webp",
+      "newPrice": 559.99,
+      "oldPrice": 799.99,
+      "shopName": "ElectraHub",
+      "rating": "20k",
+      "soldCount": "30/50",
+      "badge": "30%",
+      "badgeType": "discount"
+    },
+    {
+      "id": 6,
+      "title": "Smart LED TV 43 Inch Full HD",
+      "image": "/assets/images/product-img6.webp",
+      "newPrice": 1250.00,
+      "oldPrice": null,
+      "shopName": "ElectraHub",
+      "rating": "25k",
+      "soldCount": "40/60",
+      "badge": "Hot",
+      "badgeType": "status"
+    },
+    {
+      "id": 7,
+      "title": "Rechargeable Table Fan with Remote",
+      "image": "/assets/images/product-img7.webp",
+      "newPrice": 215.75,
+      "oldPrice": 299.99,
+      "shopName": "ElectraHub",
+      "rating": "9k",
+      "soldCount": "12/20",
+      "badge": "25%",
+      "badgeType": "discount"
+    },
+    {
+      "id": 8,
+      "title": "Digital Air Fryer 5L Capacity",
+      "image": "/assets/images/product-img8.webp",
+      "newPrice": 645.40,
+      "oldPrice": null,
+      "shopName": "ElectraHub",
+      "rating": "18k",
+      "soldCount": "28/40",
+      "badge": "New",
+      "badgeType": "status"
+    },
+    {
+      "id": 9,
+      "title": "Smart Watch Fitness Tracker Waterproof",
+      "image": "/assets/images/product-img9.webp",
+      "newPrice": 189.99,
+      "oldPrice": 249.99,
+      "shopName": "ElectraHub",
+      "rating": "22k",
+      "soldCount": "35/50",
+      "badge": "20%",
+      "badgeType": "discount"
+    },
+    {
+      "id": 10,
+      "title": "USB Type-C Fast Charging Power Bank 20000mAh",
+      "image": "/assets/images/product-img10.webp",
+      "newPrice": 129.50,
+      "oldPrice": null,
+      "shopName": "ElectraHub",
+      "rating": "30k",
+      "soldCount": "45/70",
+      "badge": null
+    },
+        {
+      "id": 11,
+      "title": "Rustic Granite Gloves Robot Vacuum ZUSG406...",
+      "image": "/assets/images/product-img2.webp",
+      "newPrice": 336.51,
+      "oldPrice": null,
+      "shopName": "ElectraHub",
+      "rating": "17k",
+      "soldCount": "22/40",
+      "badge": "50%",
+      "badgeType": "discount"
+    },
+        {
+      "id": 12,
+      "title": "Smart LED TV 43 Inch Full HD",
+      "image": "/assets/images/product-img6.webp",
+      "newPrice": 1250.00,
+      "oldPrice": null,
+      "shopName": "ElectraHub",
+      "rating": "25k",
+      "soldCount": "40/60",
+      "badge": "Hot",
+      "badgeType": "status"
+    }
+  ]
+}

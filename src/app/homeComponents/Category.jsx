@@ -9,7 +9,6 @@ import "swiper/css/navigation";
 import Image from "next/image";
 
 const Category = ({ category }) => {
-  // ডাটা নেই এমন অবস্থায় এরর হ্যান্ডেল করা
   if (!category) return null;
 
   return (
@@ -39,7 +38,7 @@ const Category = ({ category }) => {
                   <Image
                     src={item.image}
                     alt={item.title}
-                    width={120} // আপনার প্রয়োজন অনুযায়ী সাইজ দিন
+                    width={120} 
                     height={120}
                     className="max-h-full object-contain"
                   />
@@ -48,7 +47,6 @@ const Category = ({ category }) => {
                 <h3 className="text-xl font-bold text-gray-900 mb-1">
                   {item.title}
                 </h3>
-                {/* আপনার JSON অনুযায়ী এটি productCount হবে */}
                 <p className="text-gray-400 text-sm font-medium">
                   {item.productCount} 
                 </p>
@@ -61,5 +59,5 @@ const Category = ({ category }) => {
   );
 };
 
-// এখানে নাম ঠিক করা হয়েছে (CategorySlider এর জায়গায় Category)
+
 export default Category;
