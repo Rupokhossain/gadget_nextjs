@@ -1,0 +1,208 @@
+{
+  "phones": [
+    {
+      "id": 1,
+      "title": "Galaxy Nova X5 5G Smartphone",
+      "image": "/assets/images/phone-img1.webp",
+      "newPrice": 899.99,
+      "oldPrice": 1049.99,
+      "shopName": "ElectraHub",
+      "rating": "22k",
+      "soldCount": "40/60",
+      "badge": "20%",
+      "badgeType": "discount",
+      "description": {
+        "text": "Galaxy Nova X5 offers powerful performance with a premium design. Perfect for gaming, photography, and daily multitasking.",
+        "points": [
+          "6.6-inch AMOLED Display",
+          "5G High-speed connectivity",
+          "Advanced cooling system",
+          "Premium glass finish body"
+        ]
+      },
+      "specifications": {
+        "Product Type": "Smartphone",
+        "Brand": "GalaxyTech",
+        "RAM": "8GB",
+        "Storage": "128GB",
+        "Battery": "5000mAh"
+      },
+      "moreDetails": [
+        "In-display fingerprint sensor",
+        "Fast charging support",
+        "Dual stereo speakers",
+        "Android 14 OS"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "iSmart Pro Max Ultra Camera Phone",
+      "image": "/assets/images/phone-img2.webp",
+      "newPrice": 1199.00,
+      "oldPrice": 1399.00,
+      "shopName": "ElectraHub",
+      "rating": "30k",
+      "soldCount": "55/80",
+      "badge": "Hot",
+      "badgeType": "status",
+      "description": {
+        "text": "Designed for photography lovers, iSmart Pro Max delivers stunning camera quality with smooth performance.",
+        "points": [
+          "108MP AI Triple Camera",
+          "Ultra-clear Night Mode",
+          "Flagship-level processor",
+          "Elegant premium design"
+        ]
+      },
+      "specifications": {
+        "Product Type": "Smartphone",
+        "Brand": "iSmart",
+        "RAM": "12GB",
+        "Storage": "256GB",
+        "Battery": "4800mAh"
+      },
+      "moreDetails": [
+        "Optical image stabilization",
+        "Wireless charging",
+        "Face unlock",
+        "5G enabled"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Redon Note Z Gaming Smartphone",
+      "image": "/assets/images/phone-img3.webp",
+      "newPrice": 749.50,
+      "oldPrice": null,
+      "shopName": "ElectraHub",
+      "rating": "18k",
+      "soldCount": "35/55",
+      "badge": "New",
+      "badgeType": "status",
+      "description": {
+        "text": "Built for gamers, Redon Note Z delivers high refresh rate visuals and powerful performance.",
+        "points": [
+          "120Hz Smooth Display",
+          "Gaming-optimized chipset",
+          "Advanced heat dissipation",
+          "RGB gaming design"
+        ]
+      },
+      "specifications": {
+        "Product Type": "Gaming Smartphone",
+        "Brand": "Redon",
+        "RAM": "8GB",
+        "Storage": "256GB",
+        "Battery": "5200mAh"
+      },
+      "moreDetails": [
+        "Game boost mode",
+        "Dual speaker system",
+        "Fast touch response",
+        "Custom gaming UI"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "PixelOne Lite Compact Smartphone",
+      "image": "/assets/images/phone-img1.webp",
+      "newPrice": 599.99,
+      "oldPrice": 699.99,
+      "shopName": "ElectraHub",
+      "rating": "14k",
+      "soldCount": "25/40",
+      "badge": "15%",
+      "badgeType": "discount",
+      "description": {
+        "text": "A compact and lightweight smartphone for everyday use with clean software experience.",
+        "points": [
+          "Stock Android Experience",
+          "Compact and lightweight design",
+          "AI-powered camera",
+          "Smooth daily performance"
+        ]
+      },
+      "specifications": {
+        "Product Type": "Smartphone",
+        "Brand": "PixelOne",
+        "RAM": "6GB",
+        "Storage": "128GB",
+        "Battery": "4300mAh"
+      },
+      "moreDetails": [
+        "Regular security updates",
+        "Minimal UI",
+        "Power-efficient chipset",
+        "USB Type-C"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "OppoZen A9 Style Edition",
+      "image": "/assets/images/phone-img2.webp",
+      "newPrice": 679.00,
+      "oldPrice": 799.00,
+      "shopName": "ElectraHub",
+      "rating": "16k",
+      "soldCount": "28/45",
+      "badge": "30%",
+      "badgeType": "discount",
+      "description": {
+        "text": "OppoZen A9 combines stylish design with reliable performance for daily smartphone users.",
+        "points": [
+          "Slim and stylish design",
+          "AI-enhanced selfie camera",
+          "Smooth multitasking",
+          "Long-lasting battery life"
+        ]
+      },
+      "specifications": {
+        "Product Type": "Smartphone",
+        "Brand": "OppoZen",
+        "RAM": "8GB",
+        "Storage": "128GB",
+        "Battery": "5000mAh"
+      },
+      "moreDetails": [
+        "Face & fingerprint unlock",
+        "Fast charging support",
+        "Vivid color display",
+        "Dual SIM support"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "RealPro C12 Budget Smartphone",
+      "image": "/assets/images/phone-img3.webp",
+      "newPrice": 399.99,
+      "oldPrice": 499.99,
+      "shopName": "ElectraHub",
+      "rating": "20k",
+      "soldCount": "50/75",
+      "badge": "Best Seller",
+      "badgeType": "status",
+      "description": {
+        "text": "RealPro C12 is an affordable smartphone with strong battery life and reliable performance.",
+        "points": [
+          "Massive battery backup",
+          "Reliable daily performance",
+          "Large immersive display",
+          "Durable build quality"
+        ]
+      },
+      "specifications": {
+        "Product Type": "Smartphone",
+        "Brand": "RealPro",
+        "RAM": "4GB",
+        "Storage": "64GB",
+        "Battery": "6000mAh"
+      },
+      "moreDetails": [
+        "Battery saver mode",
+        "Face unlock",
+        "Splash resistant design",
+        "Dedicated memory card slot"
+      ]
+    }
+  ]
+}

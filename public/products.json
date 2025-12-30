@@ -2,26 +2,70 @@
   "products": [
     {
       "id": 1,
-      "title": "Speak 710 Portable Speaker for Music and...",
+      "title": "Speak 710 Portable Speaker for Music and Calls",
       "image": "/assets/images/product-img1.webp",
       "newPrice": 471.48,
       "oldPrice": 904.21,
       "shopName": "ElectraHub",
       "rating": "17k",
       "soldCount": "18/35",
-      "badge": null
+      "badge": null,
+      "description": {
+        "text": "Experience high-quality sound with the Speak 710. Whether it's for professional meetings or personal music, this portable speaker delivers crystal clear audio with an immersive experience.",
+        "points": [
+          "Premium portable speakerphone with amazing sound",
+          "Immersive sound for calls and music",
+          "Plug-and-play connectivity with USB or Bluetooth",
+          "Exclusive portable design for travel"
+        ]
+      },
+      "specifications": {
+        "Product Type": "Audio & Speakers",
+        "Brand": "Jabra",
+        "Connectivity": "Bluetooth / USB",
+        "Battery Life": "15 Hours",
+        "Item Code": "710-109"
+      },
+      "moreDetails": [
+        "Digital Signal Processing (DSP)",
+        "Omni-directional microphone",
+        "Smart button for voice assistant",
+        "Color: Black/Metallic"
+      ]
     },
     {
       "id": 2,
-      "title": "Rustic Granite Gloves Robot Vacuum ZUSG406...",
+      "title": "Rustic Granite Robot Vacuum ZUSG406 Clean Pro",
       "image": "/assets/images/product-img2.webp",
       "newPrice": 336.51,
-      "oldPrice": null,
+      "oldPrice": 450.00,
       "shopName": "ElectraHub",
-      "rating": "17k",
+      "rating": "12k",
       "soldCount": "22/40",
       "badge": "50%",
-      "badgeType": "discount"
+      "badgeType": "discount",
+      "description": {
+        "text": "The ZUSG406 Robot Vacuum is designed to make home cleaning effortless. With advanced mapping technology, it reaches every corner of your house while saving your time.",
+        "points": [
+          "Smart navigation with obstacle detection",
+          "Automatic recharging and resume",
+          "Powerful suction for pet hair and dust",
+          "Control via Smartphone App"
+        ]
+      },
+      "specifications": {
+        "Product Type": "Smart Home Appliance",
+        "Brand": "CleanPro",
+        "Battery Type": "Lithium-Ion",
+        "Runtime": "120 Minutes",
+        "Dust Bin": "0.6 Liters"
+      },
+      "moreDetails": [
+        "HEPA Filter included",
+        "Drop-sensing technology",
+        "Low profile design",
+        "Quiet operation mode"
+      ]
     },
     {
       "id": 3,
@@ -33,11 +77,33 @@
       "rating": "17k",
       "soldCount": "20/32",
       "badge": "New",
-      "badgeType": "status"
+      "badgeType": "status",
+      "description": {
+        "text": "The ultimate kitchen companion. This Blender Combo allows you to make large batches or single servings for your morning smoothie with ease and power.",
+        "points": [
+          "1200-watt professional motor base",
+          "Multiple speed settings with Pulse",
+          "BPA-free dishwasher safe jars",
+          "Includes 2 single-serve cups"
+        ]
+      },
+      "specifications": {
+        "Product Type": "Kitchen Appliance",
+        "Brand": "KitchenMaster",
+        "Wattage": "1200W",
+        "Jar Capacity": "2.1 Liters",
+        "Blade Material": "Stainless Steel"
+      },
+      "moreDetails": [
+        "Anti-slip rubber feet",
+        "Safety locking system",
+        "Easy-to-clean interface",
+        "Overload protection"
+      ]
     },
     {
       "id": 4,
-      "title": "Foot Portable Mini Washing Machine, White",
+      "title": "Portable Mini Washing Machine, White Edition",
       "image": "/assets/images/product-img4.webp",
       "newPrice": 985.52,
       "oldPrice": null,
@@ -45,7 +111,29 @@
       "rating": "17k",
       "soldCount": "15/25",
       "badge": "35%",
-      "badgeType": "discount"
+      "badgeType": "discount",
+      "description": {
+        "text": "Perfect for small apartments or dorm rooms, this mini washing machine is lightweight and efficient for quick daily laundry needs.",
+        "points": [
+          "Compact and lightweight design",
+          "Dual function for wash and spin",
+          "Energy saving technology",
+          "Easy to move with built-in handle"
+        ]
+      },
+      "specifications": {
+        "Product Type": "Home Appliance",
+        "Brand": "MiniWash",
+        "Capacity": "3.5 kg",
+        "Control": "Manual Knob",
+        "Voltage": "220V/50Hz"
+      },
+      "moreDetails": [
+        "Drain pipe included",
+        "Low noise vibration",
+        "Transparent top lid",
+        "Rust-proof body"
+      ]
     },
     {
       "id": 5,
@@ -57,23 +145,67 @@
       "rating": "20k",
       "soldCount": "30/50",
       "badge": "30%",
-      "badgeType": "discount"
+      "badgeType": "discount",
+      "description": {
+        "text": "Block out the world and dive into your music. These premium headphones offer Active Noise Cancellation (ANC) for a pure listening experience.",
+        "points": [
+          "Advanced Active Noise Cancelling",
+          "High-fidelity stereo sound",
+          "Foldable design for easy storage",
+          "Built-in mic for hands-free calls"
+        ]
+      },
+      "specifications": {
+        "Product Type": "Audio & Headphones",
+        "Brand": "SonicPro",
+        "Battery Life": "40 Hours",
+        "Bluetooth": "Version 5.2",
+        "Charge Time": "2 Hours"
+      },
+      "moreDetails": [
+        "Soft protein ear pads",
+        "Voice assistant support",
+        "Dual device connection",
+        "Quick charge support"
+      ]
     },
     {
       "id": 6,
-      "title": "Smart LED TV 43 Inch Full HD",
+      "title": "Smart LED TV 43 Inch Full HD Cinema",
       "image": "/assets/images/product-img6.webp",
       "newPrice": 1250.00,
-      "oldPrice": null,
+      "oldPrice": 1500.00,
       "shopName": "ElectraHub",
       "rating": "25k",
       "soldCount": "40/60",
       "badge": "Hot",
-      "badgeType": "status"
+      "badgeType": "status",
+      "description": {
+        "text": "Upgrade your home entertainment with this 43-inch Smart TV. Enjoy stunning Full HD resolution and access to all your favorite streaming apps.",
+        "points": [
+          "Vibrant Full HD Resolution",
+          "Built-in Netflix and YouTube",
+          "Slim bezel modern design",
+          "Powerful surround sound speakers"
+        ]
+      },
+      "specifications": {
+        "Product Type": "Television",
+        "Brand": "VisionSmart",
+        "Screen Size": "43 Inch",
+        "Resolution": "1920 x 1080",
+        "Ports": "3 HDMI, 2 USB"
+      },
+      "moreDetails": [
+        "Android OS built-in",
+        "WiFi & Ethernet support",
+        "Wall mountable design",
+        "Energy Star certified"
+      ]
     },
     {
       "id": 7,
-      "title": "Rechargeable Table Fan with Remote",
+      "title": "Rechargeable Table Fan with Remote Control",
       "image": "/assets/images/product-img7.webp",
       "newPrice": 215.75,
       "oldPrice": 299.99,
@@ -81,19 +213,63 @@
       "rating": "9k",
       "soldCount": "12/20",
       "badge": "25%",
-      "badgeType": "discount"
+      "badgeType": "discount",
+      "description": {
+        "text": "Keep cool during power cuts with this high-speed rechargeable fan. It features a remote control for convenient operation from a distance.",
+        "points": [
+          "Powerful rechargeable battery",
+          "Oscillating function for wide reach",
+          "3-speed adjustable airflow",
+          "Includes night light feature"
+        ]
+      },
+      "specifications": {
+        "Product Type": "Cooling Fan",
+        "Brand": "BreezeAir",
+        "Battery": "4500mAh",
+        "Working Time": "Up to 8 Hours",
+        "Fan Size": "12 Inch"
+      },
+      "moreDetails": [
+        "Overcharge protection",
+        "Lightweight ABS body",
+        "Low noise motor",
+        "USB charging port"
+      ]
     },
     {
       "id": 8,
-      "title": "Digital Air Fryer 5L Capacity",
+      "title": "Digital Air Fryer 5L Large Capacity",
       "image": "/assets/images/product-img8.webp",
       "newPrice": 645.40,
-      "oldPrice": null,
+      "oldPrice": 750.00,
       "shopName": "ElectraHub",
       "rating": "18k",
       "soldCount": "28/40",
       "badge": "New",
-      "badgeType": "status"
+      "badgeType": "status",
+      "description": {
+        "text": "Healthy cooking made easy. Fry, roast, and bake with 85% less oil using the 360-degree rapid air circulation technology.",
+        "points": [
+          "5 Liter family size basket",
+          "LED touchscreen control panel",
+          "8 Pre-set cooking modes",
+          "Non-stick dishwasher safe tray"
+        ]
+      },
+      "specifications": {
+        "Product Type": "Cooking Appliance",
+        "Brand": "HealthChef",
+        "Capacity": "5.0 Liters",
+        "Temp Range": "80°C - 200°C",
+        "Timer": "Up to 60 Mins"
+      },
+      "moreDetails": [
+        "Auto-shut off sensor",
+        "Cool-touch handle",
+        "Recipe book included",
+        "Non-slip feet"
+      ]
     },
     {
       "id": 9,
@@ -105,42 +281,130 @@
       "rating": "22k",
       "soldCount": "35/50",
       "badge": "20%",
-      "badgeType": "discount"
+      "badgeType": "discount",
+      "description": {
+        "text": "Track your health and stay connected. This smartwatch monitors your heart rate, steps, and sleep while providing notifications from your phone.",
+        "points": [
+          "Heart rate and sleep monitor",
+          "IP68 Waterproof rating",
+          "Multi-sport tracking modes",
+          "Notification alerts for apps"
+        ]
+      },
+      "specifications": {
+        "Product Type": "Wearable Tech",
+        "Brand": "FitTrack",
+        "Screen": "1.4 Inch IPS",
+        "Battery": "10 Days Standby",
+        "Compatibility": "iOS & Android"
+      },
+      "moreDetails": [
+        "Magnetic charging cable",
+        "Customizable watch faces",
+        "Sedentary reminder",
+        "Interchangeable straps"
+      ]
     },
     {
       "id": 10,
-      "title": "USB Type-C Fast Charging Power Bank 20000mAh",
+      "title": "Power Bank 20000mAh Fast Charging",
       "image": "/assets/images/product-img10.webp",
       "newPrice": 129.50,
-      "oldPrice": null,
+      "oldPrice": 180.00,
       "shopName": "ElectraHub",
       "rating": "30k",
       "soldCount": "45/70",
-      "badge": null
+      "badge": null,
+      "description": {
+        "text": "Never run out of power on the go. This 20000mAh high-capacity power bank can charge your phone multiple times with fast charging technology.",
+        "points": [
+          "Massive 20000mAh capacity",
+          "Dual USB and Type-C outputs",
+          "Intelligent safety protection",
+          "Portable and sleek design"
+        ]
+      },
+      "specifications": {
+        "Product Type": "Phone Accessory",
+        "Brand": "VoltCharge",
+        "Capacity": "20000mAh",
+        "Input": "Type-C / Micro",
+        "Output": "PD 22.5W Fast"
+      },
+      "moreDetails": [
+        "LED Battery indicator",
+        "Travel-friendly size",
+        "Multi-protection system",
+        "Matte finish body"
+      ]
     },
-        {
+    {
       "id": 11,
-      "title": "Rustic Granite Gloves Robot Vacuum ZUSG406...",
+      "title": "Microwave Oven with Grill and Convection",
       "image": "/assets/images/product-img2.webp",
-      "newPrice": 336.51,
-      "oldPrice": null,
+      "newPrice": 450.00,
+      "oldPrice": 599.00,
       "shopName": "ElectraHub",
-      "rating": "17k",
-      "soldCount": "22/40",
-      "badge": "50%",
-      "badgeType": "discount"
+      "rating": "14k",
+      "soldCount": "10/25",
+      "badge": "25%",
+      "badgeType": "discount",
+      "description": {
+        "text": "The all-in-one kitchen essential for modern homes. Heat, grill, or bake with precision using this multi-functional microwave oven.",
+        "points": [
+          "Multi-stage cooking options",
+          "High-power grill function",
+          "Digital display with timer",
+          "Child safety lock feature"
+        ]
+      },
+      "specifications": {
+        "Product Type": "Kitchen Appliance",
+        "Brand": "HeatPro",
+        "Capacity": "25 Liters",
+        "Wattage": "900W Microwave",
+        "Body": "Stainless Steel"
+      },
+      "moreDetails": [
+        "Defrost by weight/time",
+        "Glass turntable tray",
+        "Interior LED light",
+        "Auto-cook menu"
+      ]
     },
-        {
+    {
       "id": 12,
-      "title": "Smart LED TV 43 Inch Full HD",
+      "title": "Professional DSLR Camera 24MP HD Kit",
       "image": "/assets/images/product-img6.webp",
-      "newPrice": 1250.00,
+      "newPrice": 1850.00,
       "oldPrice": null,
       "shopName": "ElectraHub",
-      "rating": "25k",
-      "soldCount": "40/60",
-      "badge": "Hot",
-      "badgeType": "status"
+      "rating": "8k",
+      "soldCount": "5/12",
+      "badge": "Exclusive",
+      "badgeType": "status",
+      "description": {
+        "text": "Capture every moment in stunning detail. This DSLR kit comes with an 18-55mm lens and is perfect for both beginners and pro photographers.",
+        "points": [
+          "24.1 Megapixel CMOS sensor",
+          "Full HD 1080p video recording",
+          "Fast and accurate Autofocus",
+          "Built-in WiFi and Bluetooth"
+        ]
+      },
+      "specifications": {
+        "Product Type": "Camera",
+        "Brand": "SnapMaster",
+        "Resolution": "24.1 MP",
+        "Lens Kit": "18-55mm IS",
+        "Display": "Vari-angle Touch"
+      },
+      "moreDetails": [
+        "Rechargeable Li-ion battery",
+        "External mic support",
+        "SD Card slot included",
+        "Lightweight body"
+      ]
     }
   ]
 }

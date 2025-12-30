@@ -1,33 +1,42 @@
 import Image from "next/image";
 import React from "react";
-import { FaRegHeart, FaShoppingCart, FaStar } from "react-icons/fa";
+import {
+  FaRegHeart,
+  FaShoppingCart,
+  FaStar,
+  FaTruck,
+  FaUndoAlt,
+  FaShoppingBag,
+  FaCheckCircle,
+} from "react-icons/fa";
+import { MdOutlinePayment, MdVerifiedUser } from "react-icons/md";
 
 const page = async ({ params }) => {
-  const { id } = await params; 
+  const { id } = await params;
 
+  // ডাটা ফেচ করা
   const res = await fetch("http://localhost:3000/products.json", {
     cache: "no-store",
   });
-
   const data = await res.json();
-
-  
   const product = data.products.find(
-    (p) => p?.id?.toString() === id?.toString(id)
+    (p) => p?.id?.toString() === id?.toString()
   );
 
-  if (!product) {
-    return <div className="text-center py-20">Product Not Found</div>;
-  }
-
-
+  if (!product)
+    return (
+      <div className="text-center py-20 text-2xl font-bold">
+        Product Not Found
+      </div>
+    );
 
   return (
-    <div className="container mx-auto px-4 py-10 space-y-12">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
-      
-        <div className="lg:col-span-5 border border-gray-200 rounded-2xl p-6 flex items-center justify-center bg-white h-100 lg:h-125">
-          <div className="relative w-full h-full">
+    <div className="container mx-auto px-4 py-10 space-y-12 max-w-7xl">
+      {/* TOP SECTION: IMAGE + INFO + SIDEBAR */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        {/* 1. Image Section */}
+        <div className="lg:col-span-4 border border-gray-200 rounded-3xl p-8 flex items-center justify-center bg-white h-[450px] shadow-sm">
+          <div className="relative w-full h-full hover:scale-105 transition-transform duration-300">
             <Image
               src={product?.image}
               alt={product?.title}
@@ -38,12 +47,11 @@ const page = async ({ params }) => {
           </div>
         </div>
 
-     
-        <div className="lg:col-span-7 space-y-6">
+        {/* 2. Product Summary Section */}
+        <div className="lg:col-span-5 space-y-6">
           <h1 className="text-3xl font-bold text-gray-900 leading-tight">
             {product?.title}
           </h1>
-
           <div className="flex items-center gap-2">
             <div className="flex text-yellow-400">
               {[...Array(5)].map((_, i) => (
@@ -51,40 +59,164 @@ const page = async ({ params }) => {
               ))}
             </div>
             <span className="text-gray-500 font-medium">
-              ({product?.rating} Reviews)
+              4.5 star Rating ({product?.rating})
             </span>
           </div>
 
-          <p className="text-gray-500 font-medium flex items-center gap-2">
+          <p className="text-gray-500 font-medium">
             Store:{" "}
             <span className="text-blue-600 font-bold">{product?.shopName}</span>
           </p>
-
-          <hr className="border-gray-200" />
+          <hr className="border-gray-100" />
 
           <div className="flex items-baseline gap-4">
-            <div className="text-4xl font-bold text-gray-900">
+            <span className="text-5xl font-extrabold text-gray-900">
               ${product?.newPrice}
-            </div>
+            </span>
             {product.oldPrice && (
-              <div className="text-xl text-gray-400 line-through">
+              <span className="text-2xl text-gray-400 line-through">
                 ${product?.oldPrice}
-              </div>
+              </span>
             )}
           </div>
 
-          <div className="bg-green-100 text-green-800 p-4 rounded-lg border border-green-200 w-fit">
-            Status: <span className="font-bold">Sold {product?.soldCount}</span>
+          <div className="bg-green-50 text-green-700 px-4 py-2 rounded-lg border border-green-100 w-fit text-sm font-bold">
+            Status: Sold {product?.soldCount}
           </div>
 
-          <div className="flex gap-4 max-w-md">
-            <button className="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-all cursor-pointer">
+          <div className="flex gap-4">
+            <button className="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-2xl font-bold flex items-center justify-center gap-2 shadow-lg shadow-blue-200 transition-all cursor-pointer">
               <FaShoppingCart /> Add To Cart
             </button>
-            <button className="flex-1 bg-blue-100 text-blue-600 hover:bg-blue-200 py-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-all cursor-pointer">
+            <button className="flex-1 bg-blue-50 text-blue-600 hover:bg-blue-100 py-4 rounded-2xl font-bold flex items-center justify-center gap-2 transition-all cursor-pointer">
               <FaRegHeart /> Wishlist
             </button>
           </div>
+        </div>
+
+        {/* 3. Right Sidebar Service Info */}
+        <div className="lg:col-span-3 border border-gray-200 rounded-3xl overflow-hidden shadow-sm h-fit">
+          <div className="p-4 flex items-center justify-between bg-white border-b border-gray-100">
+            <div className="flex items-center gap-2 font-bold text-sm">
+              <div className="bg-blue-600 p-2 rounded-lg text-white">
+                <FaShoppingBag size={14} />
+              </div>
+              By {product?.shopName}
+            </div>
+            <button className="text-xs font-bold border border-gray-300 px-3 py-1 rounded-full">
+              View More
+            </button>
+          </div>
+
+          {/* Blue Sidebar Content */}
+          <div className="bg-[#5271FF] text-white p-5 space-y-6">
+            {[
+              {
+                icon: <FaTruck />,
+                title: "Fast Delivery",
+                desc: "Lightning-fast shipping, guaranteed.",
+              },
+              {
+                icon: <FaUndoAlt />,
+                title: "Free 30-day returns",
+                desc: "Shop risk-free with easy returns.",
+              },
+              {
+                icon: <FaShoppingBag />,
+                title: "Pickup available",
+                desc: "Usually ready in 24 hours.",
+              },
+              {
+                icon: <MdOutlinePayment />,
+                title: "Payment",
+                desc: "Google Pay, Card, Online Payment.",
+              },
+            ].map((item, indx) => (
+              <div key={indx} className="flex gap-4">
+                <div className="bg-white/20 p-3 rounded-full h-fit text-xl">
+                  {item.icon}
+                </div>
+                <div>
+                  <h4 className="font-bold text-sm">{item.title}</h4>
+                  <p className="text-xs opacity-80">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* --- BOTTOM SECTION: DYNAMIC CONTENT --- */}
+      <div className="border border-gray-200 rounded-3xl overflow-hidden bg-white shadow-sm">
+        <div className="flex items-center justify-between flex-wrap gap-6 p-5 border-b border-gray-100 bg-gray-50/50">
+          <button className="bg-blue-600 text-white px-8 py-2 rounded-full text-sm font-bold">
+            Description
+          </button>
+          <div className="flex items-center gap-2 bg-green-50 text-green-700 px-4 py-2 rounded-full border border-green-100">
+            <MdVerifiedUser className="text-green-500" />
+            <span className="text-[10px] font-black uppercase tracking-widest">
+              100% Satisfaction Guaranteed
+            </span>
+          </div>
+        </div>
+
+        <div className="p-10 space-y-12">
+          {/* Product Description */}
+          <section className="space-y-4">
+            <h2 className="text-2xl font-bold text-gray-800">
+              Product Description
+            </h2>
+            <div className="text-gray-600 leading-loose max-w-5xl">
+              <p className="mb-4">{product?.description?.text}</p>
+              <ul className="space-y-2">
+                {product?.description?.points?.map((point, i) => (
+                  <li key={i} className="flex items-center gap-2 text-sm">
+                    <span className="w-1.5 h-1.5 bg-gray-400 rounded-full shrink-0"></span>{" "}
+                    {point}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+
+          {/* Specifications */}
+          <section className="space-y-6">
+            <h2 className="text-2xl font-bold text-gray-800">
+              Product Specifications
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-4 gap-x-10">
+              {product?.specifications &&
+                Object.entries(product.specifications).map(([key, value]) => (
+                  <div key={key} className="flex items-center gap-3">
+                    <FaCheckCircle
+                      className="text-blue-500 shrink-0"
+                      size={16}
+                    />
+                    <p className="text-gray-700 text-sm">
+                      <span className="font-bold">{key}:</span> {value}
+                    </p>
+                  </div>
+                ))}
+            </div>
+          </section>
+
+          {/* More Details */}
+          <section className="space-y-6">
+            <h2 className="text-2xl font-bold text-gray-800">More Details</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {product?.moreDetails?.map((detail, i) => (
+                <div
+                  key={i}
+                  className="flex items-center gap-3 bg-gray-50 p-3 rounded-xl border border-gray-100"
+                >
+                  <FaCheckCircle className="text-blue-500 shrink-0" size={14} />
+                  <span className="text-gray-700 text-xs font-semibold">
+                    {detail}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </section>
         </div>
       </div>
     </div>
