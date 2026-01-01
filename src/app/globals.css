@@ -20,3 +20,7 @@
   font-family: var(--Merienda);
 }
 
+.off-product {
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}

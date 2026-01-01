@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
@@ -8,15 +8,14 @@ import { FaRegHeart, FaStar, FaShoppingCart } from "react-icons/fa";
 import "swiper/css";
 import "swiper/css/navigation";
 import SectionHeading from "../components/Shared/SectionHeading";
+import Link from "next/link";
 
-const HotDeals = ({phones}) => {
-
+const HotDeals = ({ phones }) => {
   return (
     <div className="container mx-auto px-4 py-10">
-
-        <div>
-            <SectionHeading heading="Todays Hot Deals."></SectionHeading>
-        </div>
+      <div>
+        <SectionHeading heading="Todays Hot Deals."></SectionHeading>
+      </div>
 
       <div className="flex flex-col lg:flex-row gap-6">
         {/* --- LEFT SIDE: Promo Banner (w-1/3 on lg) --- */}
@@ -50,7 +49,7 @@ const HotDeals = ({phones}) => {
             slidesPerView={1}
             autoplay={{ delay: 3000 }}
             breakpoints={{
-                320: { slidesPerView: 1 },
+              320: { slidesPerView: 1 },
               640: { slidesPerView: 2 },
               1024: { slidesPerView: 3 },
             }}
@@ -77,44 +76,44 @@ const HotDeals = ({phones}) => {
                     )}
                   </div>
 
-                  {/* phone Image */}
-                  <div className="relative w-full h-40 mb-4 overflow-hidden">
-                    <Image
-                      src={phone?.image}
-                      alt={phone?.title}
-                      fill
-                      className="object-contain group-hover:scale-110 transition-transform duration-500"
-                    />
-                  </div>
+                  <Link href={`/HotDeals/${phone?.id}`}>
+                    {/* phone Image */}
+                    <div className="relative w-full h-40 mb-4 overflow-hidden">
+                      <Image
+                        src={phone?.image}
+                        alt={phone?.title}
+                        fill
+                        className="object-contain group-hover:scale-110 transition-transform duration-500"
+                      />
+                    </div>
 
-                  {/* Price Info */}
-                  <div className="flex items-baseline gap-2 mb-2">
-                    <span className="text-gray-500 text-sm line-through">
-                      ${phone?.oldPrice || "32.99"}
-                    </span>
-                    <span className="text-xl font-semibold">
-                      ${phone?.newPrice}
-                    </span>
-                    <span className="text-gray-500 text-sm">/Qty</span>
-                  </div>
+                    {/* Price Info */}
+                    <div className="flex items-baseline gap-2 mb-2">
+                      <span className="text-gray-500 text-sm line-through">
+                        ${phone?.oldPrice || "32.99"}
+                      </span>
+                      <span className="text-xl font-semibold">
+                        ${phone?.newPrice}
+                      </span>
+                      <span className="text-gray-500 text-sm">/Qty</span>
+                    </div>
 
-                  {/* Title */}
-                  <h3 className="text-xl font-normal Unbounded my-2 hover:text-(--prizm-color)transition-all duration-300 line-clamp-2">
-                    {phone?.title}
-                  </h3>
+                    {/* Title */}
+                    <h3 className="text-xl font-normal Unbounded my-2 hover:text-(--prizm-color)transition-all duration-300 line-clamp-2">
+                      {phone?.title}
+                    </h3>
 
-                  {/* Rating */}
-                  <div className="flex items-center text-yellow-500 text-lg">
-                    <FaStar />
-                    <span className="font-semibold">
-                      ({phone?.rating})
-                    </span>
-                  </div>
+                    {/* Rating */}
+                    <div className="flex items-center text-yellow-500 text-lg">
+                      <FaStar />
+                      <span className="font-semibold">({phone?.rating})</span>
+                    </div>
 
-                  {/* Sold count */}
-                  <p className="mt-2 text-md Unbounded text-gray-600">
-                    Sold: {phone?.soldCount}
-                  </p>
+                    {/* Sold count */}
+                    <p className="mt-2 text-md Unbounded text-gray-600">
+                      Sold: {phone?.soldCount}
+                    </p>
+                  </Link>
 
                   {/* Add to Cart Button */}
                   <button className="w-full px-4 py-2 my-2 text-lg font-semibold text-(--prim-color) bg-(--prim-light) rounded-md text-md hover:bg-(--prim-color) hover:text-white flex items-center gap-2 justify-center cursor-pointer transition">

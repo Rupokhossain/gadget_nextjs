@@ -6,6 +6,9 @@ import ProductSection from "./homeComponents/ProductCard/ProductSection";
 import PromoBanner from "./homeComponents/PromoBanner/PromoBanner";
 import FilterSelling from "./homeComponents/FilterSelling/FilterSelling";
 import FilterHotDeals from "./homeComponents/FilterHotDeals/FilterHotDeals";
+import FilterBestSell from "./homeComponents/FilterBestSell/FilterBestSell";
+import Offer from "./homeComponents/Offer";
+import FilterFeature from "./homeComponents/FilterFeature/FilterFeature";
 
 const page = async () => {
   // fetch category
@@ -24,6 +27,9 @@ const page = async () => {
       <PromoBanner></PromoBanner>
       <FilterSelling></FilterSelling>
       <FilterHotDeals></FilterHotDeals>
+      <FilterBestSell></FilterBestSell>
+      <Offer></Offer>
+      <FilterFeature></FilterFeature>
     </div>
   );
 };

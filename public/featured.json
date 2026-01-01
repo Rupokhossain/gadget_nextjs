@@ -1,0 +1,64 @@
+{
+  "featured": [
+    {
+      "id": 101,
+      "title": "Smart LED TV 43 Inch Full HD Cinema",
+      "image": "/assets/images/product-img6.webp",
+      "newPrice": 1250.0,
+      "oldPrice": 1500.0,
+      "shopName": "ElectraHub",
+      "rating": "25k",
+      "soldCount": "40/60",
+      "badge": "Featured",
+      "badgeType": "status"
+    },
+    {
+      "id": 102,
+      "title": "Professional DSLR Camera 24MP HD Kit",
+      "image": "/assets/images/product-img6.webp",
+      "newPrice": 1850.0,
+      "oldPrice": null,
+      "shopName": "ElectraHub",
+      "rating": "8k",
+      "soldCount": "5/12",
+      "badge": "Exclusive",
+      "badgeType": "status"
+    },
+    {
+      "id": 103,
+      "title": "Wireless Bluetooth Headphones Noise Cancel",
+      "image": "/assets/images/product-img5.webp",
+      "newPrice": 559.99,
+      "oldPrice": 799.99,
+      "shopName": "ElectraHub",
+      "rating": "20k",
+      "soldCount": "30/50",
+      "badge": "Featured",
+      "badgeType": "status"
+    },
+    {
+      "id": 104,
+      "title": "Blender Combo with Single Serve Cups",
+      "image": "/assets/images/product-img3.webp",
+      "newPrice": 788.31,
+      "oldPrice": null,
+      "shopName": "ElectraHub",
+      "rating": "17k",
+      "soldCount": "20/32",
+      "badge": "New",
+      "badgeType": "status"
+    },
+    {
+      "id": 105,
+      "title": "Digital Air Fryer 5L Large Capacity",
+      "image": "/assets/images/product-img8.webp",
+      "newPrice": 645.4,
+      "oldPrice": 750.0,
+      "shopName": "ElectraHub",
+      "rating": "18k",
+      "soldCount": "28/40",
+      "badge": "Featured",
+      "badgeType": "status"
+    }
+  ]
+}

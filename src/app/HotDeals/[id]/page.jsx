@@ -15,18 +15,18 @@ const page = async ({ params }) => {
   const { id } = await params;
 
 
-  const res = await fetch("http://localhost:3000/products.json", {
+  const res = await fetch("http://localhost:3000/phones.json", {
     cache: "no-store",
   });
   const data = await res.json();
-  const product = data.products.find(
+  const phone = data.phones.find(
     (p) => p?.id?.toString() === id?.toString()
   );
 
-  if (!product)
+  if (!phone)
     return (
       <div className="text-center py-20 text-2xl font-bold">
-        Product Not Found
+        phone Not Found
       </div>
     );
 
@@ -38,8 +38,8 @@ const page = async ({ params }) => {
         <div className="lg:col-span-4 border border-gray-200 rounded-3xl p-8 flex items-center justify-center bg-white h-[450px] shadow-sm">
           <div className="relative w-full h-full hover:scale-105 transition-transform duration-300">
             <Image
-              src={product?.image}
-              alt={product?.title}
+              src={phone?.image}
+              alt={phone?.title}
               fill
               className="object-contain"
               priority
@@ -47,10 +47,10 @@ const page = async ({ params }) => {
           </div>
         </div>
 
-        {/* 2. Product Summary Section */}
+        {/* 2. phone Summary Section */}
         <div className="lg:col-span-5 space-y-6">
           <h1 className="text-3xl font-bold text-gray-900 leading-tight">
-            {product?.title}
+            {phone?.title}
           </h1>
           <div className="flex items-center gap-2">
             <div className="flex text-yellow-400">
@@ -59,29 +59,29 @@ const page = async ({ params }) => {
               ))}
             </div>
             <span className="text-gray-500 font-medium">
-              4.5 star Rating ({product?.rating})
+              4.5 star Rating ({phone?.rating})
             </span>
           </div>
 
           <p className="text-gray-500 font-medium">
             Store:{" "}
-            <span className="text-blue-600 font-bold">{product?.shopName}</span>
+            <span className="text-blue-600 font-bold">{phone?.shopName}</span>
           </p>
           <hr className="border-gray-100" />
 
           <div className="flex items-baseline gap-4">
             <span className="text-5xl font-extrabold text-gray-900">
-              ${product?.newPrice}
+              ${phone?.newPrice}
             </span>
-            {product.oldPrice && (
+            {phone.oldPrice && (
               <span className="text-2xl text-gray-400 line-through">
-                ${product?.oldPrice}
+                ${phone?.oldPrice}
               </span>
             )}
           </div>
 
           <div className="bg-green-50 text-green-700 px-4 py-2 rounded-lg border border-green-100 w-fit text-sm font-bold">
-            Status: Sold {product?.soldCount}
+            Status: Sold {phone?.soldCount}
           </div>
 
           <div className="flex gap-4">
@@ -101,7 +101,7 @@ const page = async ({ params }) => {
               <div className="bg-blue-600 p-2 rounded-lg text-white">
                 <FaShoppingBag size={14} />
               </div>
-              By {product?.shopName}
+              By {phone?.shopName}
             </div>
             <button className="text-xs font-bold border border-gray-300 px-3 py-1 rounded-full">
               View More
@@ -161,15 +161,15 @@ const page = async ({ params }) => {
         </div>
 
         <div className="p-10 space-y-12">
-          {/* Product Description */}
+          {/* phone Description */}
           <section className="space-y-4">
             <h2 className="text-2xl font-bold text-gray-800">
-              Product Description
+              phone Description
             </h2>
             <div className="text-gray-600 leading-loose max-w-5xl">
-              <p className="mb-4">{product?.description?.text}</p>
+              <p className="mb-4">{phone?.description?.text}</p>
               <ul className="space-y-2">
-                {product?.description?.points?.map((point, i) => (
+                {phone?.description?.points?.map((point, i) => (
                   <li key={i} className="flex items-center gap-2 text-sm">
                     <span className="w-1.5 h-1.5 bg-gray-400 rounded-full shrink-0"></span>{" "}
                     {point}
@@ -182,11 +182,11 @@ const page = async ({ params }) => {
           {/* Specifications */}
           <section className="space-y-6">
             <h2 className="text-2xl font-bold text-gray-800">
-              Product Specifications
+              phone Specifications
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-4 gap-x-10">
-              {product?.specifications &&
-                Object.entries(product.specifications).map(([key, value]) => (
+              {phone?.specifications &&
+                Object.entries(phone.specifications).map(([key, value]) => (
                   <div key={key} className="flex items-center gap-3">
                     <FaCheckCircle
                       className="text-blue-500 shrink-0"
@@ -204,7 +204,7 @@ const page = async ({ params }) => {
           <section className="space-y-6">
             <h2 className="text-2xl font-bold text-gray-800">More Details</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-              {product?.moreDetails?.map((detail, i) => (
+              {phone?.moreDetails?.map((detail, i) => (
                 <div
                   key={i}
                   className="flex items-center gap-3 bg-gray-50 p-3 rounded-xl border border-gray-100"
