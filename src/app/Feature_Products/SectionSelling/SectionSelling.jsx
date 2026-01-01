@@ -3,15 +3,16 @@
 import React from "react";
 import "swiper/css";
 import "swiper/css/pagination";
-import Featured from "./Featured";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
+import Selling from "./Selling";
 
-const SectionFeatured = ({ title, featured }) => {
-  const doubleFeatured = [featured, featured, featured]; 
+const SectiontopSelling = ({ title, topSelling }) => {
+  const doubletopSelling = [topSelling, topSelling, topSelling];
 
-  for (let i = 0; i < featured.length; i += 5) {
-    doubleFeatured.push(featured.slice(i, i + 5));
+  for (let i = 0; i < topSelling.length; i += 5) {
+    doubletopSelling.push(topSelling.slice(i, i + 5));
   }
 
   return (
@@ -27,22 +28,22 @@ const SectionFeatured = ({ title, featured }) => {
       {/* Swiper */}
       <div className="p-4">
         <Swiper
-        spaceBetween={10}
+          spaceBetween={10}
           slidesPerView={1}
           loop={true}
-          autoplay={{ 
-            delay: 4000, 
-            disableOnInteraction: false 
+          autoplay={{
+            delay: 4000,
+            disableOnInteraction: false,
           }}
           // pagination={{ clickable: true }}
           modules={[Autoplay]}
           className="pb-8"
         >
-          {doubleFeatured.map((feature, index) => (
+          {doubletopSelling.map((selling, index) => (
             <SwiperSlide key={index}>
               <div className="flex flex-col gap-4">
-                {feature.map((f, pIndex) => (
-                  <Featured
+                {selling.map((f, pIndex) => (
+                  <Selling
                     key={pIndex}
                     id={f.id}
                     image={f.image}
@@ -62,4 +63,4 @@ const SectionFeatured = ({ title, featured }) => {
   );
 };
 
-export default SectionFeatured;
+export default SectiontopSelling;

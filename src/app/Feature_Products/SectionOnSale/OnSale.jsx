@@ -3,7 +3,7 @@ import React from "react";
 import Image from "next/image";
 import { FaStar } from "react-icons/fa";
 
-const Featured = ({
+const OnSale = ({
   image,
   title,
   newPrice,
@@ -46,4 +46,4 @@ const Featured = ({
   );
 };
 
-export default Featured;
+export default OnSale;

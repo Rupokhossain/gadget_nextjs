@@ -3,15 +3,15 @@
 import React from "react";
 import "swiper/css";
 import "swiper/css/pagination";
-import Featured from "./Featured";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
+import OnSale from "./OnSale";
 
-const SectionFeatured = ({ title, featured }) => {
-  const doubleFeatured = [featured, featured, featured]; 
+const SectionOnSale = ({ title, onSale }) => {
+  const doubleonSale = [onSale, onSale, onSale]; 
 
-  for (let i = 0; i < featured.length; i += 5) {
-    doubleFeatured.push(featured.slice(i, i + 5));
+  for (let i = 0; i < onSale.length; i += 5) {
+    doubleonSale.push(onSale.slice(i, i + 5));
   }
 
   return (
@@ -38,11 +38,11 @@ const SectionFeatured = ({ title, featured }) => {
           modules={[Autoplay]}
           className="pb-8"
         >
-          {doubleFeatured.map((feature, index) => (
+          {doubleonSale.map((onSale, index) => (
             <SwiperSlide key={index}>
               <div className="flex flex-col gap-4">
-                {feature.map((f, pIndex) => (
-                  <Featured
+                {onSale.map((f, pIndex) => (
+                  <OnSale
                     key={pIndex}
                     id={f.id}
                     image={f.image}
@@ -62,4 +62,4 @@ const SectionFeatured = ({ title, featured }) => {
   );
 };
 
-export default SectionFeatured;
+export default SectionOnSale;
