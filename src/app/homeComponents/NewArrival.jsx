@@ -50,8 +50,10 @@ const NewArrival = () => {
       <div>
         <SectionHeading heading={`New Arrivals.`}></SectionHeading>
       </div>
+      
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+
         {newItem.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}

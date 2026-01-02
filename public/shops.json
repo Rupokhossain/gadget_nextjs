@@ -1,0 +1,683 @@
+{
+  "shops": [
+    {
+      "id": 1,
+      "title": "Speak 710 Portable Speaker for Music and Calls",
+      "image": "/assets/images/product-img1.webp",
+      "newPrice": 471.48,
+      "oldPrice": 904.21,
+      "shopName": "ElectraHub",
+      "rating": "17k",
+      "soldCount": "18/35",
+      "badge": null,
+      "description": {
+        "text": "Experience high-quality sound with the Speak 710. Whether it's for professional meetings or personal music, this portable speaker delivers crystal clear audio with an immersive experience.",
+        "points": [
+          "Premium portable speakerphone with amazing sound",
+          "Immersive sound for calls and music",
+          "Plug-and-play connectivity with USB or Bluetooth",
+          "Exclusive portable design for travel"
+        ]
+      },
+      "specifications": {
+        "Product Type": "Audio & Speakers",
+        "Brand": "Jabra",
+        "Connectivity": "Bluetooth / USB",
+        "Battery Life": "15 Hours",
+        "Item Code": "710-109"
+      },
+      "moreDetails": [
+        "Digital Signal Processing (DSP)",
+        "Omni-directional microphone",
+        "Smart button for voice assistant",
+        "Color: Black/Metallic"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Rustic Granite Robot Vacuum ZUSG406 Clean Pro",
+      "image": "/assets/images/product-img2.webp",
+      "newPrice": 336.51,
+      "oldPrice": 450.00,
+      "shopName": "ElectraHub",
+      "rating": "12k",
+      "soldCount": "22/40",
+      "badge": "50%",
+      "badgeType": "discount",
+      "description": {
+        "text": "The ZUSG406 Robot Vacuum is designed to make home cleaning effortless. With advanced mapping technology, it reaches every corner of your house while saving your time.",
+        "points": [
+          "Smart navigation with obstacle detection",
+          "Automatic recharging and resume",
+          "Powerful suction for pet hair and dust",
+          "Control via Smartphone App"
+        ]
+      },
+      "specifications": {
+        "Product Type": "Smart Home Appliance",
+        "Brand": "CleanPro",
+        "Battery Type": "Lithium-Ion",
+        "Runtime": "120 Minutes",
+        "Dust Bin": "0.6 Liters"
+      },
+      "moreDetails": [
+        "HEPA Filter included",
+        "Drop-sensing technology",
+        "Low profile design",
+        "Quiet operation mode"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Blender Combo with Single Serve Cups",
+      "image": "/assets/images/product-img3.webp",
+      "newPrice": 788.31,
+      "oldPrice": null,
+      "shopName": "ElectraHub",
+      "rating": "17k",
+      "soldCount": "20/32",
+      "badge": "New",
+      "badgeType": "status",
+      "description": {
+        "text": "The ultimate kitchen companion. This Blender Combo allows you to make large batches or single servings for your morning smoothie with ease and power.",
+        "points": [
+          "1200-watt professional motor base",
+          "Multiple speed settings with Pulse",
+          "BPA-free dishwasher safe jars",
+          "Includes 2 single-serve cups"
+        ]
+      },
+      "specifications": {
+        "Product Type": "Kitchen Appliance",
+        "Brand": "KitchenMaster",
+        "Wattage": "1200W",
+        "Jar Capacity": "2.1 Liters",
+        "Blade Material": "Stainless Steel"
+      },
+      "moreDetails": [
+        "Anti-slip rubber feet",
+        "Safety locking system",
+        "Easy-to-clean interface",
+        "Overload protection"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Portable Mini Washing Machine, White Edition",
+      "image": "/assets/images/product-img4.webp",
+      "newPrice": 985.52,
+      "oldPrice": null,
+      "shopName": "ElectraHub",
+      "rating": "17k",
+      "soldCount": "15/25",
+      "badge": "35%",
+      "badgeType": "discount",
+      "description": {
+        "text": "Perfect for small apartments or dorm rooms, this mini washing machine is lightweight and efficient for quick daily laundry needs.",
+        "points": [
+          "Compact and lightweight design",
+          "Dual function for wash and spin",
+          "Energy saving technology",
+          "Easy to move with built-in handle"
+        ]
+      },
+      "specifications": {
+        "Product Type": "Home Appliance",
+        "Brand": "MiniWash",
+        "Capacity": "3.5 kg",
+        "Control": "Manual Knob",
+        "Voltage": "220V/50Hz"
+      },
+      "moreDetails": [
+        "Drain pipe included",
+        "Low noise vibration",
+        "Transparent top lid",
+        "Rust-proof body"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Wireless Bluetooth Headphones Noise Cancel",
+      "image": "/assets/images/product-img5.webp",
+      "newPrice": 559.99,
+      "oldPrice": 799.99,
+      "shopName": "ElectraHub",
+      "rating": "20k",
+      "soldCount": "30/50",
+      "badge": "30%",
+      "badgeType": "discount",
+      "description": {
+        "text": "Block out the world and dive into your music. These premium headphones offer Active Noise Cancellation (ANC) for a pure listening experience.",
+        "points": [
+          "Advanced Active Noise Cancelling",
+          "High-fidelity stereo sound",
+          "Foldable design for easy storage",
+          "Built-in mic for hands-free calls"
+        ]
+      },
+      "specifications": {
+        "Product Type": "Audio & Headphones",
+        "Brand": "SonicPro",
+        "Battery Life": "40 Hours",
+        "Bluetooth": "Version 5.2",
+        "Charge Time": "2 Hours"
+      },
+      "moreDetails": [
+        "Soft protein ear pads",
+        "Voice assistant support",
+        "Dual device connection",
+        "Quick charge support"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Smart LED TV 43 Inch Full HD Cinema",
+      "image": "/assets/images/product-img6.webp",
+      "newPrice": 1250.00,
+      "oldPrice": 1500.00,
+      "shopName": "ElectraHub",
+      "rating": "25k",
+      "soldCount": "40/60",
+      "badge": "Hot",
+      "badgeType": "status",
+      "description": {
+        "text": "Upgrade your home entertainment with this 43-inch Smart TV. Enjoy stunning Full HD resolution and access to all your favorite streaming apps.",
+        "points": [
+          "Vibrant Full HD Resolution",
+          "Built-in Netflix and YouTube",
+          "Slim bezel modern design",
+          "Powerful surround sound speakers"
+        ]
+      },
+      "specifications": {
+        "Product Type": "Television",
+        "Brand": "VisionSmart",
+        "Screen Size": "43 Inch",
+        "Resolution": "1920 x 1080",
+        "Ports": "3 HDMI, 2 USB"
+      },
+      "moreDetails": [
+        "Android OS built-in",
+        "WiFi & Ethernet support",
+        "Wall mountable design",
+        "Energy Star certified"
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Rechargeable Table Fan with Remote Control",
+      "image": "/assets/images/product-img7.webp",
+      "newPrice": 215.75,
+      "oldPrice": 299.99,
+      "shopName": "ElectraHub",
+      "rating": "9k",
+      "soldCount": "12/20",
+      "badge": "25%",
+      "badgeType": "discount",
+      "description": {
+        "text": "Keep cool during power cuts with this high-speed rechargeable fan. It features a remote control for convenient operation from a distance.",
+        "points": [
+          "Powerful rechargeable battery",
+          "Oscillating function for wide reach",
+          "3-speed adjustable airflow",
+          "Includes night light feature"
+        ]
+      },
+      "specifications": {
+        "Product Type": "Cooling Fan",
+        "Brand": "BreezeAir",
+        "Battery": "4500mAh",
+        "Working Time": "Up to 8 Hours",
+        "Fan Size": "12 Inch"
+      },
+      "moreDetails": [
+        "Overcharge protection",
+        "Lightweight ABS body",
+        "Low noise motor",
+        "USB charging port"
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Digital Air Fryer 5L Large Capacity",
+      "image": "/assets/images/product-img8.webp",
+      "newPrice": 645.40,
+      "oldPrice": 750.00,
+      "shopName": "ElectraHub",
+      "rating": "18k",
+      "soldCount": "28/40",
+      "badge": "New",
+      "badgeType": "status",
+      "description": {
+        "text": "Healthy cooking made easy. Fry, roast, and bake with 85% less oil using the 360-degree rapid air circulation technology.",
+        "points": [
+          "5 Liter family size basket",
+          "LED touchscreen control panel",
+          "8 Pre-set cooking modes",
+          "Non-stick dishwasher safe tray"
+        ]
+      },
+      "specifications": {
+        "Product Type": "Cooking Appliance",
+        "Brand": "HealthChef",
+        "Capacity": "5.0 Liters",
+        "Temp Range": "80°C - 200°C",
+        "Timer": "Up to 60 Mins"
+      },
+      "moreDetails": [
+        "Auto-shut off sensor",
+        "Cool-touch handle",
+        "Recipe book included",
+        "Non-slip feet"
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Smart Watch Fitness Tracker Waterproof",
+      "image": "/assets/images/product-img9.webp",
+      "newPrice": 189.99,
+      "oldPrice": 249.99,
+      "shopName": "ElectraHub",
+      "rating": "22k",
+      "soldCount": "35/50",
+      "badge": "20%",
+      "badgeType": "discount",
+      "description": {
+        "text": "Track your health and stay connected. This smartwatch monitors your heart rate, steps, and sleep while providing notifications from your phone.",
+        "points": [
+          "Heart rate and sleep monitor",
+          "IP68 Waterproof rating",
+          "Multi-sport tracking modes",
+          "Notification alerts for apps"
+        ]
+      },
+      "specifications": {
+        "Product Type": "Wearable Tech",
+        "Brand": "FitTrack",
+        "Screen": "1.4 Inch IPS",
+        "Battery": "10 Days Standby",
+        "Compatibility": "iOS & Android"
+      },
+      "moreDetails": [
+        "Magnetic charging cable",
+        "Customizable watch faces",
+        "Sedentary reminder",
+        "Interchangeable straps"
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Power Bank 20000mAh Fast Charging",
+      "image": "/assets/images/product-img10.webp",
+      "newPrice": 129.50,
+      "oldPrice": 180.00,
+      "shopName": "ElectraHub",
+      "rating": "30k",
+      "soldCount": "45/70",
+      "badge": null,
+      "badgeType": null,
+      "description": {
+        "text": "Never run out of power on the go. This 20000mAh high-capacity power bank can charge your phone multiple times with fast charging technology.",
+        "points": [
+          "Massive 20000mAh capacity",
+          "Dual USB and Type-C outputs",
+          "Intelligent safety protection",
+          "Portable and sleek design"
+        ]
+      },
+      "specifications": {
+        "Product Type": "Phone Accessory",
+        "Brand": "VoltCharge",
+        "Capacity": "20000mAh",
+        "Input": "Type-C / Micro",
+        "Output": "PD 22.5W Fast"
+      },
+      "moreDetails": [
+        "LED Battery indicator",
+        "Travel-friendly size",
+        "Multi-protection system",
+        "Matte finish body"
+      ]
+    },
+    {
+      "id": 11,
+      "title": "Microwave Oven with Grill and Convection",
+      "image": "/assets/images/product-img2.webp",
+      "newPrice": 450.00,
+      "oldPrice": 599.00,
+      "shopName": "ElectraHub",
+      "rating": "14k",
+      "soldCount": "10/25",
+      "badge": "25%",
+      "badgeType": "discount",
+      "description": {
+        "text": "The all-in-one kitchen essential for modern homes. Heat, grill, or bake with precision using this multi-functional microwave oven.",
+        "points": [
+          "Multi-stage cooking options",
+          "High-power grill function",
+          "Digital display with timer",
+          "Child safety lock feature"
+        ]
+      },
+      "specifications": {
+        "Product Type": "Kitchen Appliance",
+        "Brand": "HeatPro",
+        "Capacity": "25 Liters",
+        "Wattage": "900W Microwave",
+        "Body": "Stainless Steel"
+      },
+      "moreDetails": [
+        "Defrost by weight/time",
+        "Glass turntable tray",
+        "Interior LED light",
+        "Auto-cook menu"
+      ]
+    },
+    {
+      "id": 12,
+      "title": "Professional DSLR Camera 24MP HD Kit",
+      "image": "/assets/images/product-img6.webp",
+      "newPrice": 1850.00,
+      "oldPrice": null,
+      "shopName": "ElectraHub",
+      "rating": "8k",
+      "soldCount": "5/12",
+      "badge": "Exclusive",
+      "badgeType": "status",
+      "description": {
+        "text": "Capture every moment in stunning detail. This DSLR kit comes with an 18-55mm lens and is perfect for both beginners and pro photographers.",
+        "points": [
+          "24.1 Megapixel CMOS sensor",
+          "Full HD 1080p video recording",
+          "Fast and accurate Autofocus",
+          "Built-in WiFi and Bluetooth"
+        ]
+      },
+      "specifications": {
+        "Product Type": "Camera",
+        "Brand": "SnapMaster",
+        "Resolution": "24.1 MP",
+        "Lens Kit": "18-55mm IS",
+        "Display": "Vari-angle Touch"
+      },
+      "moreDetails": [
+        "Rechargeable Li-ion battery",
+        "External mic support",
+        "SD Card slot included",
+        "Lightweight body"
+      ]
+    },
+    {
+      "id": 13,
+      "title": "iPhone 15 Pro Max - Titanium Edition",
+      "image": "/assets/images/phone-img1.webp",
+      "newPrice": 1299.99,
+      "oldPrice": 1399.99,
+      "shopName": "ElectraHub",
+      "rating": "45k",
+      "soldCount": "120/200",
+      "badge": "Status",
+      "badgeType": "status",
+      "description": {
+        "text": "Experience the strongest and lightest iPhone yet. The A17 Pro chip brings a whole new level of performance for gaming and professional tasks.",
+        "points": [
+          "Aerospace-grade titanium design",
+          "A17 Pro chip with 6-core GPU",
+          "48MP Main camera with Pro-level depth",
+          "USB-C support for faster data transfer"
+        ]
+      },
+      "specifications": {
+        "Product Type": "Smart Phone",
+        "Brand": "Apple",
+        "Processor": "A17 Pro",
+        "Storage": "256GB / 512GB / 1TB",
+        "Display": "6.7-inch OLED"
+      },
+      "moreDetails": [
+        "Dynamic Island feature",
+        "Customizable Action button",
+        "All-day battery life",
+        "Face ID security"
+      ]
+    },
+    {
+      "id": 14,
+      "title": "Samsung Galaxy S23 Ultra 5G AI Phone",
+      "image": "/assets/images/phone-img2.webp",
+      "newPrice": 999.00,
+      "oldPrice": 1199.00,
+      "shopName": "ElectraHub",
+      "rating": "38k",
+      "soldCount": "95/150",
+      "badge": "15%",
+      "badgeType": "discount",
+      "description": {
+        "text": "Redefine your mobile experience with the Galaxy S23 Ultra. Featuring a massive 200MP camera and built-in S Pen for maximum productivity.",
+        "points": [
+          "Epic 200MP sensor for night photos",
+          "Built-in S Pen for notes and drawing",
+          "Snapdragon 8 Gen 2 Mobile Platform",
+          "Eco-friendly materials used in design"
+        ]
+      },
+      "specifications": {
+        "Product Type": "Smart Phone",
+        "Brand": "Samsung",
+        "RAM": "12GB",
+        "Storage": "256GB / 512GB",
+        "Battery": "5000mAh"
+      },
+      "moreDetails": [
+        "120Hz Dynamic AMOLED 2X",
+        "100x Space Zoom",
+        "Corning Gorilla Glass Victus 2",
+        "One UI 5.1 interface"
+      ]
+    },
+    {
+      "id": 15,
+      "title": "Google Pixel 8 Pro - Pure Android",
+      "image": "/assets/images/phone-img3.webp",
+      "newPrice": 899.00,
+      "oldPrice": null,
+      "shopName": "ElectraHub",
+      "rating": "12k",
+      "soldCount": "40/100",
+      "badge": "New",
+      "badgeType": "status",
+      "description": {
+        "text": "The most advanced Pixel ever. Powered by Google Tensor G3, it uses AI to help you do more, take amazing photos, and stay secure.",
+        "points": [
+          "Google Tensor G3 chip with AI",
+          "Fully upgraded triple camera system",
+          "Magic Editor for photo corrections",
+          "7 years of OS and security updates"
+        ]
+      },
+      "specifications": {
+        "Product Type": "Smart Phone",
+        "Brand": "Google",
+        "Processor": "Tensor G3",
+        "Display": "6.7-inch Super Actua",
+        "Security": "Titan M2 Chip"
+      },
+      "moreDetails": [
+        "Live Translate feature",
+        "Best Take AI for group photos",
+        "VPN by Google One included",
+        "Qi wireless charging"
+      ]
+    },
+    {
+      "id": 16,
+      "title": "OnePlus 11 5G with Hasselblad Camera",
+      "image": "/assets/images/product-img2.webp",
+      "newPrice": 649.99,
+      "oldPrice": 799.00,
+      "shopName": "ElectraHub",
+      "rating": "15k",
+      "soldCount": "65/120",
+      "badge": "20%",
+      "badgeType": "discount",
+      "description": {
+        "text": "Witness the shape of power. The OnePlus 11 5G combines industry-leading hardware with Hasselblad software for professional photography.",
+        "points": [
+          "Snapdragon 8 Gen 2 with ray tracing",
+          "3rd Gen Hasselblad Camera for Mobile",
+          "100W SUPERVOOC fast charging",
+          "Dual-axis haptic feedback motor"
+        ]
+      },
+      "specifications": {
+        "Product Type": "Smart Phone",
+        "Brand": "OnePlus",
+        "Charging": "100W Wired",
+        "OS": "OxygenOS 13",
+        "Display": "120Hz AMOLED"
+      },
+      "moreDetails": [
+        "Alert Slider included",
+        "Dolby Vision & Atmos support",
+        "Cryo-velocity cooling system",
+        "Bionic vibration motor"
+      ]
+    },
+    {
+      "id": 17,
+      "title": "Xiaomi 13 Ultra - Leica Optics",
+      "image": "/assets/images/phone-img2.webp",
+      "newPrice": 1099.00,
+      "oldPrice": null,
+      "shopName": "ElectraHub",
+      "rating": "10k",
+      "soldCount": "30/80",
+      "badge": "Exclusive",
+      "badgeType": "status",
+      "description": {
+        "text": "A masterpiece in camera engineering. Xiaomi 13 Ultra features a 1-inch main sensor with Leica Summicron lens for true cinematic results.",
+        "points": [
+          "Leica professional optical lens",
+          "1-inch variable aperture sensor",
+          "WQHD+ ultra-clear 2K display",
+          "90W wired and 50W wireless turbo charge"
+        ]
+      },
+      "specifications": {
+        "Product Type": "Smart Phone",
+        "Brand": "Xiaomi",
+        "Main Sensor": "50MP 1-inch",
+        "Cooling": "Loop LiquidCool tech",
+        "Bluetooth": "5.3 Support"
+      },
+      "moreDetails": [
+        "Premium leather-like finish",
+        "IP68 Water resistance",
+        "Custom Leica photo styles",
+        "Dolby HDR recording"
+      ]
+    },
+    {
+      "id": 18,
+      "title": "Nothing Phone (2) - Glyph Interface",
+      "image": "/assets/images/product-img4.webp",
+      "newPrice": 599.00,
+      "oldPrice": 699.00,
+      "shopName": "ElectraHub",
+      "rating": "8k",
+      "soldCount": "50/110",
+      "badge": "Trendy",
+      "badgeType": "status",
+      "description": {
+        "text": "A unique approach to modern tech. The Nothing Phone (2) features a refined Glyph Interface and a focus on intentional smartphone usage.",
+        "points": [
+          "New Glyph Interface for notifications",
+          "Snapdragon 8+ Gen 1 chipset",
+          "Dual 50MP rear camera system",
+          "Nothing OS 2.0 with custom widgets"
+        ]
+      },
+      "specifications": {
+        "Product Type": "Smart Phone",
+        "Brand": "Nothing",
+        "Display": "6.7-inch LTPO OLED",
+        "Front Cam": "32MP Selfie",
+        "Eco-friendly": "100% Recycled Alu"
+      },
+      "moreDetails": [
+        "Transparent back design",
+        "LED light patterns",
+        "Carbon neutral certified",
+        "Wireless reverse charging"
+      ]
+    },
+    {
+      "id": 19,
+      "title": "Sony Xperia 1 V - Cinema Focus",
+      "image": "/assets/images/product-img1.webp",
+      "newPrice": 1199.00,
+      "oldPrice": 1299.00,
+      "shopName": "ElectraHub",
+      "rating": "5k",
+      "soldCount": "15/50",
+      "badge": "Pro",
+      "badgeType": "status",
+      "description": {
+        "text": "Engineered for creators. The Xperia 1 V offers 4K OLED HDR display and professional-grade video recording features from Sony's Alpha cameras.",
+        "points": [
+          "World's first 4K 120Hz OLED screen",
+          "Exmor T for mobile sensor tech",
+          "Real-time Eye AF for video",
+          "High-quality 3.5mm audio jack"
+        ]
+      },
+      "specifications": {
+        "Product Type": "Smart Phone",
+        "Brand": "Sony",
+        "Display Aspect": "21:9 CinemaWide",
+        "Audio": "Hi-Res Wireless",
+        "Storage Expansion": "MicroSD Slot"
+      },
+      "moreDetails": [
+        "Zeiss T* coating on lenses",
+        "Shutter button included",
+        "Professional color profiles",
+        "Game enhancer mode"
+      ]
+    },
+    {
+      "id": 20,
+      "title": "Motorola Edge 40 Pro - Fast & Smooth",
+      "image": "/assets/images/phone-img1.webp",
+      "newPrice": 749.00,
+      "oldPrice": 850.00,
+      "shopName": "ElectraHub",
+      "rating": "9k",
+      "soldCount": "42/90",
+      "badge": "12%",
+      "badgeType": "discount",
+      "description": {
+        "text": "Sleek, fast, and powerful. The Edge 40 Pro features a stunning quad-curved display and incredibly fast charging to keep you going.",
+        "points": [
+          "165Hz ultra-smooth OLED display",
+          "125W TurboPower charging",
+          "50MP high-res camera system",
+          "Snapdragon 8 Gen 2 performance"
+        ]
+      },
+      "specifications": {
+        "Product Type": "Smart Phone",
+        "Brand": "Motorola",
+        "RAM": "12GB LPDDR5X",
+        "Charging": "125W Wired",
+        "Water": "IP68 Protection"
+      },
+      "moreDetails": [
+        "Quad-curved glass front",
+        "Ready For desktop mode",
+        "Dual stereo speakers",
+        "Near-stock Android"
+      ]
+    }
+  ]
+}

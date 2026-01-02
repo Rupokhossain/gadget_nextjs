@@ -19,7 +19,7 @@ const ShopByBrands = () => {
       <div className="bg-[#CED9FF] rounded-2xl p-10 md:p-16 text-center overflow-hidden">
         
         {/* Title */}
-        <h2 className="text-4xl lg:text-5xl Unbounded mb-8">
+        <h2 className="text-2xl md:text-4xl lg:text-5xl Unbounded mb-8">
           Shop by Brands.
         </h2>
 
