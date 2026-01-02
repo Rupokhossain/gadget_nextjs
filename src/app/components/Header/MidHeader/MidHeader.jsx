@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import React from "react";
 import {
@@ -6,9 +7,12 @@ import {
   CiSearch,
   CiShoppingCart,
 } from "react-icons/ci";
-import { HiMenuAlt3 } from "react-icons/hi";
+import { useSelector } from "react-redux";
+
 
 const MidHeader = () => {
+    const cartCount = useSelector((state) => state.cart.items.length);
+  const wishlistCount = useSelector((state) => state.wishlist.items.length);
   return (
     <div className="w-full border-b border-gray-300 relative">
       <div className="flex flex-col md:flex-row items-center justify-between py-4 md:py-5 px-4 lg:px-24 container mx-auto gap-4">
@@ -23,16 +27,16 @@ const MidHeader = () => {
 
           {/* mobile */}
           <div className="flex lg:hidden items-center space-x-4">
-            <Link href="" className="relative">
+            <Link href="/WishlistPage" className="relative">
               <CiHeart className="text-gray-600 text-2xl" />
               <span className="absolute -top-2 -right-2 bg-(--prim-color) text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full">
-                2
+                {wishlistCount}
               </span>
             </Link>
-            <Link href="" className="relative">
+            <Link href="/CartPage" className="relative">
               <CiShoppingCart className="text-gray-600 text-2xl" />
               <span className="absolute -top-2 -right-2 bg-(--prim-color) text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full">
-                2
+                {cartCount}
               </span>
             </Link>
           </div>
@@ -61,16 +65,16 @@ const MidHeader = () => {
 
         {/* Wishlist + Cart (Desktop Only) */}
         <div className="hidden lg:flex items-center space-x-6">
-          <Link href="" className="relative group">
+          <Link href="/WishlistPage" className="relative group">
             <CiHeart className="text-gray-600 text-2xl group-hover:text-(--prim-color) transition-all" />
             <span className="absolute -top-2 -right-2 bg-(--prim-color) text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
-              2
+              {wishlistCount}
             </span>
           </Link>
-          <Link href="" className="relative group">
+          <Link href="/CartPage" className="relative group">
             <CiShoppingCart className="text-gray-600 text-2xl group-hover:text-(--prim-color) transition-all" />
             <span className="absolute -top-2 -right-2 bg-(--prim-color) text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
-              2
+             {cartCount}
             </span>
           </Link>
         </div>

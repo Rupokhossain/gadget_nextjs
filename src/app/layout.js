@@ -2,7 +2,7 @@ import { Geist, Geist_Mono, Merienda, Unbounded } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-
+import { Providers } from "@/redux/Providers";
 
 const unbounded = Unbounded({
   variable: "--font-unbounded",
@@ -36,9 +36,11 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${unbounded.variable} ${merienda.variable} antialiased`}
       >
-        <Header></Header>
-        {children}
-        <Footer></Footer>
+        <Providers>
+          <Header></Header>
+          {children}
+          <Footer></Footer>
+        </Providers>
       </body>
     </html>
   );
