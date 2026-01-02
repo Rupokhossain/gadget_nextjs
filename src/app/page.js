@@ -9,6 +9,10 @@ import FilterHotDeals from "./homeComponents/FilterHotDeals/FilterHotDeals";
 import FilterBestSell from "./homeComponents/FilterBestSell/FilterBestSell";
 import Offer from "./homeComponents/Offer";
 import FilterFeature from "./homeComponents/FilterFeature/FilterFeature";
+import ShopByBrands from "./homeComponents/ShopByBrands";
+
+import ServiceFeatures from "./homeComponents/ServiceFeatures";
+import NewArrival from "./homeComponents/NewArrival";
 
 const page = async () => {
   // fetch category
@@ -30,6 +34,9 @@ const page = async () => {
       <FilterBestSell></FilterBestSell>
       <Offer></Offer>
       <FilterFeature></FilterFeature>
+      <ShopByBrands></ShopByBrands>
+      <NewArrival></NewArrival>
+      <ServiceFeatures></ServiceFeatures>
     </div>
   );
 };

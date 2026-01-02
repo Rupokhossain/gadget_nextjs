@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono, Merienda, Unbounded } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 
 
 const unbounded = Unbounded({
@@ -37,6 +38,7 @@ export default function RootLayout({ children }) {
       >
         <Header></Header>
         {children}
+        <Footer></Footer>
       </body>
     </html>
   );
