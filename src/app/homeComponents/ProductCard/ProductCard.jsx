@@ -3,14 +3,14 @@ import React from 'react'
 import Image from 'next/image';
 import { CiShoppingCart } from 'react-icons/ci';
 import {  FaStar } from "react-icons/fa";
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addToCart } from '@/redux/cartSlice';
 
 const ProductCard = ({ product }) => {
   const dispatch = useDispatch();
 
-    const wishlistItems = useSelector((state) => state.wishlist.items);
-  const isWishlisted = wishlistItems.find((item) => item.id === p.id);
+  // const wishlistItems = useSelector((state) => state.wishlist.items);
+  // const isWishlisted = wishlistItems.find((item) => item.id === p.id);
   return (
     <div className="bg-white border border-gray-200 rounded-xl p-4 relative cursor-pointer flex flex-col hover:shadow-lg transition-shadow duration-300">
       

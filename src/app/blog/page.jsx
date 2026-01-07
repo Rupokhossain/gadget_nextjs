@@ -1,16 +1,15 @@
 "use client";
-import React, { useState } from "react";
+
 import Image from "next/image";
+import { useState } from "react";
 import {
   CiCalendar,
   CiCircleChevLeft,
-  CiLock,
-  CiRead,
-  CiTimer,
+  CiLock
 } from "react-icons/ci";
 
-const page = () => {
-  const [selectedPostId, setSelectedPostId] = useState();
+const Page = () => {
+  const [selectedPostId, setSelectedPostId] = useState(null);
 
   const mainPosts = [
     {
@@ -84,7 +83,7 @@ const page = () => {
     : mainPosts;
   return (
     <div className="min-h-screen py-12">
-      <div className="container mx-auto px-4 lg:px-24">
+      <div className="container mx-auto px-4 xl:px-24">
         <div className="flex flex-col lg:flex-row justify-between items-start gap-5">
           {/* left section */}
           <div className="w-full lg:w-2/3 gap-5 flex flex-col">
@@ -112,75 +111,33 @@ const page = () => {
                 </div>
 
                 <div className="space-y-4 px-2">
-                  <span className="bg-[#E6F9EF] p-3 rounded-md text-2xl Unbounded">
+                  <p className="bg-[#E6F9EF] md:p-3 mb-2 rounded-md text-2xl font-bold Unbounded">
                     {post?.category}
-                  </span>
+                  </p>
 
-                  <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight group-hover:text-blue-600 transition-colors Unbounded">
+                  <h2 className="text-2xl md:text-4xl text-gray-900  group-hover:text-blue-600 Unbounded hover:underline transition-all duration-300">
                     {post.title}
                   </h2>
-                  <p className="mt-5 text-lg border-gray-400">
+                  <p className="mt-5 md:text-lg text-base border-gray-400">
                     {post.description}
                   </p>
                   <div className="border-t border-t-gray-400"></div>
 
                   <div className="flex mt-5 gap-5 ">
-                    <div className="text-gray-500 flex items-center gap-2">
+                    <div className="text-gray-500 flex items-center gap-2 xl:text-sm text-xs">
                       <CiCalendar
                         size={20}
                         className="text-(--prim-color) pr-1"
                       />{" "}
                       {post.date}
                     </div>
-                    <div className="flex items-center gap-2 text-gray-500">
+                    <div className="flex items-center gap-2 text-gray-500 xl:text-sm text-xs">
                       <CiLock size={20} className="text-blue-500" /> {post.date}
                     </div>
                   </div>
                 </div>
 
-                {/* --- READ MORE BUTTON & MODAL START --- */}
-                <div className="mt-4">
-                  <button
-                    className="btn bg-[#FB5875] hover:bg-[#de2648] border border-gray-200 text-gray-400 py-2 rounded-md px-8 cursor-pointer font-medium transition-all shadow-md"
-                    onClick={() =>
-                      document.getElementById(`modal_${post.id}`).showModal()
-                    }
-                  >
-                    Read More
-                  </button>
 
-                  <dialog id={`modal_${post.id}`} className="modal">
-                    <div className="modal-box max-w-4xl h-fit">
-                      <form method="dialog">
-                        <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
-                          ✕
-                        </button>
-                      </form>
-
-                      <div className="card-body lg:card-side bg-base-100 shadow-sm">
-                        <figure>
-                          <Image
-                            src={post.image}
-                            alt="Album"
-                            width={400}
-                            height={400}
-                          />
-                        </figure>
-                        <div className="card-body">
-                          <h2 className="card-title">New album is released!</h2>
-                          <p>Click the button to listen on Spotiwhy app.</p>
-                          <div className="card-actions justify-end">
-                            <button className="btn btn-primary">Listen</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <form method="dialog" className="modal-backdrop">
-                      <button>close</button>
-                    </form>
-                  </dialog>
-                </div>
-                {/* --- END MODAL --- */}
               </div>
             ))}
           </div>
@@ -199,20 +156,20 @@ const page = () => {
                       setSelectedPostId(post.id);
                       window.scrollTo({ top: 0, behavior: "smooth" });
                     }}
-                    className="flex justify-between items-center mb-5 gap-5 cursor-pointer"
+                    className="flex flex-col md:flex-row justify-between items-center mb-5 gap-5 cursor-pointer"
                   >
-                    <div className="w-1/2">
+                    <div className="md:w-1/2 w-full">
                       <Image
                         src={post.image}
                         alt={post.title}
                         width={200}
                         height={110}
-                        className="object-cover group-hover:scale-110 transition-transform duration-500"
+                        className="md:object-cover w-full group-hover:scale-110 transition-transform duration-500"
                       />
                     </div>
-                    <div className="w-1/2 flex flex-col gap-2">
+                    <div className="md:w-1/2 w-full flex flex-col gap-2">
                       <h4
-                        className={`text-lg leading-tight transition-all Unbounded hover:text-var(--prim-color)] hover:underline duration-300 ${
+                        className={`xl:text-lg text-sm transition-all Unbounded hover:text-var(--prim-color)] hover:underline duration-300 ${
                           selectedPostId === post.id
                             ? "text-blue-600 Unbounded"
                             : "group-hover:text-(--prim-color) Unbounded"
@@ -220,7 +177,7 @@ const page = () => {
                       >
                         {post.title}
                       </h4>
-                      <div className="flex items-center gap-2 text-sm text-gray-500 font-medium">
+                      <div className="flex items-center gap-2 xl:text-sm text-xs text-gray-500 font-medium">
                         <CiCalendar
                           size={16}
                           className="text-(--prim-color) pr-1"
@@ -239,4 +196,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

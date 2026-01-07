@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import { Providers } from "@/redux/Providers";
+import ServiceFeatures from "./homeComponents/ServiceFeatures";
 
 const unbounded = Unbounded({
   variable: "--font-unbounded",
@@ -39,6 +40,7 @@ export default function RootLayout({ children }) {
         <Providers>
           <Header></Header>
           {children}
+          <ServiceFeatures></ServiceFeatures>
           <Footer></Footer>
         </Providers>
       </body>

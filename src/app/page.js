@@ -10,8 +10,6 @@ import FilterBestSell from "./homeComponents/FilterBestSell/FilterBestSell";
 import Offer from "./homeComponents/Offer";
 import FilterFeature from "./homeComponents/FilterFeature/FilterFeature";
 import ShopByBrands from "./homeComponents/ShopByBrands";
-
-import ServiceFeatures from "./homeComponents/ServiceFeatures";
 import NewArrival from "./homeComponents/NewArrival";
 
 const page = async () => {
@@ -36,7 +34,7 @@ const page = async () => {
       <FilterFeature></FilterFeature>
       <ShopByBrands></ShopByBrands>
       <NewArrival></NewArrival>
-      <ServiceFeatures></ServiceFeatures>
+      
     </div>
   );
 };

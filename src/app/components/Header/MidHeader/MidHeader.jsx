@@ -33,7 +33,7 @@ const MidHeader = () => {
                 {wishlistCount}
               </span>
             </Link>
-            <Link href="/CartPage" className="relative">
+            <Link href="/cart" className="relative">
               <CiShoppingCart className="text-gray-600 text-2xl" />
               <span className="absolute -top-2 -right-2 bg-(--prim-color) text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full">
                 {cartCount}
@@ -71,7 +71,7 @@ const MidHeader = () => {
               {wishlistCount}
             </span>
           </Link>
-          <Link href="/CartPage" className="relative group">
+          <Link href="/cart" className="relative group">
             <CiShoppingCart className="text-gray-600 text-2xl group-hover:text-(--prim-color) transition-all" />
             <span className="absolute -top-2 -right-2 bg-(--prim-color) text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
              {cartCount}
