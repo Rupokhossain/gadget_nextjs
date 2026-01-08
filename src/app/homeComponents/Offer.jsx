@@ -1,12 +1,12 @@
 import React from "react";
 import Image from "next/image";
 import { FaShoppingCart } from "react-icons/fa";
+import Link from "next/link";
 
 const Offer = () => {
   return (
     <div className="container mx-auto px-4 pb-10">
       <div className="relative w-full min-h-[220px] md:h-[300px] bg-[#D6EBE9] rounded-2xl overflow-hidden flex items-center my-8">
-
         {/* Background Image (md+ only) */}
         <div className="hidden md:block absolute -right-5 -bottom-5 w-1/2 h-[120%] pointer-events-none">
           <Image
@@ -33,9 +33,11 @@ const Offer = () => {
             </p>
           </div>
 
-          <button className="px-6 py-2.5 md:px-8 md:py-3 text-base md:text-lg font-semibold text-(--prim-color) bg-(--prim-light) rounded-md hover:bg-white hover:text-(--prim-color) transition-all duration-300 flex items-center gap-2">
-            Shop Now <FaShoppingCart size={18} />
-          </button>
+          <Link href="/shops">
+            <button className="px-6 py-2.5 md:px-8 md:py-3 cursor-pointer text-base md:text-lg font-semibold text-(--prim-color) bg-(--prim-light) rounded-md hover:bg-white hover:text-(--prim-color) transition-all duration-300 flex items-center gap-2">
+              Shop Now <FaShoppingCart size={18} />
+            </button>
+          </Link>
         </div>
 
         {/* Subtle overlay */}
@@ -44,6 +46,5 @@ const Offer = () => {
     </div>
   );
 };
-
 
 export default Offer;

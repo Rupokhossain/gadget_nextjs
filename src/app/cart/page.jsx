@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
 import { removeFromCart, addToCart } from "@/redux/cartSlice";
 import { FaStar, FaStore } from "react-icons/fa";
+import Link from "next/link";
 
 const CartPage = () => {
   const dispatch = useDispatch();
@@ -24,19 +25,26 @@ const CartPage = () => {
           <table className="w-full text-left border-collapse border border-gray-100">
             <thead>
               <tr className="bg-[#DEE5FF] text-gray-800">
-                <th className="py-3 px-4 Unbounded font-normal text-left">Product</th>
-                <th className="py-3 px-4 Unbounded font-normal text-left">Price</th>
-                <th className="py-3 px-4 Unbounded font-normal text-left">Quantity</th>
-                <th className="py-3 px-4 Unbounded font-normal text-left">Subtotal</th>
-                <th className="py-3 px-4 Unbounded font-normal text-left">Delete</th>
+                <th className="py-3 px-4 Unbounded font-normal text-left">
+                  Product
+                </th>
+                <th className="py-3 px-4 Unbounded font-normal text-left">
+                  Price
+                </th>
+                <th className="py-3 px-4 Unbounded font-normal text-left">
+                  Quantity
+                </th>
+                <th className="py-3 px-4 Unbounded font-normal text-left">
+                  Subtotal
+                </th>
+                <th className="py-3 px-4 Unbounded font-normal text-left">
+                  Delete
+                </th>
               </tr>
             </thead>
             <tbody>
               {cartItems.map((item) => (
-                <tr
-                  key={item.id}
-                  className="border-b border-gray-200"
-                >
+                <tr key={item.id} className="border-b border-gray-200">
                   <td className="py-3 px-6 flex flex-col items-center gap-4 h-36">
                     <div className="object-contain h-[100px] flex items-center justify-center rounded w-full">
                       <Image
@@ -48,9 +56,7 @@ const CartPage = () => {
                       />
                     </div>
                     <div className="text-center w-full">
-                      <h4 className="font-medium Unbounded">
-                        {item.title}
-                      </h4>
+                      <h4 className="font-medium Unbounded">{item.title}</h4>
                       <p className="my-2 text-sm text-gray-500 flex items-center justify-center gap-1 mt-1">
                         <FaStore className="text-blue-500" /> By ElectraHub
                       </p>
@@ -62,9 +68,7 @@ const CartPage = () => {
                       </div>
                     </div>
                   </td>
-                  <td className="py-3 px-6 Unbounded">
-                    ${item.newPrice}
-                  </td>
+                  <td className="py-3 px-6 Unbounded">${item.newPrice}</td>
                   <td className="p-4">
                     <div className="flex items-center justify-center border border-gray-300 rounded-lg w-fit mx-auto overflow-hidden">
                       <button
@@ -134,9 +138,11 @@ const CartPage = () => {
               <span>Total</span>
               <span>${total.toFixed(2)}</span>
             </div>
-            <button className="w-full bg-[#4B70F5] hover:bg-black duration-300 cursor-pointer text-white py-4 rounded-md font-bold transition-all shadow-lg shadow-blue-200 mt-4">
-              Proceed to Checkout
-            </button>
+            <Link href="/checkout">
+              <button className="w-full bg-[#4B70F5] hover:bg-black duration-300 cursor-pointer text-white py-4 rounded-md font-bold transition-all shadow-lg shadow-blue-200 mt-4">
+                Proceed to Checkout
+              </button>
+            </Link>
           </div>
         </div>
       </div>

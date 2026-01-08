@@ -3,10 +3,12 @@ import SellGrid from "./SellGrid";
 import Image from "next/image";
 import { FaShoppingCart } from "react-icons/fa";
 import SectionHeading from "../components/Shared/SectionHeading";
+import Link from "next/link";
 
 const BestSell = () => {
   const sellItems = [
     {
+      id: 501,
       badge: "20%",
       badgeColor: "bg-red-500",
       image: "/assets/images/best-sell1.webp",
@@ -14,6 +16,7 @@ const BestSell = () => {
       title: "SoundBox Pro Portable",
     },
     {
+      id: 502,
       badge: "12%",
       badgeColor: "bg-red-500",
       image: "/assets/images/best-sell2.webp",
@@ -22,6 +25,7 @@ const BestSell = () => {
       title: "Polk Audio T30 Speaker",
     },
     {
+      id: 503,
       badge: "New",
       badgeColor: "bg-yellow-400",
       image: "/assets/images/best-sell3.webp",
@@ -30,6 +34,7 @@ const BestSell = () => {
       title: "Taylor Farms Broccoli Florets Vegetables",
     },
     {
+      id: 504,
       badge: "30%",
       badgeColor: "bg-red-500",
       image: "/assets/images/best-sell4.webp",
@@ -42,7 +47,7 @@ const BestSell = () => {
     <div className="px-4 py-10">
       <div className="container mx-auto">
         <div>
-            <SectionHeading heading='Todays Best Sales.'></SectionHeading>
+          <SectionHeading heading="Todays Best Sales."></SectionHeading>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
           {/* Left Section: Small Product Cards */}
@@ -64,9 +69,11 @@ const BestSell = () => {
             <h2 className="text-4xl Merienda my-5 text-center">
               Numkuda USB 2.0 Gamepad
             </h2>
-            <button className="px-6 py-3 my-2 text-lg font-semibold hover:text-[#4B70F5] hover:bg-white border border-gray-300 rounded-md text-md bg-black text-white cursor-pointer transition duration-300 flex items-center gap-2">
-              Shop Now <FaShoppingCart size={20} />
-            </button>
+            <Link href="/shops">
+              <button className="px-6 py-3 my-2 text-lg font-semibold hover:text-[#4B70F5] hover:bg-white border border-gray-300 rounded-md text-md bg-black text-white cursor-pointer transition duration-300 flex items-center gap-2">
+                Shop Now <FaShoppingCart size={20} />
+              </button>
+            </Link>
           </div>
         </div>
       </div>

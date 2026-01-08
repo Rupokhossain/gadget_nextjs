@@ -27,7 +27,7 @@ const MidHeader = () => {
 
           {/* mobile */}
           <div className="flex lg:hidden items-center space-x-4">
-            <Link href="/WishlistPage" className="relative">
+            <Link href="/wishlist" className="relative">
               <CiHeart className="text-gray-600 text-2xl" />
               <span className="absolute -top-2 -right-2 bg-(--prim-color) text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full">
                 {wishlistCount}
@@ -65,7 +65,7 @@ const MidHeader = () => {
 
         {/* Wishlist + Cart (Desktop Only) */}
         <div className="hidden lg:flex items-center space-x-6">
-          <Link href="/WishlistPage" className="relative group">
+          <Link href="/wishlist" className="relative group">
             <CiHeart className="text-gray-600 text-2xl group-hover:text-(--prim-color) transition-all" />
             <span className="absolute -top-2 -right-2 bg-(--prim-color) text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
               {wishlistCount}

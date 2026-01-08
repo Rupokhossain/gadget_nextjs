@@ -9,13 +9,11 @@ import { addToCart } from '@/redux/cartSlice';
 const ProductCard = ({ product }) => {
   const dispatch = useDispatch();
 
-  // const wishlistItems = useSelector((state) => state.wishlist.items);
-  // const isWishlisted = wishlistItems.find((item) => item.id === p.id);
   return (
     <div className="bg-white border border-gray-200 rounded-xl p-4 relative cursor-pointer flex flex-col hover:shadow-lg transition-shadow duration-300">
       
       {/* Add to Cart Button */}
-      <button onClick={() => dispatch(addToCart(product))} className="absolute top-3 right-3 bg-blue-100 text-blue-600 px-3 py-1 rounded-full flex items-center gap-1 text-sm font-medium hover:bg-blue-600 hover:text-white transition-colors">
+      <button onClick={() => dispatch(addToCart(product))} className="absolute top-3 right-3 cursor-pointer bg-blue-100 text-blue-600 px-3 py-1 rounded-full flex items-center gap-1 text-sm font-medium hover:bg-blue-600 hover:text-white transition-colors">
         Add <CiShoppingCart size={14} />
       </button>
 

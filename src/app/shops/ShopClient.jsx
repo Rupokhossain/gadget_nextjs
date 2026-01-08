@@ -2,11 +2,17 @@
 import React, { useState, useMemo } from "react";
 import { LuRotateCcw } from "react-icons/lu";
 import { CiHeart, CiShoppingCart } from "react-icons/ci";
-import { FaStar, FaStore, FaShoppingCart } from "react-icons/fa";
+import { FaStar, FaStore, FaShoppingCart, FaHeart } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleWishlist } from "@/redux/wishlistSlice";
+import { addToCart } from "@/redux/cartSlice";
 
 const ShopClient = ({ initialShops }) => {
+  const dispatch = useDispatch();
+  const wishlistItems = useSelector((state) => state.wishlist.items);
+
   const [priceRange, setPriceRange] = useState(1500);
   const [selectedDiscounts, setSelectedDiscounts] = useState([]);
   const [showOnlyNew, setShowOnlyNew] = useState(false);
@@ -87,7 +93,6 @@ const ShopClient = ({ initialShops }) => {
                 ))}
               </div>
             </div>
-
           </div>
         </div>
 
@@ -113,78 +118,92 @@ const ShopClient = ({ initialShops }) => {
       <main className="flex-1">
         {filteredShops.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-6">
-            {filteredShops.map((p) => (
-              <div
-                key={p?.id}
-                className="bg-white border border-gray-200 hover:shadow-lg rounded-xl p-4 relative transition-all duration-300 flex flex-col h-full group"
-              >
-                <button className="absolute top-2 left-2 w-10 h-10 rounded-full bg-[#a9baf93d] text-[#4B70F5] flex justify-center items-center hover:bg-[#4B70F5] hover:text-white transition-all duration-300 z-20">
-                  <CiHeart className="text-xl" />
-                </button>
+            {filteredShops.map((p) => {
+              const isWishlisted = wishlistItems.some(
+                (item) => item.id === p.id
+              );
 
-                {p?.badge && (
-                  <div
-                    className={`absolute top-0 right-0 px-4 py-1.5 text-xs font-bold text-white rounded-bl-2xl rounded-tr-xl z-10 ${
-                      p.badgeType === "discount"
-                        ? "bg-red-500"
-                        : "bg-yellow-400"
-                    }`}
+              return (
+                <div
+                  key={p?.id}
+                  className="bg-white border border-gray-200 hover:shadow-lg rounded-xl p-4 relative transition-all duration-300 flex flex-col h-full group"
+                >
+                  <button
+                    onClick={() => dispatch(toggleWishlist(p))}
+                    className="absolute top-2 left-2 w-10 h-10 rounded-full bg-[#a9baf93d] text-[#4B70F5] flex justify-center cursor-pointer items-center hover:bg-[#4B70F5] hover:text-white transition-all duration-300 z-20"
                   >
-                    {p?.badge}
-                  </div>
-                )}
+                    {isWishlisted ? (
+                      <FaHeart className="text-red-500 text-lg" />
+                    ) : (
+                      <CiHeart className="text-xl" />
+                    )}
+                  </button>
 
-                <Link href={`/shops/${p?.id}`} className="flex flex-col h-full">
-                  <div className="relative flex justify-center items-center w-full h-48 overflow-hidden">
-                    <Image
-                      src={p?.image}
-                      alt={p?.title}
-                      width={200}
-                      height={200}
-                      className="max-h-full object-contain p-2 group-hover:scale-110 transition-transform duration-500"
-                    />
-                  </div>
-                  <div className="mt-5 grow space-y-2">
-                    <div className="flex items-center gap-2">
-                      {p.oldPrice && (
-                        <span className="text-gray-500 text-sm line-through">
-                          ${p?.oldPrice}
-                        </span>
-                      )}
-                      <span className="text-xl font-semibold">
-                        ${p?.newPrice}
-                      </span>
-                      <span className="text-gray-500 text-sm">
-                        /Qty
-                      </span>
+                  {p?.badge && (
+                    <div
+                      className={`absolute top-0 right-0 px-4 py-1.5 text-xs font-bold text-white rounded-bl-2xl rounded-tr-xl z-10 ${
+                        p.badgeType === "discount"
+                          ? "bg-red-500"
+                          : "bg-yellow-400"
+                      }`}
+                    >
+                      {p?.badge}
                     </div>
-                    <div className="text-lg text-gray-500 flex items-center gap-1">
-                      <FaStore size={12} className="text-blue-600" />
-                      <span>By {p?.shopName}</span>
+                  )}
+
+                  <Link
+                    href={`/shops/${p?.id}`}
+                    className="flex flex-col h-full"
+                  >
+                    <div className="relative flex justify-center items-center w-full h-48 overflow-hidden">
+                      <Image
+                        src={p?.image}
+                        alt={p?.title}
+                        width={200}
+                        height={200}
+                        className="max-h-full object-contain p-2 group-hover:scale-110 transition-transform duration-500"
+                      />
                     </div>
-                    <h3 className="text-lg font-normal Unbounded my-2 hover:text-blue-600 transition-all duration-300">
-                      {p?.title}
-                    </h3>
-                    <div className="flex flex-col gap-1">
-                      <div className="flex items-center gap-1">
-                        <FaStar size={12} className="text-yellow-400" />
-                        <span className="flex items-center text-yellow-500 text-md">
-                          ({p?.rating})
+                    <div className="mt-5 grow space-y-2">
+                      <div className="flex items-center gap-2">
+                        {p.oldPrice && (
+                          <span className="text-gray-500 text-sm line-through">
+                            ${p?.oldPrice}
+                          </span>
+                        )}
+                        <span className="text-xl font-semibold">
+                          ${p?.newPrice}
                         </span>
+                        <span className="text-gray-500 text-sm">/Qty</span>
                       </div>
-                      <p className="mt-2 text-md Unbounded text-gray-600">
-                        Sold:{" "}
-                        <span className="text-gray-600">{p?.soldCount}</span>
-                      </p>
+                      <div className="text-lg text-gray-500 flex items-center gap-1">
+                        <FaStore size={12} className="text-blue-600" />
+                        <span>By {p?.shopName}</span>
+                      </div>
+                      <h3 className="text-lg font-normal Unbounded my-2 hover:text-blue-600 transition-all duration-300">
+                        {p?.title}
+                      </h3>
+                      <div className="flex flex-col gap-1">
+                        <div className="flex items-center gap-1">
+                          <FaStar size={12} className="text-yellow-400" />
+                          <span className="flex items-center text-yellow-500 text-md">
+                            ({p?.rating})
+                          </span>
+                        </div>
+                        <p className="mt-2 text-md Unbounded text-gray-600">
+                          Sold:{" "}
+                          <span className="text-gray-600">{p?.soldCount}</span>
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                </Link>
+                  </Link>
 
-                <button className="w-full mt-4 flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-bold text-blue-600 bg-blue-50 rounded-xl hover:bg-blue-600 hover:text-white transition-all duration-300 cursor-pointer">
-                  Add To Cart <CiShoppingCart size={20} />
-                </button>
-              </div>
-            ))}
+                  <button onClick={() => dispatch(addToCart(p))} className="w-full mt-4 flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-bold text-blue-600 bg-blue-50 rounded-xl hover:bg-blue-600 hover:text-white transition-all duration-300 cursor-pointer">
+                    Add To Cart <CiShoppingCart size={20} />
+                  </button>
+                </div>
+              );
+            })}
           </div>
         ) : (
           <div className="flex flex-col items-center justify-center h-64 bg-white rounded-2xl border border-dashed border-gray-300">

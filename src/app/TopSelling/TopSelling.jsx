@@ -11,7 +11,6 @@ import { toggleWishlist } from "@/redux/wishlistSlice";
 const TopSelling = () => {
   const [products, setProducts] = useState([]);
   const dispatch = useDispatch();
-
   const wishlistItems = useSelector((state) => state.wishlist.items);
 
   useEffect(() => {

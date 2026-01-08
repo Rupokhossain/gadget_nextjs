@@ -1,6 +1,5 @@
+import Link from "next/link";
 import React from "react";
-
-import { IoArrowForward } from "react-icons/io5";
 
 const PromoBannerSection = () => {
   const promoData = [
@@ -33,17 +32,16 @@ const PromoBannerSection = () => {
                 {item?.badge}
               </span>
 
-    
               <h2 className="Merienda font-bold text-black text-4xl leading-11 whitespace-pre-line py-3">
                 {item?.title}
               </h2>
 
-              <button className="px-5 py-3 rounded-full text-white font-bold mt-2 bg-black hover:bg-white hover:text-black transition-all duration-300 cursor-pointer">
-                Shop Now
-                <span className="text-xl pl-2">
-                  →
-                </span>
-              </button>
+              <Link href="/shops">
+                <button className="px-5 py-3 rounded-full text-white font-bold mt-2 bg-black hover:bg-white hover:text-black transition-all duration-300 cursor-pointer">
+                  Shop Now
+                  <span className="text-xl pl-2">→</span>
+                </button>
+              </Link>
             </div>
           </div>
         ))}

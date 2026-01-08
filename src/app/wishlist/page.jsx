@@ -1,13 +1,14 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { useDispatch, useSelector } from "react-redux";
+
 import { addToCart } from "@/redux/cartSlice";
 import { toggleWishlist } from "@/redux/wishlistSlice";
 import { FaStar, FaStore } from "react-icons/fa";
 import { CiShoppingCart } from "react-icons/ci";
+import { useDispatch, useSelector } from "react-redux";
 
-const WishlistPage = () => {
+const Wishlist = () => {
   const dispatch = useDispatch();
   const wishlistItems = useSelector((state) => state.wishlist.items);
 
@@ -26,18 +27,18 @@ const WishlistPage = () => {
           </thead>
           <tbody>
             {wishlistItems.map((item) => (
-              <tr key={item.id} className="border-b border-gray-50 hover:bg-gray-50 transition-colors">
-                <td className="p-4 flex items-center gap-6 min-w-[350px]">
-                  <div className="w-24 h-24 border rounded-xl overflow-hidden p-2 bg-white">
+              <tr key={item.id} className="border-b border-gray-200 cursor-pointer hover:bg-gray-50 transition-colors">
+                <td className="p-4 flex items-center gap-6 min-w-[250px]">
+                  <div className="w-36 h-36 border border-gray-300 rounded-xl overflow-hidden p-2 bg-white">
                     <Image src={item.image} alt={item.title} width={100} height={100} className="object-contain w-full h-full" />
                   </div>
                   <div>
-                    <h4 className="text-lg font-bold text-gray-800">{item.title}</h4>
-                    <p className="text-gray-400 text-xs flex items-center gap-1 mt-1">
+                    <h4 className="font-medium Unbounded text-xl">{item.title}</h4>
+                    <p className="text-sm text-gray-500 flex items-center gap-1 mt-1">
                       <FaStore className="text-blue-500" /> By {item.shopName}
                     </p>
-                    <div className="flex text-yellow-400 text-xs mt-1">
-                       <FaStar /> <span className="text-gray-400 ml-1">({item.rating}) Reviews</span>
+                    <div className="text-yellow-500 text-sm flex items-center mt-2">
+                       <FaStar /> <span className="text-gray-400 me-1">({item.rating}) Reviews</span>
                     </div>
                   </div>
                 </td>
@@ -46,7 +47,7 @@ const WishlistPage = () => {
                 <td className="p-4 border-l border-gray-100">
                   <button 
                     onClick={() => dispatch(addToCart(item))}
-                    className="flex items-center justify-center gap-2 bg-[#D9E2FF] hover:bg-[#4B70F5] hover:text-white text-[#4B70F5] px-6 py-3 rounded-lg font-bold transition-all mx-auto"
+                    className="flex items-center justify-center gap-2 bg-[#D9E2FF] hover:bg-[#4B70F5] hover:text-white cursor-pointer text-[#4B70F5] px-6 py-3 rounded-lg font-bold transition-all mx-auto"
                   >
                     Add To Cart <CiShoppingCart size={20} />
                   </button>
@@ -54,7 +55,7 @@ const WishlistPage = () => {
                 <td className="p-4 border-l border-gray-100">
                   <button 
                     onClick={() => dispatch(toggleWishlist(item))}
-                    className="text-red-500 font-medium hover:underline flex items-center gap-1 cursor-pointer"
+                    className="text-red-500 font-medium hover:underline duration-300 transition-all flex items-center gap-1 cursor-pointer"
                   >
                     <span className="text-lg">✕</span> Remove
                   </button>
@@ -71,4 +72,4 @@ const WishlistPage = () => {
   );
 };
 
-export default WishlistPage;
+export default Wishlist;
