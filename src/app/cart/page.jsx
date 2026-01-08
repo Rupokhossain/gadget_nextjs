@@ -18,128 +18,208 @@ const CartPage = () => {
   const total = subtotal + (cartItems.length > 0 ? taxes : 0);
 
   return (
-    <div className="container mx-auto px-4 lg:px-24 py-10 min-h-screen">
-      <div className="flex flex-col lg:flex-row gap-8">
-        {/* Left Section: Cart Table */}
-        <div className="lg:w-2/3 w-full overflow-x-auto">
-          <table className="w-full text-left border-collapse border border-gray-100">
-            <thead>
-              <tr className="bg-[#DEE5FF] text-gray-800">
-                <th className="py-3 px-4 Unbounded font-normal text-left">
-                  Product
-                </th>
-                <th className="py-3 px-4 Unbounded font-normal text-left">
-                  Price
-                </th>
-                <th className="py-3 px-4 Unbounded font-normal text-left">
-                  Quantity
-                </th>
-                <th className="py-3 px-4 Unbounded font-normal text-left">
-                  Subtotal
-                </th>
-                <th className="py-3 px-4 Unbounded font-normal text-left">
-                  Delete
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {cartItems.map((item) => (
-                <tr key={item.id} className="border-b border-gray-200">
-                  <td className="py-3 px-6 flex flex-col items-center gap-4 h-36">
-                    <div className="object-contain h-[100px] flex items-center justify-center rounded w-full">
-                      <Image
-                        src={item.image}
-                        alt={item.title}
-                        width={220}
-                        height={120}
-                        className="object-contain"
-                      />
-                    </div>
-                    <div className="text-center w-full">
-                      <h4 className="font-medium Unbounded">{item.title}</h4>
-                      <p className="my-2 text-sm text-gray-500 flex items-center justify-center gap-1 mt-1">
-                        <FaStore className="text-blue-500" /> By ElectraHub
-                      </p>
-                      <div className="flex items-center text-yellow-500 text-sm justify-center">
-                        <FaStar />{" "}
-                        <span className="text-gray-400 ml-1">
-                          ({item.rating}) Reviews
-                        </span>
-                      </div>
-                    </div>
-                  </td>
-                  <td className="py-3 px-6 Unbounded">${item.newPrice}</td>
-                  <td className="p-4">
-                    <div className="flex items-center justify-center border border-gray-300 rounded-lg w-fit mx-auto overflow-hidden">
-                      <button
-                        className="px-3 py-1 hover:bg-gray-100 cursor-pointer"
-                        onClick={() => dispatch(removeFromCart(item.id))}
-                      >
-                        -
-                      </button>
-                      <span className="px-4 py-1 border-x border-gray-300 font-bold">
-                        {item.quantity}
-                      </span>
-                      <button
-                        className="px-3 py-1 hover:bg-gray-100 cursor-pointer"
-                        onClick={() => dispatch(addToCart(item))}
-                      >
-                        +
-                      </button>
-                    </div>
-                  </td>
-                  <td className="py-3 px-6 Unbounded">
-                    ${(item.newPrice * item.quantity).toFixed(2)}
-                  </td>
-                  <td className=" cursor-pointer">
-                    <button
-                      onClick={() => dispatch(removeFromCart(item.id))}
-                      className="text-red-500! Unbounded hover:text-red-700 cursor-pointer"
-                    >
-                      Delete
-                    </button>
-                  </td>
-                </tr>
-              ))}
-              {cartItems.length === 0 && (
+    <div className="container mx-auto px-4 xl:px-24 py-10 min-h-screen">
+      <div className="flex flex-col lg:flex-row gap-8 items-start">
+        {/* Left Section: Cart Items */}
+        <div className="w-full xl:w-2/3">
+          {/* --- 1. DESKTOP VIEW (Table) - Visible on md and up --- */}
+          <div className="hidden md:block border border-gray-200 cursor-pointer rounded-xl bg-white shadow-sm overflow-hidden">
+            <table className="w-full text-left border-collapse">
+              <thead className="bg-[#DEE5FF] text-gray-800">
                 <tr>
-                  <td
-                    colSpan="5"
-                    className="p-10 text-center text-gray-400 font-bold italic"
-                  >
-                    Your cart is empty!
-                  </td>
+                  <th className="py-4 px-6 Unbounded font-semibold text-sm">
+                    Product
+                  </th>
+                  <th className="py-4 px-6 Unbounded font-semibold text-sm">
+                    Price
+                  </th>
+                  <th className="py-4 px-6 Unbounded font-semibold text-sm text-center">
+                    Quantity
+                  </th>
+                  <th className="py-4 px-6 Unbounded font-semibold text-sm">
+                    Subtotal
+                  </th>
+                  <th className="py-4 px-6 Unbounded font-semibold text-sm">
+                    Delete
+                  </th>
                 </tr>
-              )}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {cartItems.map((item) => (
+                  <tr
+                    key={item.id}
+                    className="border-b border-gray-100 hover:bg-gray-50"
+                  >
+                    <td className="py-6 px-6 flex items-center gap-4">
+                      <div className="relative w-[250px] h-[150px] flex items-center justify-center rounded bg-gray-50 p-1">
+                        <Image
+                          src={item.image}
+                          alt={item.title}
+                          width={180}
+                          height={120}
+                          className="object-contain"
+                        />
+                      </div>
+                      <div>
+                        <h4 className="Unbounded font-medium text-lg line-clamp-1">
+                          {item.title}
+                        </h4>
+                        <p className="text-xs text-gray-500">By ElectraHub</p>
+                      </div>
+                    </td>
+                    <td className="py-6 px-6 font-bold text-gray-800">
+                      ${item.newPrice}
+                    </td>
+                    <td className="py-6 px-6">
+                      <div className="flex items-center border border-gray-300 rounded w-fit mx-auto overflow-hidden">
+                        <button
+                          className="px-3 py-1 hover:bg-gray-100 cursor-pointer"
+                          onClick={() => dispatch(removeFromCart(item.id))}
+                        >
+                          -
+                        </button>
+                        <span className="px-4 font-bold text-sm">
+                          {item.quantity}
+                        </span>
+                        <button
+                          className="px-3 py-1 hover:bg-gray-100 cursor-pointer"
+                          onClick={() => dispatch(addToCart(item))}
+                        >
+                          +
+                        </button>
+                      </div>
+                    </td>
+                    <td className="py-6 px-6 font-bold text-gray-800">
+                      ${(item.newPrice * item.quantity).toFixed(2)}
+                    </td>
+                    <td className="py-6 px-6">
+                      <button
+                        onClick={() => dispatch(removeFromCart(item.id))}
+                        className="text-red-500 font-bold hover:underline cursor-pointer"
+                      >
+                        Delete
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          {/* --- 2. MOBILE VIEW (Cards) - Visible only on small screens --- */}
+          <div className="md:hidden flex flex-col gap-6">
+            {cartItems.map((item) => (
+              <div
+                key={item.id}
+                className="bg-white border border-gray-200 rounded-xl p-5 shadow-sm space-y-4"
+              >
+                {/* Product Image */}
+                <div className="relative w-full h-48 bg-gray-50 rounded-lg flex items-center justify-center overflow-hidden">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    className="object-contain p-4"
+                  />
+                </div>
+
+                {/* Details */}
+                <div className="space-y-2">
+                  <h4 className="Unbounded font-medium text-lg text-gray-900 leading-tight">
+                    {item.title}
+                  </h4>
+                  <div className="flex items-center gap-1.5 text-blue-500 text-sm font-medium">
+                    <FaStore size={14} /> <span>By ElectraHub</span>
+                  </div>
+                  <div className="flex items-center text-yellow-400 text-sm">
+                    <FaStar />{" "}
+                    <span className="text-gray-400 ml-1">
+                      ({item.rating}) Reviews
+                    </span>
+                  </div>
+                </div>
+
+                {/* Price Info */}
+                <div className="space-y-1 py-2 border-y border-gray-50">
+                  <div className="flex justify-between text-base">
+                    <span className="font-bold text-gray-800">Price:</span>
+                    <span className="font-bold text-gray-900">
+                      ${item.newPrice}
+                    </span>
+                  </div>
+                  <div className="flex justify-between text-base">
+                    <span className="font-bold text-gray-800">Subtotal:</span>
+                    <span className="font-bold text-gray-900">
+                      ${(item.newPrice * item.quantity).toFixed(2)}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Bottom Row: Quantity and Delete */}
+                <div className="flex justify-between items-center pt-2">
+                  <div className="flex items-center border border-gray-400 rounded-lg overflow-hidden bg-white">
+                    <button
+                      className="px-4 py-1.5 hover:bg-gray-100 font-bold text-xl cursor-pointer"
+                      onClick={() => dispatch(removeFromCart(item.id))}
+                    >
+                      -
+                    </button>
+                    <span className="px-5 font-bold">{item.quantity}</span>
+                    <button
+                      className="px-4 py-1.5 hover:bg-gray-100 font-bold text-xl cursor-pointer"
+                      onClick={() => dispatch(addToCart(item))}
+                    >
+                      +
+                    </button>
+                  </div>
+                  <button
+                    onClick={() => dispatch(removeFromCart(item.id))}
+                    className="text-red-500 font-bold text-lg hover:underline cursor-pointer"
+                  >
+                    Delete
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Empty State */}
+          {cartItems.length === 0 && (
+            <div className="p-20 text-center text-gray-400 font-bold italic text-lg bg-white rounded-xl border border-dashed border-gray-300">
+              Your cart is empty!
+            </div>
+          )}
         </div>
 
-        {/* Right Section: Totals Summary */}
-        <div className="w-full lg:w-1/3 lg:sticky lg:top-24 self-start h-fit">
-          <div className="bg-[#DEE5FF] p-8 rounded-lg space-y-4 shadow-sm">
-            <h3 className="text-xl font-bold text-gray-800">Cart Totals</h3>
-            <div className="flex justify-between text-gray-700 font-medium">
-              <span>Subtotal</span>
-              <span>${subtotal.toFixed(2)}</span>
+        {/* Right Section: Totals Summary (Always Visible) */}
+        <div className="w-full lg:w-1/3 lg:sticky lg:top-24 h-fit">
+          <div className="bg-[#DEE5FF] p-8 rounded-2xl space-y-5 shadow border border-gray-100">
+            <h3 className="text-xl font-bold mb-4">Cart Totals</h3>
+            <div className="space-y-3 text-gray-700 font-medium text-lg">
+              <div className="flex justify-between">
+                <span>Subtotal</span>
+                <span className="font-bold text-gray-900">
+                  ${subtotal.toFixed(2)}
+                </span>
+              </div>
+              <div className="flex justify-between">
+                <span>Estimated Delivery</span>
+                <span className="text-blue-600 font-bold">Free</span>
+              </div>
+              <div className="flex justify-between">
+                <span>Estimated Taxes</span>
+                <span className="font-bold">
+                  USD {cartItems.length > 0 ? taxes.toFixed(2) : "0.00"}
+                </span>
+              </div>
             </div>
-            <div className="flex justify-between text-gray-700 font-medium">
-              <span>Estimated Delivery</span>
-              <span className="text-blue-600 font-bold">Free</span>
-            </div>
-            <div className="flex justify-between text-gray-700 font-medium">
-              <span>Estimated Taxes</span>
-              <span>
-                USD {cartItems.length > 0 ? taxes.toFixed(2) : "0.00"}
-              </span>
-            </div>
-            <hr className="border-gray-300" />
-            <div className="flex justify-between text-xl font-black text-gray-900">
+            <hr className="border-gray-400 my-2" />
+            <div className="flex justify-between text-xl font-semibold Unbounded py-2">
               <span>Total</span>
               <span>${total.toFixed(2)}</span>
             </div>
-            <Link href="/checkout">
-              <button className="w-full bg-[#4B70F5] hover:bg-black duration-300 cursor-pointer text-white py-4 rounded-md font-bold transition-all shadow-lg shadow-blue-200 mt-4">
+            <Link href="/checkout" className="block w-full">
+              <button className="w-full py-3 cursor-pointer bg-[#4B70F5] text-white font-semibold rounded-lg mt-4 hover:bg-black transition">
                 Proceed to Checkout
               </button>
             </Link>
