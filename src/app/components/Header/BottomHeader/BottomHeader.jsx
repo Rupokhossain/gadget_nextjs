@@ -8,9 +8,6 @@ const BottomHeader = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname(); 
 
-  
-
-
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "Shop", href: "/shops" },

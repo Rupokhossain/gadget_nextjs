@@ -44,7 +44,7 @@ const ShopClient = ({ initialShops }) => {
 
   return (
     <div className="flex flex-col lg:flex-row gap-8">
-      <aside className="w-full lg:w-[30%] lg:sticky lg:top-24 self-start h-fit space-y-6">
+      <aside className="w-full lg:w-[30%] lg:sticky lg:top-48 self-start h-fit space-y-6">
         {/* Filter Box */}
         <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
           <div className="flex justify-between items-center mb-6">

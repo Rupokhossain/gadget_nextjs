@@ -89,7 +89,7 @@ const page = () => {
           </div>
 
           {/* RIGHT SECTION: Contact Info */}
-          <div className="w-full lg:w-1/3 lg:sticky lg:top-24 bg-white p-8 rounded-lg border border-gray-300 shadow-sm space-y-8">
+          <div className="w-full lg:w-1/3 lg:sticky lg:top-48 bg-white p-8 rounded-lg border border-gray-300 shadow-sm space-y-8">
             <h2 className="Unbounded text-xl mb-10">
               Get In Touch
             </h2>
@@ -97,7 +97,7 @@ const page = () => {
             <div className="flex flex-col gap-6">
               {/* Phone */}
               <div className="flex items-center gap-3 group">
-                <div className="w-12 h-12 rounded-full border-2 border-blue-500 p-2 flex items-center justify-center text-blue-500 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
+                <div className="w-12 h-12 rounded-full border-2 border-blue-500 p-2 flex items-center justify-center text-blue-500 transition-all duration-300">
                   <FiPhone className="text-xl text-blue-500"/>
                 </div>
                 <span className="text-blue-600 font-semibold cursor-pointer hover:underline text-lg">
@@ -107,7 +107,7 @@ const page = () => {
 
               {/* Email */}
               <div className="flex items-center gap-3 group">
-                <div className="w-12 h-12 rounded-full border-2 border-blue-500 p-2 flex items-center justify-center text-blue-500 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
+                <div className="w-12 h-12 rounded-full border-2 border-blue-500 p-2 flex items-center justify-center text-blue-500 transition-all duration-300">
                   <GoMail className="text-xl text-blue-500" />
                 </div>
                 <span className="text-blue-600 font-semibold cursor-pointer hover:underline text-lg">
@@ -117,7 +117,7 @@ const page = () => {
 
               {/* Location */}
               <div className="flex items-center gap-3 group">
-                <div className="w-12 h-12 rounded-full border-2 border-blue-500 p-2 flex items-center justify-center text-blue-500 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
+                <div className="w-12 h-12 rounded-full border-2 border-blue-500 p-2 flex items-center justify-center text-blue-500 transition-all duration-300">
                   <LuMapPin className="text-xl text-blue-500" />
                 </div>
                 <span className="text-blue-600 font-semibold text-lg leading-tight">

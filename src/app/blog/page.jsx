@@ -143,7 +143,7 @@ const Page = () => {
           </div>
 
           {/* RIGHT SECTION */}
-          <aside className="w-full lg:w-1/3 lg:sticky lg:top-24 self-start h-fit">
+          <aside className="w-full lg:w-1/3 lg:sticky lg:top-48 self-start h-fit">
             <div className="shadow-sm border border-gray-200 rounded">
               <h3 className="border-b border-gray-300 Unbounded text-2xl p-5">
                 Recent Posts
