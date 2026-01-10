@@ -24,13 +24,13 @@ const Featured = ({
       </div>
         <div className="flex-1">
           <div className="flex items-center gap-1 mb-1">
-            <span className="text-[10px] text-gray-400 font-medium">
+            <span className="text-sm text-gray-400 font-medium">
               {rating}
             </span>
-            <FaStar size={10} className="fill-yellow-400 text-yellow-400" />
-            <span className="text-[10px] text-gray-400">({soldCount})</span>
+            <FaStar size={12} className="fill-yellow-400 text-yellow-400" />
+            <span className="text-sm text-gray-400">({soldCount})</span>
           </div>
-          <h4 className="text-sm font-bold text-gray-800 line-clamp-1 mb-1">
+          <h4 className="text-base line-clamp-1 mb-1 Unbounded">
             {title}
           </h4>
           <div className="flex items-baseline gap-2">

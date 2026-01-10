@@ -1,3 +1,4 @@
+import ProductActions from "@/app/TopSelling/ProductActions";
 import Image from "next/image";
 import React from "react";
 import {
@@ -84,14 +85,7 @@ const page = async ({ params }) => {
             Status: Sold {phone?.soldCount}
           </div>
 
-          <div className="flex gap-4">
-            <button className="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-2xl font-bold flex items-center justify-center gap-2 shadow-lg shadow-blue-200 transition-all cursor-pointer">
-              <FaShoppingCart /> Add To Cart
-            </button>
-            <button className="flex-1 bg-blue-50 text-blue-600 hover:bg-blue-100 py-4 rounded-2xl font-bold flex items-center justify-center gap-2 transition-all cursor-pointer">
-              <FaRegHeart /> Wishlist
-            </button>
-          </div>
+            <ProductActions product={phone} />
         </div>
 
         {/* 3. Right Sidebar Service Info */}

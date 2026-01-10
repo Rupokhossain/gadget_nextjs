@@ -7,6 +7,7 @@ import { FaStar, FaStore, FaHeart } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux"; 
 import { addToCart } from "@/redux/cartSlice";
 import { toggleWishlist } from "@/redux/wishlistSlice";
+import SectionHeading from "../components/Shared/SectionHeading";
 
 const TopSelling = () => {
   const [products, setProducts] = useState([]);
@@ -25,6 +26,10 @@ const TopSelling = () => {
   return (
     <div className="py-12">
       <div className="container mx-auto px-4 ">
+
+        <div>
+          <SectionHeading heading="Top Selling Items"></SectionHeading>
+        </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {products.map((p) => {
@@ -76,27 +81,27 @@ const TopSelling = () => {
                           ${p?.oldPrice}
                         </span>
                       )}
-                      <span className="text-lg font-bold text-gray-900">
+                      <span className="text-xl font-semibold text-gray-900">
                         ${p?.newPrice}
                       </span>
                     </div>
 
-                    <div className="text-sm text-gray-500 flex items-center gap-1">
+                    <div className="text-lg text-gray-500 flex items-center gap-1">
                       <FaStore size={12} className="text-blue-600" />
                       <span>By {p?.shopName}</span>
                     </div>
 
-                    <h3 className="text-sm font-bold text-gray-800 line-clamp-2 min-h-10 group-hover:text-blue-600 transition-colors">
+                    <h3 className="text-xl font-normal Unbounded my-2 hover:text-blue-600 transition-all duration-300 line-clamp-2">
                       {p?.title}
                     </h3>
 
                     <div className="flex flex-col gap-1">
-                      <div className="flex items-center text-yellow-400 text-xs">
+                      <div className="flex items-center text-yellow-400 text-base">
                         <FaStar fill="currentColor" />
                         <span className="ml-1 text-gray-400">({p?.rating})</span>
                       </div>
-                      <p className="text-xs font-bold text-gray-500">
-                        Sold: <span className="text-gray-700">{p?.soldCount}</span>
+                      <p className="text-base font-medium text-gray-600 Unbounded">
+                        Sold: <span>{p?.soldCount}</span>
                       </p>
                     </div>
                   </div>
@@ -104,7 +109,7 @@ const TopSelling = () => {
 
                 <button
                   onClick={() => dispatch(addToCart(p))}
-                  className="w-full mt-4 flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-bold text-[#4B70F5] bg-[#DEE5FF] rounded-lg hover:bg-[#4B70F5] hover:text-white transition-all cursor-pointer"
+                  className="w-full mt-4 flex items-center justify-center gap-2 px-4 py-2.5 text-base font-semibold text-[#4B70F5] bg-[#DEE5FF] rounded-lg hover:bg-[#4B70F5] hover:text-white transition-all cursor-pointer"
                 >
                   Add To Cart <CiShoppingCart size={20} />
                 </button>

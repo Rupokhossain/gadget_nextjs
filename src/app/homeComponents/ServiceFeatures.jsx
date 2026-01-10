@@ -42,7 +42,7 @@ const ServiceFeatures = () => {
 
             {/* Text Content */}
             <div>
-              <h4 className="font-semibold Unbounded">
+              <h4 className="font-semibold Unbounded text-base">
                 {item.title}
               </h4>
               <p className="text-gray-700">

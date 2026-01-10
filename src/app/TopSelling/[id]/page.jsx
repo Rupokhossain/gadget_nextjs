@@ -1,8 +1,6 @@
 import Image from "next/image";
 import React from "react";
 import {
-  FaRegHeart,
-  FaShoppingCart,
   FaStar,
   FaTruck,
   FaUndoAlt,
@@ -10,10 +8,12 @@ import {
   FaCheckCircle,
 } from "react-icons/fa";
 import { MdOutlinePayment, MdVerifiedUser } from "react-icons/md";
+import ProductActions from "../ProductActions";
 
 const page = async ({ params }) => {
-  const { id } = await params;
 
+
+  const { id } = await params;
 
   const res = await fetch("http://localhost:3000/products.json", {
     cache: "no-store",
@@ -84,14 +84,7 @@ const page = async ({ params }) => {
             Status: Sold {product?.soldCount}
           </div>
 
-          <div className="flex gap-4">
-            <button className="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-2xl font-bold flex items-center justify-center gap-2 shadow-lg shadow-blue-200 transition-all cursor-pointer">
-              <FaShoppingCart /> Add To Cart
-            </button>
-            <button className="flex-1 bg-blue-50 text-blue-600 hover:bg-blue-100 py-4 rounded-2xl font-bold flex items-center justify-center gap-2 transition-all cursor-pointer">
-              <FaRegHeart /> Wishlist
-            </button>
-          </div>
+            <ProductActions product={product} />
         </div>
 
         {/* 3. Right Sidebar Service Info */}

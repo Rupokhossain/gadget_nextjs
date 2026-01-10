@@ -14,7 +14,7 @@ const Wishlist = () => {
   return (
     <div className="container mx-auto px-4 xl:px-24 py-10 min-h-screen">
       
-      {/* --- ১. ডেক্সটপ এবং ট্যাবলেট ভিউ (Visible from md screen) --- */}
+      {/* ---(Visible from md screen) --- */}
       <div className="hidden md:block border border-gray-100 rounded-xl overflow-hidden shadow-sm bg-white">
         <table className="w-full text-left border-collapse">
           <thead>
@@ -67,7 +67,7 @@ const Wishlist = () => {
         </table>
       </div>
 
-      {/* --- ২. মোবাইল ভিউ (Visible only on screens below md) --- */}
+      {/* --- (Visible only on screens below md) --- */}
       <div className="md:hidden flex flex-col gap-6">
         {wishlistItems.map((item) => (
           <div key={item.id} className="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm space-y-4">
@@ -78,7 +78,7 @@ const Wishlist = () => {
 
             {/* Details */}
             <div className="space-y-2">
-              <h4 className="Unbounded font-bold text-lg text-gray-900 leading-tight">
+              <h4 className="Unbounded font-medium text-lg text-gray-900 leading-tight">
                 {item.title}
               </h4>
               <p className="text-blue-500 text-sm font-medium flex items-center gap-1">
@@ -120,7 +120,7 @@ const Wishlist = () => {
         ))}
       </div>
 
-      {/* Empty State (ডেক্সটপ ও মোবাইল দুই জায়গাতেই কাজ করবে) */}
+      {/* */}
       {wishlistItems.length === 0 && (
         <div className="p-20 text-center text-gray-400 font-bold italic text-lg bg-white rounded-xl border border-dashed border-gray-300">
           No items found in your wishlist!
