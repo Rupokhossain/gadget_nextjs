@@ -6,7 +6,7 @@ const ProductSection = () => {
   const products = [
     {
       id: 1,
-      title: "Speak 710 Portable Speaker for Music...",
+      title: "Speak 710 Portable Speaker...",
       image: "/assets/images/product-img1.webp",
       rating: "5k",
       oldPrice: "904.21",
@@ -49,14 +49,12 @@ const ProductSection = () => {
   return (
     <div className="container mx-auto px-4 py-12">
       <div>
-        <SectionHeading
-          heading={`Todays Best Deals.`}
-        ></SectionHeading>
+        <SectionHeading heading={`Todays Best Deals.`} />
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-        {products.map((product) => (
-          <ProductCard key={product.id} product={product} />
+        {products.map((product, index) => (
+          <ProductCard key={product.id} product={product} delay={index * 100} />
         ))}
       </div>
     </div>

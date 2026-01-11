@@ -2,56 +2,64 @@
 import React from 'react'
 import Image from 'next/image';
 import { CiShoppingCart } from 'react-icons/ci';
-import {  FaStar } from "react-icons/fa";
+import { FaStar } from "react-icons/fa";
 import { useDispatch } from 'react-redux';
 import { addToCart } from '@/redux/cartSlice';
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product, delay }) => {
   const dispatch = useDispatch();
 
   return (
-    <div className="bg-white border border-gray-200 rounded-xl p-4 relative cursor-pointer flex flex-col hover:shadow-lg transition-shadow duration-300">
+    <div 
+
+      data-aos="fade-up" 
+      data-aos-delay={delay} 
+      data-aos-duration="800"
+      className="bg-white border border-gray-200 rounded-xl p-4 relative cursor-pointer flex flex-col hover:shadow-lg transition-shadow duration-300"
+    >
       
       {/* Add to Cart Button */}
-      <button onClick={() => dispatch(addToCart(product))} className="absolute top-3 right-3 cursor-pointer bg-blue-100 text-blue-600 px-3 py-1 rounded-full flex items-center gap-1 text-sm font-medium hover:bg-blue-600 hover:text-white transition-colors">
+      <button 
+        onClick={() => dispatch(addToCart(product))} 
+        className="absolute top-3 right-3 cursor-pointer bg-blue-100 text-blue-600 px-3 py-1 rounded-full flex items-center gap-1 text-sm font-medium hover:bg-blue-600 hover:text-white transition-colors z-10"
+      >
         Add <CiShoppingCart size={14} />
       </button>
 
       {/* Product Image */}
-      <div className="h-40 w-full flex items-center justify-center mb-4">
+      <div className="h-40 w-full flex items-center justify-center mb-4 overflow-hidden">
         <Image 
           src={product.image} 
           alt={product.title} 
           width={200}
           height={200}
-          className="max-h-full object-contain"
+          className="max-h-full object-contain hover:scale-110 transition-transform duration-500"
         />
       </div>
 
       {/* Product Info */}
       <div className="grow">
-        <h3 className="text-xl font-normal Unbounded my-2 hover:text-(--prim-color) transition-all duration-300 line-clamp-2">
+        <h3 className="text-sm font-bold text-gray-800 my-2 line-clamp-2 Unbounded">
           {product.title}
         </h3>
         
         {/* Rating */}
-        <div className="flex items-center text-yellow-500 text-md">
-          <FaStar size={14} fill="currentColor" className='text-yellow-500 me-1' />
+        <div className="flex items-center text-yellow-500 text-xs mb-2">
+          <FaStar size={12} fill="currentColor" className='me-1' />
           <span>({product.rating})</span>
         </div>
 
         {/* Pricing */}
         <div className="flex items-center gap-2">
           {product.oldPrice && (
-            <span className="text-gray-500 text-sm line-through">${product.oldPrice}</span>
+            <span className="text-gray-400 text-xs line-through">${product.oldPrice}</span>
           )}
-          <span className="text-xl font-semibold">${product.newPrice}</span>
-          <span className="text-gray-500 text-sm">/Qty</span>
+          <span className="text-lg font-bold text-gray-900">${product.newPrice}</span>
+          <span className="text-gray-400 text-[10px]">/Qty</span>
         </div>
       </div>
     </div>
   );
 };
 
-
-export default ProductCard
+export default ProductCard;

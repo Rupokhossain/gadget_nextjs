@@ -6,16 +6,21 @@ import "swiper/css/pagination";
 import Featured from "./Featured";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
+import AOS from "aos";
 
 const SectionFeatured = ({ title, featured }) => {
-  const doubleFeatured = [featured, featured, featured]; 
+  const doubleFeatured = [featured, featured, featured];
 
   for (let i = 0; i < featured.length; i += 5) {
     doubleFeatured.push(featured.slice(i, i + 5));
   }
 
   return (
-    <div className="border border-gray-200 rounded-2xl overflow-hidden bg-white shadow-sm">
+    <div
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      className="border border-gray-200 rounded-2xl overflow-hidden bg-white shadow-sm"
+    >
       {/* Header */}
       <div className="bg-[#E7EEFF] px-5 py-4 relative">
         <h3 className="text-lg font-bold text-[#1e1e1e] relative z-10">
@@ -27,12 +32,13 @@ const SectionFeatured = ({ title, featured }) => {
       {/* Swiper */}
       <div className="p-4">
         <Swiper
-        spaceBetween={10}
+          spaceBetween={10}
           slidesPerView={1}
           loop={true}
-          autoplay={{ 
-            delay: 4000, 
-            disableOnInteraction: false 
+          onSlideChange={() => AOS.refresh()}
+          autoplay={{
+            delay: 4000,
+            disableOnInteraction: false,
           }}
           // pagination={{ clickable: true }}
           modules={[Autoplay]}

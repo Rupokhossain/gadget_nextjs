@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import { FaShoppingCart } from "react-icons/fa";
@@ -6,9 +7,18 @@ import Link from "next/link";
 const Offer = () => {
   return (
     <div className="container mx-auto px-4 pb-10">
-      <div className="relative w-full min-h-[220px] md:h-[300px] bg-[#D6EBE9] rounded-2xl overflow-hidden flex items-center my-8">
+      <div
+        className="relative w-full min-h-[220px] md:h-[300px] bg-[#D6EBE9] rounded-2xl overflow-hidden flex items-center my-8"
+        data-aos="zoom-in"
+        data-aos-duration="1000"
+      >
         {/* Background Image (md+ only) */}
-        <div className="hidden md:block absolute -right-5 -bottom-5 w-1/2 h-[120%] pointer-events-none">
+        <div
+          data-aos="fade-left"
+          data-aos-delay="400"
+          data-aos-duration="1200"
+          className="hidden md:block absolute -right-5 -bottom-5 w-1/2 h-[120%] pointer-events-none"
+        >
           <Image
             src="/assets/images/phone.webp"
             alt="Apple Products"
@@ -19,7 +29,11 @@ const Offer = () => {
         </div>
 
         {/* Content */}
-        <div className="flex flex-col items-center md:items-start text-center md:text-left w-full px-4 md:px-10">
+        <div
+          data-aos="fade-right"
+          data-aos-delay="300"
+          className="flex flex-col items-center md:items-start text-center md:text-left w-full px-4 md:px-10"
+        >
           <h2 className="text-black text-2xl md:text-4xl Merienda">
             Get $50 off on select apple products
           </h2>

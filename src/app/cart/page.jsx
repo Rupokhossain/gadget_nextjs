@@ -1,14 +1,19 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
 import { removeFromCart, addToCart } from "@/redux/cartSlice";
 import { FaStar, FaStore } from "react-icons/fa";
 import Link from "next/link";
+import AOS from "aos";
 
 const CartPage = () => {
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.items);
+
+   useEffect(() => {
+    AOS.refresh();
+  }, [cartItems]);
 
   const subtotal = cartItems.reduce(
     (acc, item) => acc + item.newPrice * item.quantity,
@@ -21,7 +26,7 @@ const CartPage = () => {
     <div className="container mx-auto px-4 xl:px-24 py-10 min-h-screen">
       <div className="flex flex-col lg:flex-row gap-8 items-start">
         {/* Left Section: Cart Items */}
-        <div className="w-full xl:w-2/3">
+        <div className="w-full xl:w-2/3" data-aos="fade-right" data-aos-duration="1000">
           {/* --- 1. DESKTOP VIEW (Table) - Visible on md and up --- */}
           <div className="hidden md:block border border-gray-200 cursor-pointer rounded-xl bg-white shadow-sm overflow-hidden">
             <table className="w-full text-left border-collapse">
@@ -45,9 +50,11 @@ const CartPage = () => {
                 </tr>
               </thead>
               <tbody>
-                {cartItems.map((item) => (
+                {cartItems.map((item, index) => (
                   <tr
                     key={item.id}
+                       data-aos="fade-up"
+                    data-aos-delay={index * 100}
                     className="border-b border-gray-100 hover:bg-gray-50"
                   >
                     <td className="py-6 px-6 flex items-center gap-4">
@@ -108,9 +115,11 @@ const CartPage = () => {
 
           {/* --- 2. MOBILE VIEW (Cards) - Visible only on small screens --- */}
           <div className="md:hidden flex flex-col gap-6">
-            {cartItems.map((item) => (
+            {cartItems.map((item, index) => (
               <div
                 key={item.id}
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
                 className="bg-white border border-gray-200 rounded-xl p-5 shadow-sm space-y-4"
               >
                 {/* Product Image */}
@@ -192,7 +201,7 @@ const CartPage = () => {
         </div>
 
         {/* Right Section: Totals Summary (Always Visible) */}
-        <div className="w-full lg:w-1/3 lg:sticky lg:top-24 h-fit">
+        <div className="w-full lg:w-1/3 lg:sticky lg:top-24 h-fit" data-aos="fade-left" data-aos-duration="1000">
           <div className="bg-[#DEE5FF] p-8 rounded-2xl space-y-5 shadow border border-gray-100">
             <h3 className="text-xl font-bold mb-4">Cart Totals</h3>
             <div className="space-y-3 text-gray-700 font-medium text-lg">

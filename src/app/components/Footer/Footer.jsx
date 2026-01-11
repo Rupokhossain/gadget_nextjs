@@ -1,3 +1,4 @@
+"use client";
 import Image from 'next/image';
 import React from 'react';
 import { LuMapPin } from "react-icons/lu";
@@ -65,7 +66,7 @@ const Footer = () => {
 
           {/* Dynamic Links Columns */}
           {footerLinks.map((section, idx) => (
-            <div key={idx}>
+            <div key={idx} data-aos="fade-up" data-aos-delay={idx * 150} data-aos-duration="1000">
               <h3 className="Unbounded text-xl mb-3">
                 {section.title}
               </h3>
@@ -85,7 +86,7 @@ const Footer = () => {
       </div>
 
       {/* Bottom Copyright Bar */}
-      <div className="bg-[#DEE5FF] py-6">
+      <div className="bg-[#DEE5FF] py-6" data-aos="fade-up" data-aos-offset="0">
         <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className=" text-lg">
             ©2025. All Rights Reserved By <span className="font-bold">Siam Ahmed</span>

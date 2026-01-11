@@ -24,7 +24,7 @@ const ProductActions = ({ product }) => {
         onClick={() => dispatch(toggleWishlist(product))}
          className="flex-1 bg-blue-50 text-blue-600 hover:bg-blue-100 py-4 rounded-2xl font-bold flex items-center justify-center gap-2 transition-all cursor-pointer"
       >
-        {isWishlisted ? <FaHeart className="text-red-500" /> : <FaRegHeart />}
+        {isWishlisted ? <FaHeart className="text-indigo-500" /> : <FaRegHeart />}
         Wishlist
       </button>
     </div>

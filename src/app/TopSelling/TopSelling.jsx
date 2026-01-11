@@ -1,10 +1,10 @@
-"use client"; 
+"use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { CiHeart, CiShoppingCart } from "react-icons/ci";
-import { FaStar, FaStore, FaHeart } from "react-icons/fa"; 
-import { useDispatch, useSelector } from "react-redux"; 
+import { FaStar, FaStore, FaHeart } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "@/redux/cartSlice";
 import { toggleWishlist } from "@/redux/wishlistSlice";
 import SectionHeading from "../components/Shared/SectionHeading";
@@ -16,7 +16,7 @@ const TopSelling = () => {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const res = await fetch("http://localhost:3000/products.json");
+      const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/products.json`);
       const data = await res.json();
       setProducts(data.products || []);
     };
@@ -24,28 +24,29 @@ const TopSelling = () => {
   }, []);
 
   return (
-    <div className="py-12">
+    <div className="py-12 overflow-hidden">
       <div className="container mx-auto px-4 ">
-
         <div>
           <SectionHeading heading="Top Selling Items"></SectionHeading>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-          {products.map((p) => {
+          {products.map((p, index) => {
             const isWishlisted = wishlistItems.some((item) => item.id === p.id);
             return (
               <div
                 key={p?.id}
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
+                data-aos-duration="800"
                 className="bg-white border border-gray-200 hover:shadow-lg rounded-xl p-4 relative transition-all duration-300 flex flex-col h-full group"
               >
-
                 <button
                   onClick={() => dispatch(toggleWishlist(p))}
                   className="absolute top-2 left-2 w-10 h-10 rounded-full cursor-pointer bg-[#a9baf93d] text-[#4B70F5] flex justify-center items-center hover:bg-[#4B70F5] hover:text-white transition-all duration-300 z-10"
                 >
                   {isWishlisted ? (
-                    <FaHeart className="text-red-500 text-lg" />
+                    <FaHeart className="text-indigo-500 text-lg" />
                   ) : (
                     <CiHeart className="text-xl" />
                   )}
@@ -55,13 +56,14 @@ const TopSelling = () => {
                 {p?.badge && (
                   <div
                     className={`absolute top-0 right-0 px-4 py-1.5 text-xs font-bold text-white rounded-bl-2xl rounded-tr-xl shadow-md z-10 ${
-                      p.badgeType === "discount" ? "bg-red-500" : "bg-yellow-400"
+                      p.badgeType === "discount"
+                        ? "bg-red-500"
+                        : "bg-yellow-400"
                     }`}
                   >
                     {p?.badge}
                   </div>
                 )}
-
 
                 <Link href={`/TopSelling/${p?.id}`} className="grow">
                   <div className="relative flex justify-center items-center w-full h-48 overflow-hidden">
@@ -98,7 +100,9 @@ const TopSelling = () => {
                     <div className="flex flex-col gap-1">
                       <div className="flex items-center text-yellow-400 text-base">
                         <FaStar fill="currentColor" />
-                        <span className="ml-1 text-gray-400">({p?.rating})</span>
+                        <span className="ml-1 text-gray-400">
+                          ({p?.rating})
+                        </span>
                       </div>
                       <p className="text-base font-medium text-gray-600 Unbounded">
                         Sold: <span>{p?.soldCount}</span>

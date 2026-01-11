@@ -10,18 +10,18 @@ const page = () => {
       <div className="container mx-auto px-4 lg:px-24 font-sans ">
         <div className="flex flex-col lg:flex-row justify-between items-start gap-5 ">
           {/* LEFT SECTION: Contact Form */}
-          <div className="w-full lg:w-1/1 gap-3 border border-gray-300 p-6 rounded-lg hover:border-(--prim-color) cursor-pointer">
-            <h2 className="Unbounded text-xl mb-10">
-              Make Custom Request
-            </h2>
+          <div
+            data-aos="fade-right"
+            data-aos-duration="1000"
+            className="w-full lg:w-1/1 gap-3 border border-gray-300 p-6 rounded-lg hover:border-(--prim-color) cursor-pointer transition-all duration-300"
+          >
+            <h2 className="Unbounded text-xl mb-10">Make Custom Request</h2>
 
             <form className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Full Name */}
                 <div className="space-y-2">
-                  <label className="Unbounded">
-                    Full Name
-                  </label>
+                  <label className="Unbounded">Full Name</label>
                   <input
                     type="text"
                     placeholder="First Name"
@@ -31,9 +31,7 @@ const page = () => {
 
                 {/* Email */}
                 <div className="space-y-2">
-                  <label className="Unbounded">
-                    Email Address
-                  </label>
+                  <label className="Unbounded">Email Address</label>
                   <input
                     type="email"
                     placeholder="Email Address"
@@ -43,9 +41,7 @@ const page = () => {
 
                 {/* Phone Number */}
                 <div className="space-y-2">
-                  <label className="Unbounded">
-                    Phone Number
-                  </label>
+                  <label className="Unbounded">Phone Number</label>
                   <input
                     type="text"
                     placeholder="Phone Number"
@@ -55,9 +51,7 @@ const page = () => {
 
                 {/* Subject */}
                 <div className="space-y-2">
-                  <label className="Unbounded">
-                    Subject
-                  </label>
+                  <label className="Unbounded">Subject</label>
                   <input
                     type="text"
                     placeholder="Subject"
@@ -68,9 +62,7 @@ const page = () => {
 
               {/* Message */}
               <div className="space-y-2">
-                <label className="Unbounded">
-                  Message
-                </label>
+                <label className="Unbounded">Message</label>
                 <textarea
                   rows="5"
                   placeholder="Type your Message"
@@ -89,16 +81,18 @@ const page = () => {
           </div>
 
           {/* RIGHT SECTION: Contact Info */}
-          <div className="w-full lg:w-1/3 lg:sticky lg:top-48 bg-white p-8 rounded-lg border border-gray-300 shadow-sm space-y-8">
-            <h2 className="Unbounded text-xl mb-10">
-              Get In Touch
-            </h2>
+          <div
+            data-aos="fade-left"
+            data-aos-duration="1000"
+            className="w-full lg:w-1/3 lg:sticky lg:top-48 bg-white p-8 rounded-lg border border-gray-300 shadow-sm space-y-8 hover:border-(--prim-color) cursor-pointer transition-all duration-300"
+          >
+            <h2 className="Unbounded text-xl mb-10">Get In Touch</h2>
 
             <div className="flex flex-col gap-6">
               {/* Phone */}
-              <div className="flex items-center gap-3 group">
-                <div className="w-12 h-12 rounded-full border-2 border-blue-500 p-2 flex items-center justify-center text-blue-500 transition-all duration-300">
-                  <FiPhone className="text-xl text-blue-500"/>
+              <div className="flex items-center gap-4">
+                <div className="border-2 border-blue-500 p-3 rounded-full text-blue-500">
+                  <FiPhone size={18} />
                 </div>
                 <span className="text-blue-600 font-semibold cursor-pointer hover:underline text-lg">
                   +00 123 456 789
@@ -106,9 +100,9 @@ const page = () => {
               </div>
 
               {/* Email */}
-              <div className="flex items-center gap-3 group">
-                <div className="w-12 h-12 rounded-full border-2 border-blue-500 p-2 flex items-center justify-center text-blue-500 transition-all duration-300">
-                  <GoMail className="text-xl text-blue-500" />
+              <div className="flex items-center gap-4">
+                <div className="border-2 border-blue-500 p-3 rounded-full text-blue-500">
+                  <GoMail size={18} />
                 </div>
                 <span className="text-blue-600 font-semibold cursor-pointer hover:underline text-lg">
                   Example@site.com
@@ -116,12 +110,12 @@ const page = () => {
               </div>
 
               {/* Location */}
-              <div className="flex items-center gap-3 group">
-                <div className="w-12 h-12 rounded-full border-2 border-blue-500 p-2 flex items-center justify-center text-blue-500 transition-all duration-300">
-                  <LuMapPin className="text-xl text-blue-500" />
+              <div className="flex items-center gap-4">
+                <div className="border-2 border-blue-500 p-3 rounded-full text-blue-500">
+                  <LuMapPin size={18} />
                 </div>
-                <span className="text-blue-600 font-semibold text-lg leading-tight">
-                  789 inner lane, california, USA
+                <span className="text-blue-600 font-semibold cursor-pointer hover:underline text-lg">
+                  789 Inner Lane, Biyes park, California
                 </span>
               </div>
             </div>

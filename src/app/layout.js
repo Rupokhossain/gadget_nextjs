@@ -4,6 +4,7 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import { Providers } from "@/redux/Providers";
 import ServiceFeatures from "./homeComponents/ServiceFeatures";
+import AosInit from "./components/AosInit";
 
 const unbounded = Unbounded({
   variable: "--font-unbounded",
@@ -32,12 +33,16 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${unbounded.variable} ${merienda.variable} antialiased`}
       >
         <Providers>
+
+        <AosInit></AosInit>
+
           <Header></Header>
           {children}
           <ServiceFeatures></ServiceFeatures>

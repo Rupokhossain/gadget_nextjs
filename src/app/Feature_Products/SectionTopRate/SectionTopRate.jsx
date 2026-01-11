@@ -7,6 +7,7 @@ import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import TopRate from "./TopRate";
+import AOS from "aos";
 
 const SectionTopRate = ({ title, topRated }) => {
   const doubletopRated = [topRated, topRated, topRated];
@@ -16,7 +17,12 @@ const SectionTopRate = ({ title, topRated }) => {
   }
 
   return (
-    <div className="border border-gray-200 rounded-2xl overflow-hidden bg-white shadow-sm">
+    <div
+      data-aos="fade-up"
+      data-aos-delay="300"
+      data-aos-duration="1000"
+      className="border border-gray-200 rounded-2xl overflow-hidden bg-white shadow-sm"
+    >
       {/* Header */}
       <div className="bg-[#E7EEFF] px-5 py-4 relative">
         <h3 className="text-lg font-bold text-[#1e1e1e] relative z-10">
@@ -31,6 +37,7 @@ const SectionTopRate = ({ title, topRated }) => {
           spaceBetween={10}
           slidesPerView={1}
           loop={true}
+          onSlideChange={() => AOS.refresh()}
           autoplay={{
             delay: 4000,
             disableOnInteraction: false,

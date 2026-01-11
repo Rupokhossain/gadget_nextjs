@@ -1,15 +1,16 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
-import {
-  CiCalendar,
-  CiCircleChevLeft,
-  CiLock
-} from "react-icons/ci";
+import { useEffect, useState } from "react";
+import { CiCalendar, CiCircleChevLeft, CiLock } from "react-icons/ci";
+import AOS from "aos";
 
 const Page = () => {
   const [selectedPostId, setSelectedPostId] = useState(null);
+
+  useEffect(() => {
+    AOS.refresh();
+  }, [selectedPostId]);
 
   const mainPosts = [
     {
@@ -95,9 +96,11 @@ const Page = () => {
                 <CiCircleChevLeft size={24} /> Show All Posts
               </button>
             )}
-            {displayedPosts.map((post) => (
+            {displayedPosts.map((post, index) => (
               <div
                 key={post.id}
+                data-aos="fade-up"
+                data-aos-delay={index * 150}
                 className="group cursor-pointer bg-white p-5 rounded-xl shadow-sm border border-gray-100"
               >
                 <div className="relative w-full aspect-video overflow-hidden rounded-lg mb-6 shadow-sm">
@@ -111,7 +114,9 @@ const Page = () => {
                 </div>
 
                 <div className="space-y-4 px-2">
-                  <p className="bg-[#E6F9EF] md:p-3 mb-2 rounded-md text-2xl font-bold Unbounded">
+                  <p
+                    className="bg-[#E6F9EF] md:p-3 mb-2 rounded-md text-2xl font-medium inline-block Unbounded"
+                  >
                     {post?.category}
                   </p>
 
@@ -136,19 +141,21 @@ const Page = () => {
                     </div>
                   </div>
                 </div>
-
-
               </div>
             ))}
           </div>
 
           {/* RIGHT SECTION */}
-          <aside className="w-full lg:w-1/3 lg:sticky lg:top-48 self-start h-fit">
+          <aside
+            data-aos="fade-left"
+            data-aos-duration="1000"
+            className="w-full lg:w-1/3 lg:sticky lg:top-48 self-start h-fit"
+          >
             <div className="shadow-sm border border-gray-200 rounded">
               <h3 className="border-b border-gray-300 Unbounded text-2xl p-5">
                 Recent Posts
               </h3>
-              <div className="p-6 flex flex-col gap-8">
+              <div className="p-6 flex flex-col gap-4">
                 {recentPosts.map((post) => (
                   <div
                     key={post.id}
@@ -158,18 +165,18 @@ const Page = () => {
                     }}
                     className="flex flex-col md:flex-row justify-between items-center mb-5 gap-5 cursor-pointer"
                   >
-                    <div className="md:w-1/2 w-full">
+                    <div className="md:w-1/2 w-full ">
                       <Image
                         src={post.image}
                         alt={post.title}
                         width={200}
                         height={110}
-                        className="md:object-cover w-full group-hover:scale-110 transition-transform duration-500"
+                        className="md:object-cover rounded-md w-full group-hover:scale-110 transition-transform duration-500"
                       />
                     </div>
                     <div className="md:w-1/2 w-full flex flex-col gap-2">
                       <h4
-                        className={`xl:text-lg text-sm transition-all Unbounded hover:text-var(--prim-color)] hover:underline duration-300 ${
+                        className={`xl:text-base text-sm font-medium transition-all Unbounded hover:text-(--prim-color) hover:underline duration-300 ${
                           selectedPostId === post.id
                             ? "text-blue-600 Unbounded"
                             : "group-hover:text-(--prim-color) Unbounded"

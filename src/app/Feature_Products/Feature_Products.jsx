@@ -6,16 +6,16 @@ import SectionTopRate from './SectionTopRate/SectionTopRate';
 
 const Feature_Products =async() => {
       // fetch 
-  const res = await fetch("http://localhost:3000/featured.json", {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/featured.json`, {
     cache: "no-store",
   });
-  const res1 = await fetch("http://localhost:3000/onSale.json", {
+  const res1 = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/onSale.json`, {
     cache: "no-store",
   });
-  const res2 = await fetch("http://localhost:3000/topRated.json", {
+  const res2 = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/topRated.json`, {
     cache: "no-store",
   });
-  const res3 = await fetch("http://localhost:3000/topSelling.json", {
+  const res3 = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/topSelling.json`, {
     cache: "no-store",
   });
 

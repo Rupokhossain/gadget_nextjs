@@ -1,5 +1,7 @@
+"use client";
 import Link from "next/link";
 import React from "react";
+import { IoMdArrowForward } from "react-icons/io";
 
 const PromoBannerSection = () => {
   const promoData = [
@@ -8,12 +10,14 @@ const PromoBannerSection = () => {
       badge: "Best Offer",
       title: "up to 30% off on headphone",
       imageUrl: "/assets/images/offer-img1.webp",
+      animation: "fade-right"
     },
     {
       id: 2,
       badge: "Game Zone",
       title: "dualsense wireless controller",
       imageUrl: "/assets/images/offer-img2.webp",
+      animation: "fade-left"
     },
   ];
 
@@ -23,6 +27,9 @@ const PromoBannerSection = () => {
         {promoData.map((item, index) => (
           <div
             key={index}
+            data-aos={item.animation}
+            data-aos-duration="1000"
+            data-aos-delay={index * 100}
             className="relative h-75 rounded-lg overflow-hidden w-full bg-no-repeat bg-cover bg-center"
             style={{ backgroundImage: `url(${item?.imageUrl})` }}
           >
@@ -37,10 +44,12 @@ const PromoBannerSection = () => {
               </h2>
 
               <Link href="/shops">
-                <button className="px-5 py-3 rounded-full text-white font-bold mt-2 bg-black hover:bg-white hover:text-black transition-all duration-300 cursor-pointer">
-                  Shop Now
-                  <span className="text-xl pl-2">→</span>
-                </button>
+                <div className="flex items-center justify-end mt-2">
+                  <button className="flex items-center px-5 py-3 rounded-full text-white font-bold mt-2 bg-black hover:bg-white hover:text-black transition-all duration-300 cursor-pointer">
+                    Shop Now
+                    <IoMdArrowForward className="text-2xl pl-2" />
+                  </button>
+                </div>
               </Link>
             </div>
           </div>

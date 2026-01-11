@@ -14,6 +14,8 @@ import { CiHeart } from "react-icons/ci";
 import { toggleWishlist } from "@/redux/wishlistSlice";
 import { addToCart } from "@/redux/cartSlice";
 
+import AOS from "aos";
+
 const HotDeals = ({ phones }) => {
   const dispatch = useDispatch();
 
@@ -26,7 +28,11 @@ const HotDeals = ({ phones }) => {
 
       <div className="flex flex-col lg:flex-row gap-6">
         {/* --- LEFT SIDE: Promo Banner (w-1/3 on lg) --- */}
-        <div className="w-full lg:w-1/3 p-10 rounded-2xl bg-[#4b70f5] flex flex-col justify-center items-center text-center">
+        <div
+          data-aos="fade-right"
+          data-aos-duration="1000"
+          className="w-full lg:w-1/3 p-10 rounded-2xl bg-[#4b70f5] flex flex-col justify-center items-center text-center"
+        >
           <div>
             <Image
               src="/assets/images/hot-deals-img.webp"
@@ -51,12 +57,17 @@ const HotDeals = ({ phones }) => {
         </div>
 
         {/* --- RIGHT SIDE: Swiper Slider (w-2/3 on lg) --- */}
-        <div className="w-full lg:w-2/3 overflow-hidden">
+        <div
+          className="w-full lg:w-2/3 overflow-hidden"
+          data-aos="fade-left"
+          data-aos-duration="1000"
+        >
           <Swiper
             modules={[Autoplay, Navigation]}
             spaceBetween={20}
             slidesPerView={1}
             autoplay={{ delay: 3000 }}
+            onSlideChange={() => AOS.refresh()}
             breakpoints={{
               320: { slidesPerView: 1 },
               640: { slidesPerView: 2 },
@@ -79,7 +90,7 @@ const HotDeals = ({ phones }) => {
                         className="absolute top-2 left-2 w-10 h-10 rounded-full cursor-pointer bg-[#a9baf93d] text-[#4B70F5] flex justify-center items-center hover:bg-[#4B70F5] hover:text-white transition-all duration-300 z-10"
                       >
                         {isWishlisted ? (
-                          <FaHeart className="text-red-500 text-lg" />
+                          <FaHeart className="text-indigo-500 text-lg" />
                         ) : (
                           <CiHeart className="text-xl" />
                         )}

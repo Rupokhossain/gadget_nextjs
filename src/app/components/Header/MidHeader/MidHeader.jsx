@@ -9,7 +9,7 @@ import { useSelector } from "react-redux";
 const MidHeader = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const { data: session } = useSession();
-  // ডেক্সটপ এবং মোবাইল এর জন্য আলাদা রিফ (Ref) নেওয়া হয়েছে
+  
   const desktopRef = useRef(null);
   const mobileRef = useRef(null);
 
@@ -18,13 +18,11 @@ const MidHeader = () => {
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      // চেক করা হচ্ছে ক্লিক কি ডেক্সটপ মেনু অথবা মোবাইল মেনুর বাইরে হয়েছে কি না
       const clickedOutsideDesktop =
         desktopRef.current && !desktopRef.current.contains(event.target);
       const clickedOutsideMobile =
         mobileRef.current && !mobileRef.current.contains(event.target);
 
-      // যদি দুটি রিফেরই বাইরে ক্লিক পড়ে, তবে মেনু বন্ধ হবে
       if (clickedOutsideDesktop && clickedOutsideMobile) {
         setIsDropdownOpen(false);
       }

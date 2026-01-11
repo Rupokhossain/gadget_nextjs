@@ -14,7 +14,7 @@ import NewArrival from "./homeComponents/NewArrival";
 
 const page = async () => {
   // fetch category
-  const res = await fetch("http://localhost:3000/category.json", {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/category.json`, {
     cache: "no-store",
   });
 

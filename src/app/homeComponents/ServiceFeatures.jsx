@@ -1,7 +1,7 @@
-import React from 'react';
-import { FaHeadphones, FaTruck } from 'react-icons/fa';
-import { MdMessage, MdRotate90DegreesCcw } from 'react-icons/md';
-
+"use client";
+import React from "react";
+import { FaHeadphones, FaTruck } from "react-icons/fa";
+import { MdMessage, MdRotate90DegreesCcw } from "react-icons/md";
 
 const ServiceFeatures = () => {
   const features = [
@@ -31,8 +31,11 @@ const ServiceFeatures = () => {
     <div className="container mx-auto px-4 pb-10">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {features.map((item, index) => (
-          <div 
-            key={index} 
+          <div
+            key={index}
+            data-aos="fade-up"
+            data-aos-delay={index * 100}
+            data-aos-duration="800"
             className="bg-[#DEE5FF] p-6 rounded-xl flex items-center gap-4 hover:shadow-md transition-shadow duration-300 cursor-pointer"
           >
             {/* Icon Wrapper */}
@@ -45,9 +48,7 @@ const ServiceFeatures = () => {
               <h4 className="font-semibold Unbounded text-base">
                 {item.title}
               </h4>
-              <p className="text-gray-700">
-                {item.desc}
-              </p>
+              <p className="text-gray-700">{item.desc}</p>
             </div>
           </div>
         ))}

@@ -53,12 +53,21 @@ const BestSell = () => {
           {/* Left Section: Small Product Cards */}
           <div className="lg:col-span-9 grid grid-cols-1 md:grid-cols-2 gap-4">
             {sellItems.map((item, index) => (
-              <SellGrid key={index} {...item} />
+              <SellGrid
+                key={index}
+                {...item}
+                index={index}
+
+              />
             ))}
           </div>
 
           {/* Right Section: Featured Gamepad Card */}
-          <div className="lg:col-span-3 border border-gray-200 rounded-xl p-8 bg-white flex flex-col items-center justify-center text-center">
+          <div
+            data-aos="fade-left"
+            data-aos-duration="1000"
+            className="lg:col-span-3 border border-gray-200 rounded-xl p-8 bg-white flex flex-col items-center justify-center text-center"
+          >
             <Image
               src="/assets/images/special-snacks-img.webp"
               alt="Gamepad"

@@ -67,10 +67,10 @@ const Hero = () => {
           {sliderData.map((slide) => (
             <SwiperSlide key={slide.id}>
               <div
-                className="relative w-full h-full flex items-center bg-cover bg-center bg-no-repeat transition-transform duration-700"
+                className="relative w-full h-full flex items-center bg-cover bg-center bg-no-repeat transition-transform duration-700" data-aos="zoom-out-left"
                 style={{ backgroundImage: `url(${slide.bgImage})` }}
               >
-                <div className="px-10 md:px-20 lg:px-24 z-10 w-full lg:w-[60%]">
+                <div className="px-10 md:px-20 lg:px-24 z-10 w-full lg:w-[60%]" data-aos="fade-right">
                   <h1 className="Merienda text-2xl lg:text-[3.6rem] font-bold leading-tight">
                     {slide.title} <br />
                     <span className="bg-(--prim-color) px-3 rounded-2xl text-white inline-block mt-1">
@@ -83,7 +83,7 @@ const Hero = () => {
                     {slide.description}
                   </p>
 
-                  <Link href={slide.link}>
+                  <Link href={`/shops/${slide.link}`}>
                     <button className="px-6 py-3.5 flex items-center rounded-full text-white font-bold mt-2 bg-(--prim-color) border-2 border-(--prim-color) hover:bg-white hover:text-(--prim-color) transition-all duration-300 cursor-pointer shadow-md">
                       Shop Now
                       <CiShoppingCart className="ms-3 text-2xl font-bold" />
