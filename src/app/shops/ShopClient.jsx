@@ -5,14 +5,12 @@ import { CiHeart, CiShoppingCart } from "react-icons/ci";
 import { FaStar, FaStore, FaShoppingCart, FaHeart } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
-import { useDispatch, useSelector } from "react-redux";
-import { toggleWishlist } from "@/redux/wishlistSlice";
-import { addToCart } from "@/redux/cartSlice";
+import { useSelector } from "react-redux";
 import AOS from "aos";
 import { useProductActions } from "@/hooks/useProductActions";
 
 const ShopClient = ({ initialShops }) => {
-  const dispatch = useDispatch();
+
   const wishlistItems = useSelector((state) => state.wishlist.items);
 
   const [priceRange, setPriceRange] = useState(1500);

@@ -2,8 +2,6 @@ import ProductActions from "@/app/TopSelling/ProductActions";
 import Image from "next/image";
 import React from "react";
 import {
-  FaRegHeart,
-  FaShoppingCart,
   FaStar,
   FaTruck,
   FaUndoAlt,
