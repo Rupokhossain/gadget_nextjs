@@ -6,7 +6,7 @@ import { IoCallOutline, IoMenu, IoClose } from "react-icons/io5";
 
 const BottomHeader = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const pathname = usePathname(); 
+  const pathname = usePathname();
 
   const navLinks = [
     { name: "Home", href: "/" },
@@ -19,19 +19,18 @@ const BottomHeader = () => {
     <div className="shadow relative bg-white border-b border-gray-100">
       <div className="container mx-auto px-4 lg:px-24">
         <div className="flex items-center justify-between h-14">
-          
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-6 lg:space-x-10">
             {navLinks.map((link) => {
-              const isActive = pathname === link.href; 
+              const isActive = pathname === link.href;
               return (
                 <Link
                   key={link.name}
                   href={link.href}
                   className={`uppercase font-semibold transition text-sm tracking-wide ${
-                    isActive 
-                      ? "text-[#4B70F5]" 
-                      : "text-[#162726] hover:text-[#07a698]" 
+                    isActive
+                      ? "text-[#4B70F5]"
+                      : "text-[#162726] hover:text-[#07a698]"
                   }`}
                 >
                   {link.name}
@@ -50,7 +49,12 @@ const BottomHeader = () => {
 
           {/* Mobile Menu Dropdown */}
           {menuOpen && (
-            <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-lg z-50 border-t border-gray-200 py-6 px-6 flex flex-col gap-5">
+            <div
+              data-aos="fade-down"
+              data-aos-delay={index * 200}
+              data-aos-duration="1000"
+              className="md:hidden absolute top-full left-0 w-full bg-white shadow-lg z-50 border-t border-gray-200 py-6 px-6 flex flex-col gap-5"
+            >
               {navLinks.map((link) => {
                 const isActive = pathname === link.href;
                 return (
@@ -58,8 +62,8 @@ const BottomHeader = () => {
                     key={link.name}
                     href={link.href}
                     className={`uppercase font-semibold transition text-sm ${
-                      isActive 
-                        ? "text-[#4B70F5]" 
+                      isActive
+                        ? "text-[#4B70F5]"
                         : "text-[#162726] hover:text-[#07a698]"
                     }`}
                     onClick={() => setMenuOpen(false)}
