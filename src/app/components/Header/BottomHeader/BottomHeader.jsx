@@ -49,18 +49,16 @@ const BottomHeader = () => {
 
           {/* Mobile Menu Dropdown */}
           {menuOpen && (
-            <div
-              data-aos="fade-down"
-              data-aos-delay={index * 200}
-              data-aos-duration="1000"
-              className="md:hidden absolute top-full left-0 w-full bg-white shadow-lg z-50 border-t border-gray-200 py-6 px-6 flex flex-col gap-5"
-            >
-              {navLinks.map((link) => {
+            <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-lg z-50 border-t border-gray-200 py-6 px-6 flex flex-col gap-5">
+              {navLinks.map((link, index) => {
                 const isActive = pathname === link.href;
                 return (
                   <Link
                     key={link.name}
                     href={link.href}
+                    data-aos="fade-down"
+                    data-aos-delay={index * 200}
+                    data-aos-duration="1000"
                     className={`uppercase font-semibold transition text-sm ${
                       isActive
                         ? "text-[#4B70F5]"
