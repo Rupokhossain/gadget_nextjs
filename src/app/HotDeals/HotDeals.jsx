@@ -9,10 +9,8 @@ import "swiper/css";
 import "swiper/css/navigation";
 import SectionHeading from "../components/Shared/SectionHeading";
 import Link from "next/link";
-import { useDispatch, useSelector } from "react-redux";
 import { CiHeart } from "react-icons/ci";
-import { toggleWishlist } from "@/redux/wishlistSlice";
-import { addToCart } from "@/redux/cartSlice";
+
 
 import AOS from "aos";
 import { useProductActions } from "@/hooks/useProductActions";
