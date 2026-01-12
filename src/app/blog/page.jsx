@@ -96,11 +96,12 @@ const Page = () => {
                 <CiCircleChevLeft size={24} /> Show All Posts
               </button>
             )}
-            {displayedPosts.map((post, index) => (
+            {displayedPosts.map((post) => (
               <div
                 key={post.id}
-                data-aos="fade-up"
-                data-aos-delay={index * 150}
+                data-aos="fade-up-right"
+                data-aos-duration="1000"
+                data-aos-once="true"
                 className="group cursor-pointer bg-white p-5 rounded-xl shadow-sm border border-gray-100"
               >
                 <div className="relative w-full aspect-video overflow-hidden rounded-lg mb-6 shadow-sm">
@@ -114,9 +115,7 @@ const Page = () => {
                 </div>
 
                 <div className="space-y-4 px-2">
-                  <p
-                    className="bg-[#E6F9EF] md:p-3 mb-2 rounded-md text-2xl font-medium inline-block Unbounded"
-                  >
+                  <p className="bg-[#E6F9EF] md:p-3 mb-2 rounded-md text-2xl font-medium inline-block Unbounded">
                     {post?.category}
                   </p>
 
@@ -147,8 +146,9 @@ const Page = () => {
 
           {/* RIGHT SECTION */}
           <aside
-            data-aos="fade-left"
+            data-aos="fade-up-left"
             data-aos-duration="1000"
+            data-aos-once="true"
             className="w-full lg:w-1/3 lg:sticky lg:top-48 self-start h-fit"
           >
             <div className="shadow-sm border border-gray-200 rounded">

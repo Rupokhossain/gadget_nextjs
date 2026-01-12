@@ -5,7 +5,7 @@ import { signIn } from "next-auth/react";
 
 export default function LoginPage() {
   return (
-    <div className="lg:py-40 md:py-24 py-16 flex items-center justify-center px-4 relative overflow-hidden">
+    <div data-aos="zoom-in" className="lg:py-40 md:py-24 py-16 flex items-center justify-center px-4 relative overflow-hidden">
       
 
       {/* Card */}

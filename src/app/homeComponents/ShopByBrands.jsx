@@ -24,7 +24,6 @@ const ShopByBrands = () => {
         {/* Title */}
         <h2
           data-aos="zoom-in"
-          data-aos-delay="200"
           className="text-xl md:text-4xl lg:text-5xl Unbounded mb-8"
         >
           Shop by Brands.

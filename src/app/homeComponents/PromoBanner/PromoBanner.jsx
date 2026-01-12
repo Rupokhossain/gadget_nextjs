@@ -10,14 +10,14 @@ const PromoBannerSection = () => {
       badge: "Best Offer",
       title: "up to 30% off on headphone",
       imageUrl: "/assets/images/offer-img1.webp",
-      animation: "fade-right"
+      animation: "fade-up-right"
     },
     {
       id: 2,
       badge: "Game Zone",
       title: "dualsense wireless controller",
       imageUrl: "/assets/images/offer-img2.webp",
-      animation: "fade-left"
+      animation: "fade-up-left"
     },
   ];
 
@@ -29,7 +29,6 @@ const PromoBannerSection = () => {
             key={index}
             data-aos={item.animation}
             data-aos-duration="1000"
-            data-aos-delay={index * 100}
             className="relative h-75 rounded-lg overflow-hidden w-full bg-no-repeat bg-cover bg-center"
             style={{ backgroundImage: `url(${item?.imageUrl})` }}
           >

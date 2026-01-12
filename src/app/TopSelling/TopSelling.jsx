@@ -4,24 +4,26 @@ import Image from "next/image";
 import Link from "next/link";
 import { CiHeart, CiShoppingCart } from "react-icons/ci";
 import { FaStar, FaStore, FaHeart } from "react-icons/fa";
-import { useDispatch, useSelector } from "react-redux";
-import { addToCart } from "@/redux/cartSlice";
-import { toggleWishlist } from "@/redux/wishlistSlice";
+import { useSelector } from "react-redux";
 import SectionHeading from "../components/Shared/SectionHeading";
+import { useProductActions } from "@/hooks/useProductActions";
 
 const TopSelling = () => {
   const [products, setProducts] = useState([]);
-  const dispatch = useDispatch();
   const wishlistItems = useSelector((state) => state.wishlist.items);
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/products.json`);
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_BASE_URL}/products.json`
+      );
       const data = await res.json();
       setProducts(data.products || []);
     };
     fetchProducts();
   }, []);
+
+  const { handleAddToCart, handleWishlistAction } = useProductActions();
 
   return (
     <div className="py-12 overflow-hidden">
@@ -31,19 +33,18 @@ const TopSelling = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-          {products.map((p, index) => {
+          {products.map((p) => {
             const isWishlisted = wishlistItems.some((item) => item.id === p.id);
             return (
               <div
                 key={p?.id}
                 data-aos="fade-up"
-                data-aos-delay={index * 100}
                 data-aos-duration="800"
                 className="bg-white border border-gray-200 hover:shadow-lg rounded-xl p-4 relative transition-all duration-300 flex flex-col h-full group"
               >
                 <button
-                  onClick={() => dispatch(toggleWishlist(p))}
-                  className="absolute top-2 left-2 w-10 h-10 rounded-full cursor-pointer bg-[#a9baf93d] text-[#4B70F5] flex justify-center items-center hover:bg-[#4B70F5] hover:text-white transition-all duration-300 z-10"
+                  onClick={() => handleWishlistAction(p)}
+                  className="absolute top-2 left-2 w-10 h-10 rounded-full cursor-pointer bg-[#a9baf93d] text-[#4B70F5] flex justify-center items-center transition-all duration-300 z-10"
                 >
                   {isWishlisted ? (
                     <FaHeart className="text-indigo-500 text-lg" />
@@ -112,7 +113,7 @@ const TopSelling = () => {
                 </Link>
 
                 <button
-                  onClick={() => dispatch(addToCart(p))}
+                  onClick={() => handleAddToCart(p)}
                   className="w-full mt-4 flex items-center justify-center gap-2 px-4 py-2.5 text-base font-semibold text-[#4B70F5] bg-[#DEE5FF] rounded-lg hover:bg-[#4B70F5] hover:text-white transition-all cursor-pointer"
                 >
                   Add To Cart <CiShoppingCart size={20} />

@@ -79,14 +79,14 @@ const CheckoutPage = () => {
     <div className="container mx-auto px-4 lg:px-24 py-10 bg-white min-h-screen">
  
       {error && (
-        <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-6 text-center font-bold sticky top-0 z-50">
+        <div data-aos="fade-up" className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-6 text-center font-bold sticky top-0 z-50">
           {error}
         </div>
       )}
 
       <div className="flex flex-col lg:flex-row gap-8">
         {/* LEFT SECTION */}
-        <div className="lg:w-2/3 w-full flex flex-col gap-6 border border-gray-200 rounded-xl p-6 lg:p-8">
+        <div data-aos="fade-right" className="lg:w-2/3 w-full flex flex-col gap-6 border border-gray-200 rounded-xl p-6 lg:p-8">
           <section className="space-y-4">
             <h2 className="text-2xl Unbounded ">Contact</h2>
             <input
@@ -236,7 +236,7 @@ const CheckoutPage = () => {
         </div>
 
         {/* RIGHT SECTION: Order Summary */}
-        <div className="w-full lg:w-1/3 lg:sticky lg:top-24 self-start h-fit">
+        <div data-aos="fade-left" className="w-full lg:w-1/3 lg:sticky lg:top-24 self-start h-fit">
           <div className="border border-gray-200 rounded-xl p-6 lg:p-8 bg-white shadow-sm">
             <div className="flex items-center gap-2 text-xl font-bold mb-6 text-gray-800">
               <FaShoppingCart className="text-blue-600" /> Order Summary

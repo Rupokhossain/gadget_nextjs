@@ -3,11 +3,11 @@
 import Image from "next/image";
 import React from "react";
 import { CiShoppingCart } from "react-icons/ci";
-import { useDispatch } from "react-redux";
-import { addToCart } from "@/redux/cartSlice";
+
+import { useProductActions } from "@/hooks/useProductActions";
 
 const SellGrid = ({ id, badge, badgeColor, image, price, oldPrice, title, index }) => {
-  const dispatch = useDispatch();
+ const { handleAddToCart} = useProductActions();
 
   const productData = {
     id,
@@ -58,7 +58,7 @@ const SellGrid = ({ id, badge, badgeColor, image, price, oldPrice, title, index 
         </h3>
 
         <button
-          onClick={() => dispatch(addToCart(productData))}
+          onClick={() => handleAddToCart(productData)}
           className="w-full px-4 py-2 my-2 text-lg font-semibold text-(--prim-color) bg-(--prim-light) rounded-md hover:bg-(--prim-color) hover:text-white cursor-pointer transition-all duration-300 flex items-center gap-2 justify-center"
         >
           Add To Cart <CiShoppingCart size={20} />

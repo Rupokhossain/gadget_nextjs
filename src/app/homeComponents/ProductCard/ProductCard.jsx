@@ -3,11 +3,34 @@ import React from 'react'
 import Image from 'next/image';
 import { CiShoppingCart } from 'react-icons/ci';
 import { FaStar } from "react-icons/fa";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addToCart } from '@/redux/cartSlice';
+import toast from 'react-hot-toast';
 
 const ProductCard = ({ product, delay }) => {
   const dispatch = useDispatch();
+
+  const cartItems = useSelector((state) => state.cart.items);
+
+  const handleAddToCart = () => {
+
+    const isAlreadyInCart = cartItems.some((item) => item.id === product.id)
+
+    if (isAlreadyInCart) {
+      toast.error(`"${product.title}" is already in your cart!`, {
+        icon: '⚠️',
+        style: {
+          borderRadius: '10px',
+          background: '#fff9c4',
+          color: '#333',
+          fontWeight: 'medium'
+        },
+      });
+    } else {
+      dispatch(addToCart(product));
+      toast.success(`${product.title} added to cart! 🛒`);
+    }
+  }
 
   return (
     <div 
@@ -20,7 +43,7 @@ const ProductCard = ({ product, delay }) => {
       
       {/* Add to Cart Button */}
       <button 
-        onClick={() => dispatch(addToCart(product))} 
+        onClick={handleAddToCart} 
         className="absolute top-3 right-3 cursor-pointer bg-blue-100 text-blue-600 px-3 py-1 rounded-full flex items-center gap-1 text-sm font-medium hover:bg-blue-600 hover:text-white transition-colors z-10"
       >
         Add <CiShoppingCart size={14} />
@@ -39,7 +62,7 @@ const ProductCard = ({ product, delay }) => {
 
       {/* Product Info */}
       <div className="grow">
-        <h3 className="text-sm font-bold text-gray-800 my-2 line-clamp-2 Unbounded">
+        <h3 className="text-lg text-gray-800 my-2 line-clamp-2 Unbounded">
           {product.title}
         </h3>
         

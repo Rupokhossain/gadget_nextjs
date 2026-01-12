@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useMemo, useEffect } from "react";
+import React, { useState, useMemo, useEffect, use } from "react";
 import { LuRotateCcw } from "react-icons/lu";
 import { CiHeart, CiShoppingCart } from "react-icons/ci";
 import { FaStar, FaStore, FaShoppingCart, FaHeart } from "react-icons/fa";
@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { toggleWishlist } from "@/redux/wishlistSlice";
 import { addToCart } from "@/redux/cartSlice";
 import AOS from "aos";
+import { useProductActions } from "@/hooks/useProductActions";
 
 const ShopClient = ({ initialShops }) => {
   const dispatch = useDispatch();
@@ -47,11 +48,14 @@ const ShopClient = ({ initialShops }) => {
     AOS.refresh();
   }, [priceRange, selectedDiscounts, showOnlyNew]);
 
+  const { handleAddToCart, handleWishlistAction } = useProductActions();
+
   return (
     <div className="flex flex-col lg:flex-row gap-8">
       <aside
         data-aos="fade-right"
         data-aos-duration="1000"
+        data-aos-once="true"
         className="w-full lg:w-[30%] lg:sticky lg:top-48 self-start h-fit space-y-6"
       >
         {/* Filter Box */}
@@ -106,11 +110,7 @@ const ShopClient = ({ initialShops }) => {
         </div>
 
         {/* Promo Banner Card */}
-        <div
-          data-aos="zoom-in"
-          data-aos-delay="200"
-          className="border border-gray-200 rounded-xl p-8 bg-white flex flex-col items-center justify-center text-center shadow-sm"
-        >
+        <div className="border border-gray-200 rounded-xl p-8 bg-white flex flex-col items-center justify-center text-center shadow-sm">
           <Image
             src="/assets/images/special-snacks-img.webp"
             alt="Gamepad"
@@ -131,7 +131,7 @@ const ShopClient = ({ initialShops }) => {
       <main className="flex-1">
         {filteredShops.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-6">
-            {filteredShops.map((p, index) => {
+            {filteredShops.map((p) => {
               const isWishlisted = wishlistItems.some(
                 (item) => item.id === p.id
               );
@@ -140,12 +140,12 @@ const ShopClient = ({ initialShops }) => {
                 <div
                   key={p?.id}
                   data-aos="fade-up"
-                  data-aos-delay={index * 50}
-                  className="bg-white border border-gray-200 hover:shadow-lg rounded-xl p-4 relative transition-all duration-300 flex flex-col h-full group"
+                  data-aos-duration="1000"
+                  className="bg-white border border-gray-200 hover:shadow-lg rounded-xl p-4 relative transition-all duration-500 flex flex-col h-full group"
                 >
                   <button
-                    onClick={() => dispatch(toggleWishlist(p))}
-                    className="absolute top-2 left-2 w-10 h-10 rounded-full bg-[#a9baf93d] text-[#4B70F5] flex justify-center cursor-pointer items-center hover:bg-[#4B70F5] hover:text-white transition-all duration-300 z-20"
+                    onClick={() => handleWishlistAction(p)}
+                    className="absolute top-2 left-2 w-10 h-10 rounded-full bg-[#a9baf93d] text-[#4B70F5] flex justify-center cursor-pointer items-center hover:text-[#4B70F5] transition-all duration-300 z-20"
                   >
                     {isWishlisted ? (
                       <FaHeart className="text-indigo-500 text-lg" />
@@ -214,7 +214,7 @@ const ShopClient = ({ initialShops }) => {
                   </Link>
 
                   <button
-                    onClick={() => dispatch(addToCart(p))}
+                    onClick={() => handleAddToCart(p)}
                     className="w-full mt-4 flex items-center justify-center gap-2 px-4 py-2.5 text-lg font-bold text-blue-600 bg-blue-50 rounded-xl hover:bg-blue-600 hover:text-white transition-all duration-300 cursor-pointer "
                   >
                     Add To Cart <CiShoppingCart size={22} />

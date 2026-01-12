@@ -20,12 +20,12 @@ const Wishlist = () => {
     <div className="container mx-auto px-4 xl:px-24 py-10 min-h-screen">
       {/* ---(Visible from md screen) --- */}
       <div
-        data-aos="fade-up-right"
+        data-aos="fade-up"
         data-aos-duration="1200"
         className="hidden md:block border border-gray-100 rounded-xl overflow-hidden shadow-sm bg-white"
       >
         <table className="w-full text-left border-collapse">
-          <thead>
+          <thead data-aos="fade-down-right">
             <tr className="bg-[#DEE5FF] text-gray-800 lg:text-lg text-sm">
               <th className="p-4 font-bold">Product</th>
               <th className="p-4 font-bold border-l border-gray-300">Price</th>
@@ -41,6 +41,7 @@ const Wishlist = () => {
           <tbody>
             {wishlistItems.map((item) => (
               <tr
+                data-aos="fade-down-left"
                 key={item.id}
                 className="border-b border-gray-200 hover:bg-gray-50 transition-colors"
               >

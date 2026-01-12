@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import React from "react";
 import {
@@ -12,7 +13,6 @@ import ProductActions from "../ProductActions";
 
 const page = async ({ params }) => {
 
-
   const { id } = await params;
 
   const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/products.json`, {
@@ -23,9 +23,11 @@ const page = async ({ params }) => {
     (p) => p?.id?.toString() === id?.toString()
   );
 
+  
+
   if (!product)
     return (
-      <div className="text-center py-20 text-2xl font-bold">
+      <div data-aos="fade-up" className="text-center py-20 text-2xl font-bold">
         Product Not Found
       </div>
     );
@@ -33,9 +35,9 @@ const page = async ({ params }) => {
   return (
     <div className="container mx-auto px-4 py-10 space-y-12 max-w-7xl">
       {/* TOP SECTION: IMAGE + INFO + SIDEBAR */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+      <div data-aos="fade-left" className="grid grid-cols-1 lg:grid-cols-12 gap-8">
         {/* 1. Image Section */}
-        <div className="lg:col-span-4 border border-gray-200 rounded-3xl p-8 flex items-center justify-center bg-white h-[450px] shadow-sm">
+        <div  className="lg:col-span-4 border border-gray-200 rounded-3xl p-8 flex items-center justify-center bg-white h-[450px] shadow-sm">
           <div className="relative w-full h-full hover:scale-105 transition-transform duration-300">
             <Image
               src={product?.image}
@@ -140,7 +142,7 @@ const page = async ({ params }) => {
       </div>
 
       {/* --- BOTTOM SECTION: DYNAMIC CONTENT --- */}
-      <div className="border border-gray-200 rounded-3xl overflow-hidden bg-white shadow-sm">
+      <div data-aos="fade-up" className="border border-gray-200 rounded-3xl overflow-hidden bg-white shadow-sm">
         <div className="flex items-center justify-between flex-wrap gap-6 p-5 border-b border-gray-100 bg-gray-50/50">
           <button className="bg-blue-600 text-white px-8 py-2 rounded-full text-sm font-bold">
             Description

@@ -15,10 +15,11 @@ import { toggleWishlist } from "@/redux/wishlistSlice";
 import { addToCart } from "@/redux/cartSlice";
 
 import AOS from "aos";
+import { useProductActions } from "@/hooks/useProductActions";
 
 const HotDeals = ({ phones }) => {
-  const dispatch = useDispatch();
-
+  const { handleAddToCart, handleWishlistAction } = useProductActions();
+  
   const wishlistItems = useSelector((state) => state.wishlist.items);
   return (
     <div className="container mx-auto px-4 py-10">
@@ -29,7 +30,7 @@ const HotDeals = ({ phones }) => {
       <div className="flex flex-col lg:flex-row gap-6">
         {/* --- LEFT SIDE: Promo Banner (w-1/3 on lg) --- */}
         <div
-          data-aos="fade-right"
+          data-aos="fade-up-right"
           data-aos-duration="1000"
           className="w-full lg:w-1/3 p-10 rounded-2xl bg-[#4b70f5] flex flex-col justify-center items-center text-center"
         >
@@ -59,7 +60,7 @@ const HotDeals = ({ phones }) => {
         {/* --- RIGHT SIDE: Swiper Slider (w-2/3 on lg) --- */}
         <div
           className="w-full lg:w-2/3 overflow-hidden"
-          data-aos="fade-left"
+          data-aos="fade-up-left"
           data-aos-duration="1000"
         >
           <Swiper
@@ -86,8 +87,8 @@ const HotDeals = ({ phones }) => {
                     {/* Badge & Wishlist */}
                     <div className="flex justify-between items-start mb-4">
                       <button
-                        onClick={() => dispatch(toggleWishlist(phone))}
-                        className="absolute top-2 left-2 w-10 h-10 rounded-full cursor-pointer bg-[#a9baf93d] text-[#4B70F5] flex justify-center items-center hover:bg-[#4B70F5] hover:text-white transition-all duration-300 z-10"
+                        onClick={() => handleWishlistAction(phone)}
+                        className="absolute top-2 left-2 w-10 h-10 rounded-full cursor-pointer bg-[#a9baf93d] text-[#4B70F5] flex justify-center items-center transition-all duration-300 z-10"
                       >
                         {isWishlisted ? (
                           <FaHeart className="text-indigo-500 text-lg" />
@@ -150,7 +151,7 @@ const HotDeals = ({ phones }) => {
                     {/* Add to Cart Button */}
                     <button
                       className="w-full px-4 py-2 my-2 text-lg font-semibold text-(--prim-color) bg-(--prim-light) rounded-md text-md hover:bg-(--prim-color) hover:text-white flex items-center gap-2 justify-center cursor-pointer transition"
-                      onClick={() => dispatch(addToCart(phone))}
+                      onClick={() => handleAddToCart(phone)}
                     >
                       Add To Cart <FaShoppingCart size={14} />
                     </button>
