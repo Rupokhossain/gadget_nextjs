@@ -14,6 +14,7 @@ import { CiHeart } from "react-icons/ci";
 
 import AOS from "aos";
 import { useProductActions } from "@/hooks/useProductActions";
+import { useSelector } from "react-redux";
 
 const HotDeals = ({ phones }) => {
   const { handleAddToCart, handleWishlistAction } = useProductActions();
