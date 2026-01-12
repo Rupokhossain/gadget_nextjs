@@ -5,7 +5,7 @@ import Footer from "./components/Footer/Footer";
 import { Providers } from "@/redux/Providers";
 import ServiceFeatures from "./homeComponents/ServiceFeatures";
 import AosInit from "./components/AosInit";
-import { Toaster } from "react-hot-toast";
+import ResponsiveToaster from "@/ResponsiveToaster";
 
 const unbounded = Unbounded({
   variable: "--font-unbounded",
@@ -40,7 +40,7 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} ${unbounded.variable} ${merienda.variable} antialiased`}
       >
         <Providers>
-          <Toaster position="top-right" reverseOrder={false} />
+          <ResponsiveToaster></ResponsiveToaster>
 
           <AosInit></AosInit>
 
