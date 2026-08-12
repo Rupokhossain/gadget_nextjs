@@ -34,7 +34,7 @@ const page = async ({ params }) => {
       {/* TOP SECTION: IMAGE + INFO + SIDEBAR */}
       <div data-aos="fade-left" className="grid grid-cols-1 lg:grid-cols-12 gap-8">
         {/* 1. Image Section */}
-        <div className="lg:col-span-4 border border-gray-200 rounded-3xl p-8 flex items-center justify-center bg-white h-[450px] shadow-sm">
+        <div className="lg:col-span-4 border border-gray-200 rounded-3xl p-8 flex items-center justify-center bg-white h-112.5 shadow-sm">
           <div className="relative w-full h-full hover:scale-105 transition-transform duration-300">
             <Image
               src={phone?.image}
